@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-/*import { Pro } from '@ionic/pro';
+import { Pro } from '@ionic/pro';
 import { ErrorHandler, Injectable, Injector } from '@angular/core';
 import { IonicErrorHandler } from 'ionic-angular';
 Pro.init('d32002e9', {
   appVersion: '1.1.2'
-})*/
+})
 
 import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from '../module/ng2-translate';
