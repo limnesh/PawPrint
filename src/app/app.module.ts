@@ -4,8 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { Pro } from '@ionic/pro';
-import { ErrorHandler, Injectable, Injector } from '@angular/core';
-import { IonicErrorHandler } from 'ionic-angular';
+import { Injectable, Injector } from '@angular/core';
+
 Pro.init('d32002e9', {
   appVersion: '1.1.2'
 })
