@@ -11,15 +11,15 @@ webpackJsonp([3],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_of__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_of__ = __webpack_require__(320);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_share__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_share__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_merge__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_merge__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_toArray__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_toArray__ = __webpack_require__(327);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_toArray___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_toArray__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__translate_parser__ = __webpack_require__(234);
 
@@ -2445,15 +2445,15 @@ var TranslateModule = (function () {
 
 var map = {
 	"../pages - Copy/appointment/appointment.module": [
-		356,
+		355,
 		0
 	],
 	"../pages/add-event/add-event.module": [
-		357,
+		356,
 		2
 	],
 	"../pages/edit-event/edit-event.module": [
-		358,
+		357,
 		1
 	]
 };
@@ -4228,63 +4228,65 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(318);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__module_ng2_translate__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_keyboard__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(231);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_screen_orientation__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_about_footer_about_footer__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_button_cart_button_cart__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_footer_tabs_footer_tabs__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_button_quantity_button_quantity__ = __webpack_require__(347);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_hide_show_hide_show__ = __webpack_require__(348);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__service_config_service__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pipes_filter__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pipes_array_join__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pipes_object_to_array__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pipes_order_by__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pipes_range__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pipes_price__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pipes_time_ago__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pipes_static__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pipes_viewmore__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_common__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_home_home__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_categories_categories__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_detail_category_detail_category__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_search_search__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_account_account__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_login_login__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_signup_signup__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_detail_detail__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_cart_cart__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_comments_comments__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_rating_rating__ = __webpack_require__(236);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_order_order__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_favorite_favorite__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_terms_terms__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_privacy_privacy__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_contact_contact__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_about_about__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_popupads_popupads__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_profile_profile__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_address_address__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_appointment_appointment__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_checkout_checkout__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_detail_order_detail_order__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_thanks_thanks__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_latest_latest__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__ionic_native_splash_screen__ = __webpack_require__(232);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__ionic_native_camera__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__ionic_native_in_app_browser__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_network__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__ionic_native_onesignal__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_social_sharing__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__ionic_native_toast__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__ionic_native_calendar__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__pages_add_event_add_event__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__pages_edit_event_edit_event__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_pro__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_pro___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ionic_pro__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_keyboard__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_screen_orientation__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_about_footer_about_footer__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_button_cart_button_cart__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_footer_tabs_footer_tabs__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_button_quantity_button_quantity__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_hide_show_hide_show__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__service_config_service__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pipes_filter__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pipes_array_join__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pipes_object_to_array__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pipes_order_by__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pipes_range__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pipes_price__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pipes_time_ago__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pipes_static__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pipes_viewmore__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_common__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_home_home__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_categories_categories__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_detail_category_detail_category__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_search_search__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_account_account__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_login_login__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_signup_signup__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_detail_detail__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_cart_cart__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_comments_comments__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_rating_rating__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_order_order__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_favorite_favorite__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_terms_terms__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_privacy_privacy__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_contact_contact__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_about_about__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_popupads_popupads__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_profile_profile__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_address_address__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_appointment_appointment__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_checkout_checkout__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_detail_order_detail_order__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_thanks_thanks__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_latest_latest__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__ionic_native_splash_screen__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__ionic_native_camera__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_in_app_browser__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__ionic_native_network__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_onesignal__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__ionic_native_social_sharing__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__ionic_native_toast__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__ionic_native_calendar__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__pages_add_event_add_event__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__pages_edit_event_edit_event__ = __webpack_require__(250);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4295,16 +4297,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-/*import { Pro } from '@ionic/pro';
-import { ErrorHandler, Injectable, Injector } from '@angular/core';
-import { IonicErrorHandler } from 'ionic-angular';
-Pro.init('d32002e9', {
-  appVersion: '1.1.2'
-})*/
+
+__WEBPACK_IMPORTED_MODULE_4__ionic_pro__["Pro"].init('d32002e9', {
+    appVersion: '1.1.2'
+});
 
 
 function createTranslateLoader(http) {
-    return new __WEBPACK_IMPORTED_MODULE_5__module_ng2_translate__["d" /* TranslateStaticLoader */](http, './assets/i18n', '.json');
+    return new __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__["d" /* TranslateStaticLoader */](http, './assets/i18n', '.json');
 }
 
 
@@ -4368,47 +4368,47 @@ var AppModule = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_26__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_10__components_about_footer_about_footer__["a" /* AboutFooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__pages_categories_categories__["a" /* CategoriesPage */],
-                __WEBPACK_IMPORTED_MODULE_28__pages_detail_category_detail_category__["a" /* DetailCategoryPage */],
-                __WEBPACK_IMPORTED_MODULE_29__pages_search_search__["a" /* SearchPage */],
-                __WEBPACK_IMPORTED_MODULE_30__pages_account_account__["a" /* AccountPage */],
-                __WEBPACK_IMPORTED_MODULE_31__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_32__pages_signup_signup__["a" /* SignupPage */],
-                __WEBPACK_IMPORTED_MODULE_11__components_button_cart_button_cart__["a" /* ButtonCartComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__components_footer_tabs_footer_tabs__["a" /* FooterTabsComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__pages_detail_detail__["a" /* DetailPage */],
-                __WEBPACK_IMPORTED_MODULE_34__pages_cart_cart__["a" /* CartPage */],
-                __WEBPACK_IMPORTED_MODULE_13__components_button_quantity_button_quantity__["a" /* ButtonQuantityComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__pipes_filter__["a" /* Filter */],
-                __WEBPACK_IMPORTED_MODULE_17__pipes_array_join__["a" /* ArrayJoin */],
-                __WEBPACK_IMPORTED_MODULE_18__pipes_object_to_array__["a" /* ObjectToArray */],
-                __WEBPACK_IMPORTED_MODULE_35__pages_comments_comments__["a" /* CommentsPage */],
-                __WEBPACK_IMPORTED_MODULE_36__pages_rating_rating__["a" /* RatingPage */],
-                __WEBPACK_IMPORTED_MODULE_37__pages_order_order__["a" /* OrderPage */],
-                __WEBPACK_IMPORTED_MODULE_38__pages_favorite_favorite__["a" /* FavoritePage */],
-                __WEBPACK_IMPORTED_MODULE_39__pages_terms_terms__["a" /* TermsPage */],
-                __WEBPACK_IMPORTED_MODULE_40__pages_privacy_privacy__["a" /* PrivacyPage */],
-                __WEBPACK_IMPORTED_MODULE_41__pages_contact_contact__["a" /* ContactPage */],
-                __WEBPACK_IMPORTED_MODULE_42__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_43__pages_popupads_popupads__["a" /* PopupadsPage */],
-                __WEBPACK_IMPORTED_MODULE_14__components_hide_show_hide_show__["a" /* HideShowComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__pipes_order_by__["a" /* OrderBy */],
-                __WEBPACK_IMPORTED_MODULE_44__pages_profile_profile__["a" /* ProfilePage */],
-                __WEBPACK_IMPORTED_MODULE_45__pages_address_address__["a" /* AddressPage */],
-                __WEBPACK_IMPORTED_MODULE_46__pages_appointment_appointment__["a" /* AppointmentPage */],
-                __WEBPACK_IMPORTED_MODULE_47__pages_checkout_checkout__["a" /* CheckoutPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pipes_range__["a" /* Range */],
-                __WEBPACK_IMPORTED_MODULE_21__pipes_price__["a" /* Price */],
-                __WEBPACK_IMPORTED_MODULE_48__pages_detail_order_detail_order__["a" /* DetailOrderPage */],
-                __WEBPACK_IMPORTED_MODULE_49__pages_thanks_thanks__["a" /* ThanksPage */],
-                __WEBPACK_IMPORTED_MODULE_22__pipes_time_ago__["a" /* TimeAgo */],
-                __WEBPACK_IMPORTED_MODULE_50__pages_latest_latest__["a" /* LatestPage */],
-                __WEBPACK_IMPORTED_MODULE_23__pipes_static__["a" /* Static */],
-                __WEBPACK_IMPORTED_MODULE_24__pipes_viewmore__["a" /* Viewmore */],
-                __WEBPACK_IMPORTED_MODULE_59__pages_add_event_add_event__["a" /* AddEventPage */],
-                __WEBPACK_IMPORTED_MODULE_60__pages_edit_event_edit_event__["a" /* EditEventPage */]
+                __WEBPACK_IMPORTED_MODULE_27__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_11__components_about_footer_about_footer__["a" /* AboutFooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__pages_categories_categories__["a" /* CategoriesPage */],
+                __WEBPACK_IMPORTED_MODULE_29__pages_detail_category_detail_category__["a" /* DetailCategoryPage */],
+                __WEBPACK_IMPORTED_MODULE_30__pages_search_search__["a" /* SearchPage */],
+                __WEBPACK_IMPORTED_MODULE_31__pages_account_account__["a" /* AccountPage */],
+                __WEBPACK_IMPORTED_MODULE_32__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_33__pages_signup_signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_12__components_button_cart_button_cart__["a" /* ButtonCartComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_footer_tabs_footer_tabs__["a" /* FooterTabsComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__pages_detail_detail__["a" /* DetailPage */],
+                __WEBPACK_IMPORTED_MODULE_35__pages_cart_cart__["a" /* CartPage */],
+                __WEBPACK_IMPORTED_MODULE_14__components_button_quantity_button_quantity__["a" /* ButtonQuantityComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__pipes_filter__["a" /* Filter */],
+                __WEBPACK_IMPORTED_MODULE_18__pipes_array_join__["a" /* ArrayJoin */],
+                __WEBPACK_IMPORTED_MODULE_19__pipes_object_to_array__["a" /* ObjectToArray */],
+                __WEBPACK_IMPORTED_MODULE_36__pages_comments_comments__["a" /* CommentsPage */],
+                __WEBPACK_IMPORTED_MODULE_37__pages_rating_rating__["a" /* RatingPage */],
+                __WEBPACK_IMPORTED_MODULE_38__pages_order_order__["a" /* OrderPage */],
+                __WEBPACK_IMPORTED_MODULE_39__pages_favorite_favorite__["a" /* FavoritePage */],
+                __WEBPACK_IMPORTED_MODULE_40__pages_terms_terms__["a" /* TermsPage */],
+                __WEBPACK_IMPORTED_MODULE_41__pages_privacy_privacy__["a" /* PrivacyPage */],
+                __WEBPACK_IMPORTED_MODULE_42__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_43__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_44__pages_popupads_popupads__["a" /* PopupadsPage */],
+                __WEBPACK_IMPORTED_MODULE_15__components_hide_show_hide_show__["a" /* HideShowComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__pipes_order_by__["a" /* OrderBy */],
+                __WEBPACK_IMPORTED_MODULE_45__pages_profile_profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_46__pages_address_address__["a" /* AddressPage */],
+                __WEBPACK_IMPORTED_MODULE_47__pages_appointment_appointment__["a" /* AppointmentPage */],
+                __WEBPACK_IMPORTED_MODULE_48__pages_checkout_checkout__["a" /* CheckoutPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pipes_range__["a" /* Range */],
+                __WEBPACK_IMPORTED_MODULE_22__pipes_price__["a" /* Price */],
+                __WEBPACK_IMPORTED_MODULE_49__pages_detail_order_detail_order__["a" /* DetailOrderPage */],
+                __WEBPACK_IMPORTED_MODULE_50__pages_thanks_thanks__["a" /* ThanksPage */],
+                __WEBPACK_IMPORTED_MODULE_23__pipes_time_ago__["a" /* TimeAgo */],
+                __WEBPACK_IMPORTED_MODULE_51__pages_latest_latest__["a" /* LatestPage */],
+                __WEBPACK_IMPORTED_MODULE_24__pipes_static__["a" /* Static */],
+                __WEBPACK_IMPORTED_MODULE_25__pipes_viewmore__["a" /* Viewmore */],
+                __WEBPACK_IMPORTED_MODULE_60__pages_add_event_add_event__["a" /* AddEventPage */],
+                __WEBPACK_IMPORTED_MODULE_61__pages_edit_event_edit_event__["a" /* EditEventPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -4427,13 +4427,13 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/edit-event/edit-event.module#EditEventPageModule', name: 'EditEventPage', segment: 'edit-event', priority: 'low', defaultHistory: [] }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_5__module_ng2_translate__["b" /* TranslateModule */].forRoot({
-                    provide: __WEBPACK_IMPORTED_MODULE_5__module_ng2_translate__["a" /* TranslateLoader */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_http__["c" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__["b" /* TranslateModule */].forRoot({
+                    provide: __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__["a" /* TranslateLoader */],
                     useFactory: (createTranslateLoader),
-                    deps: [__WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]]
+                    deps: [__WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]]
                 }),
-                __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot({
+                __WEBPACK_IMPORTED_MODULE_7__ionic_storage__["a" /* IonicStorageModule */].forRoot({
                     name: 'woocommerce_application',
                     driverOrder: ['sqlite', 'websql', 'indexeddb']
                 })
@@ -4441,49 +4441,49 @@ var AppModule = /** @class */ (function () {
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_26__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_27__pages_categories_categories__["a" /* CategoriesPage */],
-                __WEBPACK_IMPORTED_MODULE_28__pages_detail_category_detail_category__["a" /* DetailCategoryPage */],
-                __WEBPACK_IMPORTED_MODULE_29__pages_search_search__["a" /* SearchPage */],
-                __WEBPACK_IMPORTED_MODULE_30__pages_account_account__["a" /* AccountPage */],
-                __WEBPACK_IMPORTED_MODULE_31__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_32__pages_signup_signup__["a" /* SignupPage */],
-                __WEBPACK_IMPORTED_MODULE_33__pages_detail_detail__["a" /* DetailPage */],
-                __WEBPACK_IMPORTED_MODULE_34__pages_cart_cart__["a" /* CartPage */],
-                __WEBPACK_IMPORTED_MODULE_35__pages_comments_comments__["a" /* CommentsPage */],
-                __WEBPACK_IMPORTED_MODULE_36__pages_rating_rating__["a" /* RatingPage */],
-                __WEBPACK_IMPORTED_MODULE_37__pages_order_order__["a" /* OrderPage */],
-                __WEBPACK_IMPORTED_MODULE_38__pages_favorite_favorite__["a" /* FavoritePage */],
-                __WEBPACK_IMPORTED_MODULE_39__pages_terms_terms__["a" /* TermsPage */],
-                __WEBPACK_IMPORTED_MODULE_40__pages_privacy_privacy__["a" /* PrivacyPage */],
-                __WEBPACK_IMPORTED_MODULE_41__pages_contact_contact__["a" /* ContactPage */],
-                __WEBPACK_IMPORTED_MODULE_42__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_44__pages_profile_profile__["a" /* ProfilePage */],
-                __WEBPACK_IMPORTED_MODULE_43__pages_popupads_popupads__["a" /* PopupadsPage */],
-                __WEBPACK_IMPORTED_MODULE_45__pages_address_address__["a" /* AddressPage */],
-                __WEBPACK_IMPORTED_MODULE_46__pages_appointment_appointment__["a" /* AppointmentPage */],
-                __WEBPACK_IMPORTED_MODULE_47__pages_checkout_checkout__["a" /* CheckoutPage */],
-                __WEBPACK_IMPORTED_MODULE_48__pages_detail_order_detail_order__["a" /* DetailOrderPage */],
-                __WEBPACK_IMPORTED_MODULE_49__pages_thanks_thanks__["a" /* ThanksPage */],
-                __WEBPACK_IMPORTED_MODULE_50__pages_latest_latest__["a" /* LatestPage */],
-                __WEBPACK_IMPORTED_MODULE_59__pages_add_event_add_event__["a" /* AddEventPage */],
-                __WEBPACK_IMPORTED_MODULE_60__pages_edit_event_edit_event__["a" /* EditEventPage */]
+                __WEBPACK_IMPORTED_MODULE_27__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_28__pages_categories_categories__["a" /* CategoriesPage */],
+                __WEBPACK_IMPORTED_MODULE_29__pages_detail_category_detail_category__["a" /* DetailCategoryPage */],
+                __WEBPACK_IMPORTED_MODULE_30__pages_search_search__["a" /* SearchPage */],
+                __WEBPACK_IMPORTED_MODULE_31__pages_account_account__["a" /* AccountPage */],
+                __WEBPACK_IMPORTED_MODULE_32__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_33__pages_signup_signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_34__pages_detail_detail__["a" /* DetailPage */],
+                __WEBPACK_IMPORTED_MODULE_35__pages_cart_cart__["a" /* CartPage */],
+                __WEBPACK_IMPORTED_MODULE_36__pages_comments_comments__["a" /* CommentsPage */],
+                __WEBPACK_IMPORTED_MODULE_37__pages_rating_rating__["a" /* RatingPage */],
+                __WEBPACK_IMPORTED_MODULE_38__pages_order_order__["a" /* OrderPage */],
+                __WEBPACK_IMPORTED_MODULE_39__pages_favorite_favorite__["a" /* FavoritePage */],
+                __WEBPACK_IMPORTED_MODULE_40__pages_terms_terms__["a" /* TermsPage */],
+                __WEBPACK_IMPORTED_MODULE_41__pages_privacy_privacy__["a" /* PrivacyPage */],
+                __WEBPACK_IMPORTED_MODULE_42__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_43__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_45__pages_profile_profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_44__pages_popupads_popupads__["a" /* PopupadsPage */],
+                __WEBPACK_IMPORTED_MODULE_46__pages_address_address__["a" /* AddressPage */],
+                __WEBPACK_IMPORTED_MODULE_47__pages_appointment_appointment__["a" /* AppointmentPage */],
+                __WEBPACK_IMPORTED_MODULE_48__pages_checkout_checkout__["a" /* CheckoutPage */],
+                __WEBPACK_IMPORTED_MODULE_49__pages_detail_order_detail_order__["a" /* DetailOrderPage */],
+                __WEBPACK_IMPORTED_MODULE_50__pages_thanks_thanks__["a" /* ThanksPage */],
+                __WEBPACK_IMPORTED_MODULE_51__pages_latest_latest__["a" /* LatestPage */],
+                __WEBPACK_IMPORTED_MODULE_60__pages_add_event_add_event__["a" /* AddEventPage */],
+                __WEBPACK_IMPORTED_MODULE_61__pages_edit_event_edit_event__["a" /* EditEventPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_58__ionic_native_calendar__["a" /* Calendar */],
-                __WEBPACK_IMPORTED_MODULE_15__service_config_service__["a" /* Config */],
-                __WEBPACK_IMPORTED_MODULE_25__angular_common__["d" /* DatePipe */],
-                __WEBPACK_IMPORTED_MODULE_51__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_52__ionic_native_camera__["a" /* Camera */],
-                __WEBPACK_IMPORTED_MODULE_53__ionic_native_in_app_browser__["a" /* InAppBrowser */],
-                __WEBPACK_IMPORTED_MODULE_54__ionic_native_network__["a" /* Network */],
-                __WEBPACK_IMPORTED_MODULE_55__ionic_native_onesignal__["a" /* OneSignal */],
-                __WEBPACK_IMPORTED_MODULE_7__ionic_native_keyboard__["a" /* Keyboard */],
-                __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_56__ionic_native_social_sharing__["a" /* SocialSharing */],
-                __WEBPACK_IMPORTED_MODULE_57__ionic_native_toast__["a" /* Toast */],
-                __WEBPACK_IMPORTED_MODULE_9__ionic_native_screen_orientation__["a" /* ScreenOrientation */],
+                __WEBPACK_IMPORTED_MODULE_59__ionic_native_calendar__["a" /* Calendar */],
+                __WEBPACK_IMPORTED_MODULE_16__service_config_service__["a" /* Config */],
+                __WEBPACK_IMPORTED_MODULE_26__angular_common__["d" /* DatePipe */],
+                __WEBPACK_IMPORTED_MODULE_52__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_53__ionic_native_camera__["a" /* Camera */],
+                __WEBPACK_IMPORTED_MODULE_54__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+                __WEBPACK_IMPORTED_MODULE_55__ionic_native_network__["a" /* Network */],
+                __WEBPACK_IMPORTED_MODULE_56__ionic_native_onesignal__["a" /* OneSignal */],
+                __WEBPACK_IMPORTED_MODULE_8__ionic_native_keyboard__["a" /* Keyboard */],
+                __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_57__ionic_native_social_sharing__["a" /* SocialSharing */],
+                __WEBPACK_IMPORTED_MODULE_58__ionic_native_toast__["a" /* Toast */],
+                __WEBPACK_IMPORTED_MODULE_10__ionic_native_screen_orientation__["a" /* ScreenOrientation */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicErrorHandler */] }
             ]
         })
@@ -4507,17 +4507,15 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_core_service__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_keyboard__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_es6_shim__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_es6_shim___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_es6_shim__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__module_ng2_translate__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__service_config_service__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_network__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_admob_free__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_google_analytics__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_screen_orientation__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_device__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__service_config_service__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_network__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_admob_free__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_google_analytics__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_screen_orientation__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_device__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_home_home__ = __webpack_require__(127);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4534,7 +4532,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+//import 'es6-shim';
 // Custom
 
 
@@ -4564,8 +4562,8 @@ var MyApp = /** @class */ (function () {
         this.admobFree = admobFree;
         this.device = device;
         this.keyboard = keyboard;
-        this.HomePage = __WEBPACK_IMPORTED_MODULE_16__pages_home_home__["a" /* HomePage */];
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_16__pages_home_home__["a" /* HomePage */];
+        this.HomePage = __WEBPACK_IMPORTED_MODULE_15__pages_home_home__["a" /* HomePage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_15__pages_home_home__["a" /* HomePage */];
         platform.ready().then(function () {
             statusBar.overlaysWebView(false);
             statusBar.styleDefault();
@@ -4635,23 +4633,23 @@ var MyApp = /** @class */ (function () {
     }
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"c:\MobileApp\modernshop\modernshop\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n<!-- <ion-row width-100 height-100 center *ngIf="!isLoaded">\n	<ion-col relative light-bg>\n		<div absolute text-center width-100 style="top:46%;">\n			<ion-spinner></ion-spinner>\n		</div>\n	</ion-col>\n</ion-row> -->\n<div absolute padding text-center width-100 primary-bg *ngIf="isLoaded && disconnect" class="disconnect">\n	{{\'general.disconnect\'|translate}}\n</div>'/*ion-inline-end:"c:\MobileApp\modernshop\modernshop\src\app\app.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_5__service_core_service__["a" /* Core */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_admob_free__["a" /* AdMobFree */], __WEBPACK_IMPORTED_MODULE_13__ionic_native_google_analytics__["a" /* GoogleAnalytics */], __WEBPACK_IMPORTED_MODULE_14__ionic_native_screen_orientation__["a" /* ScreenOrientation */], __WEBPACK_IMPORTED_MODULE_15__ionic_native_device__["a" /* Device */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_5__service_core_service__["a" /* Core */], __WEBPACK_IMPORTED_MODULE_11__ionic_native_admob_free__["a" /* AdMobFree */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_google_analytics__["a" /* GoogleAnalytics */], __WEBPACK_IMPORTED_MODULE_13__ionic_native_screen_orientation__["a" /* ScreenOrientation */], __WEBPACK_IMPORTED_MODULE_14__ionic_native_device__["a" /* Device */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_8__module_ng2_translate__["c" /* TranslateService */],
-            __WEBPACK_IMPORTED_MODULE_9__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */],
             __WEBPACK_IMPORTED_MODULE_5__service_core_service__["a" /* Core */],
-            __WEBPACK_IMPORTED_MODULE_10__service_config_service__["a" /* Config */],
+            __WEBPACK_IMPORTED_MODULE_9__service_config_service__["a" /* Config */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_11__ionic_native_network__["a" /* Network */],
-            __WEBPACK_IMPORTED_MODULE_14__ionic_native_screen_orientation__["a" /* ScreenOrientation */],
-            __WEBPACK_IMPORTED_MODULE_13__ionic_native_google_analytics__["a" /* GoogleAnalytics */],
-            __WEBPACK_IMPORTED_MODULE_12__ionic_native_admob_free__["a" /* AdMobFree */],
-            __WEBPACK_IMPORTED_MODULE_15__ionic_native_device__["a" /* Device */],
+            __WEBPACK_IMPORTED_MODULE_10__ionic_native_network__["a" /* Network */],
+            __WEBPACK_IMPORTED_MODULE_13__ionic_native_screen_orientation__["a" /* ScreenOrientation */],
+            __WEBPACK_IMPORTED_MODULE_12__ionic_native_google_analytics__["a" /* GoogleAnalytics */],
+            __WEBPACK_IMPORTED_MODULE_11__ionic_native_admob_free__["a" /* AdMobFree */],
+            __WEBPACK_IMPORTED_MODULE_14__ionic_native_device__["a" /* Device */],
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_keyboard__["a" /* Keyboard */]])
     ], MyApp);
     return MyApp;
@@ -4674,7 +4672,7 @@ var MyApp = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_toast__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_photo_viewer__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_photo_viewer__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_Observable__);
@@ -5063,7 +5061,7 @@ var DetailPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 344:
+/***/ 343:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5122,7 +5120,7 @@ var AboutFooterComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 345:
+/***/ 344:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5197,7 +5195,7 @@ var ButtonCartComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 346:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5261,7 +5259,7 @@ var FooterTabsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 347:
+/***/ 346:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5385,7 +5383,7 @@ var ButtonQuantityComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 348:
+/***/ 347:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5429,7 +5427,7 @@ var HideShowComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 349:
+/***/ 348:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5468,7 +5466,7 @@ var Filter = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 350:
+/***/ 349:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5502,7 +5500,7 @@ var ArrayJoin = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 351:
+/***/ 350:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5586,7 +5584,7 @@ var OrderBy = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 352:
+/***/ 351:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5621,7 +5619,7 @@ var Range = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 353:
+/***/ 352:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5694,7 +5692,7 @@ var Price = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 354:
+/***/ 353:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5764,7 +5762,7 @@ var TimeAgo = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 355:
+/***/ 354:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

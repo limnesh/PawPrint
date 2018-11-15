@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Http } from '@angular/http';
 import { Core } from '../service/core.service';
 import { Keyboard } from '@ionic-native/keyboard';
-import 'es6-shim';
+//import 'es6-shim';
 // Custom
 import { TranslateService } from '../module/ng2-translate';
 import { Storage } from '@ionic/storage';
