@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "cordova": "8.1.2",
-	"@ionic/cli-utils": "1.19.2",
+	"cordova-plugin-ionic" :"5.0.3",
+    "@ionic/cli-utils": "1.19.2",
     "@angular/animations": "5.2.10",
     "@angular/common": "5.2.10",
     "@angular/compiler": "5.2.10",
@@ -90,7 +91,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.0",
-    "typescript": "~2.6.2"    
+    "typescript": "~2.6.2"
   },
   "description": "PawPrints Application",
   "cordova": {
