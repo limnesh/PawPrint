@@ -1,0 +1,33 @@
+page-address {
+/*	.scroll-content {
+    		margin-bottom: 45px !important;
+    		padding-bottom: 0 !important;
+	}*/
+	.checkbox-use-billing{
+		.checkbox{margin:0 5px 0 0!important;}
+		.item-inner{
+			border-bottom:none!important;
+			font-size:1.2rem;
+		}
+	}
+	.item{
+		&.ng-valid.input-has-value:not(.input-has-focus){
+			.item-inner{
+				border-bottom-color:#EEF0F3!important;
+				box-shadow:none!important;
+				/*border-bottom-color: #32db64;
+    			box-shadow: inset 0 -1px 0 0 #32db64;*/
+			}
+			&:last-child{
+				border:none;
+				box-shadow:none;
+			}
+		}
+	}
+	.select-icon{
+		transform: rotate(-45deg);
+		.select-icon-inner{
+			left:0!important;
+		}
+	}
+}

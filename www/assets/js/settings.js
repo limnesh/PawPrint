@@ -1,0 +1,15 @@
+// var wordpress_url = "https://modernshop.taydomobile.com";
+// var wordpress_url = "https://dev.taydotech.com/datnt/wordpress";
+var wordpress_url = "http://pawprintsbh.com";
+var wordpress_per_page = 10;
+var request_timeout = 30000;
+var open_target_blank = true;
+var display_mode = 'ltr';
+var date_format = "d MMM y HH:mm";
+var onesignal_app_id = "9ccab0dd-d940-4cc3-affa-e2aebe36c564";
+var application_language = "language";
+var google_analytics = ""; 
+var admob_android_banner = '';
+var admob_android_interstitial = '';
+var admob_ios_banner = '';
+var admob_ios_interstitial = '';

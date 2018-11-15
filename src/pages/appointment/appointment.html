@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+	<ion-title>{{'appointment.title'|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-label color="dark" >
+				{{'appointment.select_date'|translate}}
+	</ion-label>
+	<ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="strAppointmentDate" (ionChange)="getAppointTimes()"></ion-datetime>
+	<ion-label color="dark" >
+				{{'appointment.select_time'|translate}}
+	</ion-label>
+	<ion-scroll style="width:100%;height:60vh" scrollY="true">
+		<ion-list scroll="true" radio-group [(ngModel)]="schSelectedTime" class="list-payment" [disabled]="!strAppointmentDate" no-margin>
+			<button ion-item detail-none *ngFor="let item of schAvailableTimes" no-padding (click)="schSelectedTime=item">
+				<ion-label><span dark>{{item}}</span></ion-label>
+				<ion-radio [value]="item"></ion-radio>
+			</button>
+		</ion-list>
+	</ion-scroll>
+</ion-content>
+
+<ion-footer padding>
+	<button  ion-button block icon-right margin-top (click)="gotoAddress()" [disabled]="!schSelectedTime" ><!--class="button-checkout"-->
+				<span text-uppercase>{{'appointment.checkout'|translate}}</span>
+				<ion-icon name="ios-arrow-round-forward"></ion-icon>
+	</button>
+	<ion-toolbar><footer-tabs></footer-tabs></ion-toolbar>
+</ion-footer>

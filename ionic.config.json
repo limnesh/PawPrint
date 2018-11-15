@@ -1,0 +1,7 @@
+{
+  "name": "PawPrintsApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
