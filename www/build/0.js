@@ -72,7 +72,7 @@ var AppointmentPage = /** @class */ (function () {
     };
     AppointmentPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-appointment',template:/*ion-inline-start:"C:\MobileApp\modernshop\modernshop\src\pages - Copy\appointment\appointment.html"*/'<!--\n  Generated template for the AppointmentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>appointment</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\MobileApp\modernshop\modernshop\src\pages - Copy\appointment\appointment.html"*/,
+            selector: 'page-appointment',template:/*ion-inline-start:"c:\MobileApp\modernshop\modernshop\src\pages - Copy\appointment\appointment.html"*/'<!--\n  Generated template for the AppointmentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>appointment</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"c:\MobileApp\modernshop\modernshop\src\pages - Copy\appointment\appointment.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], AppointmentPage);

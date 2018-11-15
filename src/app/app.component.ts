@@ -65,7 +65,7 @@ export class MyApp {
 			translate.use(application_language);
 			storage.set('require', false);
 			if (platform.is('cordova')) {
-				keyboard.hideKeyboardAccessoryBar(true);
+				//keyboard.hideKeyboardAccessoryBar(true);
 				screenOrientation.lock('portrait');
 			 	let operating_system = '';
 				let admob: Object = {};
