@@ -12,10 +12,6 @@
     "ionic:serve": "ionic-app-scripts serve"
   },
   "dependencies": {
-    "cordova": "8.1.2",
-	"onesignal-cordova-plugin": "2.1.0",
-	"cordova-plugin-ionic" :"5.0.3",
-    "@ionic/cli-utils": "1.19.2",
     "@angular/animations": "5.2.10",
     "@angular/common": "5.2.10",
     "@angular/compiler": "5.2.10",
@@ -46,6 +42,7 @@
     "@ionic-native/status-bar": "4.7.0",
     "@ionic-native/toast": "4.7.0",
     "@ionic/app-scripts": "3.2.0",
+    "@ionic/cli-utils": "1.19.2",
     "@ionic/cloud-angular": "0.12.0",
     "@ionic/pro": "2.0.2",
     "@ionic/storage": "2.1.3",
@@ -53,6 +50,7 @@
     "android-versions": "1.3.0",
     "codelyzer": "4.2.1",
     "com-sarriaroman-photoviewer": "1.1.16",
+    "cordova": "8.1.2",
     "cordova-admob-sdk": "0.15.1",
     "cordova-android": "6.4.0",
     "cordova-android-play-services-gradle-release": "1.3.1",
@@ -67,6 +65,7 @@
     "cordova-plugin-geolocation": "2.4.3",
     "cordova-plugin-google-analytics": "1.8.3",
     "cordova-plugin-inappbrowser": "2.0.2",
+    "cordova-plugin-ionic": "5.0.3",
     "cordova-plugin-ionic-keyboard": "~2.0.5",
     "cordova-plugin-network-information": "2.0.1",
     "cordova-plugin-request-location-accuracy": "2.2.3",
@@ -85,7 +84,6 @@
     "ionic2-calendar": "0.4.4",
     "ionic3-calendar": "1.1.6",
     "ionicons": "3.0.0",
-    "onesignal-cordova-plugin": "2.3.3",
     "rxjs": "5.5.10",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
@@ -124,13 +122,13 @@
       "cordova-plugin-x-socialsharing": {},
       "cordova-plugin-x-toast": {},
       "cordova.plugins.diagnostic": {},
-      "onesignal-cordova-plugin": {},
       "cordova-sqlite-storage": {},
       "cordova-plugin-screen-orientation": {},
       "cordova-plugin-device": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-calendar": {}
+      "cordova-plugin-calendar": {},
+      "onesignal-cordova-plugin": {}
     }
   }
 }
