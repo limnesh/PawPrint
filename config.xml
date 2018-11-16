@@ -123,7 +123,7 @@
     <plugin name="cordova.plugins.diagnostic" spec="^4.0.7" />
     <allow-navigation href="http://172.20.10.12:8100" />
     <plugin name="cordova-plugin-calendar" spec="^5.1.0" />
-    <plugin name="onesignal-cordova-plugin" spec="~2.4.5" />
+    <plugin name="onesignal-cordova-plugin" spec="2.3.3" />
     <engine name="android" spec="6.3.0" />
     <engine name="ios" spec="4.5.4" />
     <engine name="browser" spec="5.0.3" />
