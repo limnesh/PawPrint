@@ -105,7 +105,7 @@
       "cordova-plugin-inappbrowser": {},
       "com-sarriaroman-photoviewer": {},
       "cordova-android-play-services-gradle-release": {
-        "PLAY_SERVICES_VERSION": "12.+"
+        "PLAY_SERVICES_VERSION": "16.+"
       },
       "cordova-plugin-camera": {
         "CAMERA_USAGE_DESCRIPTION": "take avatar",
