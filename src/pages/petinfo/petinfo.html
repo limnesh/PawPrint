@@ -1,0 +1,57 @@
+<!--
+  Generated template for the PetinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Pet</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="page-petinfo" padding>
+	<ion-list no-margin>
+	  <div [formGroup]="formPetInfo">
+		<img float-left width-50 src="assets/images/dogimage.jpg" />
+			<ion-item mode="md" bg-transparent no-padding>
+				<ion-label floating><span light>Pet Name</span></ion-label>
+				<ion-input dir="{{display_mode}}" light formControlName="PetName"></ion-input>
+			</ion-item>
+			<ion-item mode="md" bg-transparent no-padding>
+				<ion-label floating><span light>Breed</span></ion-label><!--[selectOptions]="selectOptions" -->
+				  <ion-select formControlName="PetBreed" class="select-option">
+					<ion-option value="a">Retrievers (Labrador)</ion-option>
+					<ion-option value="b">German Shepherd Dogs</ion-option>
+					<ion-option value="c">Retrievers (Golden)</ion-option>
+					<ion-option value="d">French Bulldogs</ion-option>
+					<ion-option value="e">Bulldogs</ion-option>
+					<ion-option value="f">Beagles</ion-option>
+					<ion-option value="g">Poodles</ion-option>
+				  </ion-select>
+			</ion-item>
+			<ion-item mode="md" bg-transparent no-padding>
+				<ion-label floating><span light>Date of Birth</span></ion-label>
+				<ion-datetime dir="{{display_mode}}" light formControlName="PetDOB"></ion-datetime>
+			</ion-item>
+			<ion-item mode="md" bg-transparent no-padding>
+				<ion-label floating><span light>Gender</span></ion-label>
+				<ion-select formControlName="PetGender" class="select-option">
+					<ion-option value="m">Male</ion-option>
+					<ion-option value="f">Female</ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item mode="md" bg-transparent no-padding>
+				<ion-label floating><span light>Size</span></ion-label>
+				<ion-range min="20" max="80" step="2" light formControlName="PetSize" color="danger" pin="true">
+					<ion-icon small range-left name="paw"></ion-icon>
+					<ion-icon large range-right name="paw"></ion-icon>
+				</ion-range>
+			</ion-item>
+	</div>
+
+	</ion-list>
+</ion-content>
