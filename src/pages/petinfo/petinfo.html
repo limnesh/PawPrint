@@ -14,9 +14,20 @@
 
 
 <ion-content class="page-petinfo" padding>
+	<div float-left>
+		<div class="profile-avatar" margin-auto>
+			<img *ngIf="avatar" [src]="avatar"  (click)="editAvatar()">
+			<img *ngIf="!avatar" src="assets/images/dogprofile.png" (click)="editAvatar()">
+		</div>
+		<button ion-button clear icon-left color="dark" margin-auto (click)="editAvatar()" class="disable-hover">
+			<ion-icon name="icon-pen"></ion-icon>
+			<b>{{'profile.edit'|translate}}</b>
+		</button>
+	</div>
 	<ion-list no-margin>
+	
 	  <div [formGroup]="formPetInfo">
-		<img float-left width-50 src="assets/images/dogimage.jpg" />
+		
 			<ion-item mode="md" bg-transparent no-padding>
 				<ion-label floating><span light>Pet Name</span></ion-label>
 				<ion-input dir="{{display_mode}}" light formControlName="PetName"></ion-input>

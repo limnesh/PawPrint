@@ -40825,6 +40825,14 @@ page-petinfo .select-option {
   color: #fff;
 }
 
+page-petinfo .profile-avatar {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #373A36;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
 page-popupads .disable-hover {
   padding: 0;
   border: 1px solid #dedede;
