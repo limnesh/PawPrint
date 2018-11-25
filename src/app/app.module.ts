@@ -49,6 +49,7 @@ import { RatingPage } from '../pages/rating/rating';
 import { OrderPage } from '../pages/order/order';
 import { FavoritePage } from '../pages/favorite/favorite';
 import { TermsPage } from '../pages/terms/terms';
+import { PetinfoPage } from '../pages/petinfo/petinfo';
 import { PrivacyPage } from '../pages/privacy/privacy';
 import { ContactPage } from '../pages/contact/contact';
 import { AboutPage } from '../pages/about/about';
@@ -68,6 +69,7 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Toast } from '@ionic-native/toast';
 import { Calendar } from '@ionic-native/calendar';
+import {DatePicker} from '@ionic-native/date-picker';
 import { AddEventPage } from '../pages/add-event/add-event';
 import { EditEventPage } from '../pages/edit-event/edit-event';
 
@@ -95,6 +97,7 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
     OrderPage,
     FavoritePage,
     TermsPage,
+	PetinfoPage,
     PrivacyPage,
     ContactPage,
     AboutPage,
@@ -155,6 +158,7 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
         OrderPage,
         FavoritePage,
         TermsPage,
+		PetinfoPage,
         PrivacyPage,
         ContactPage,
         AboutPage,
@@ -171,6 +175,7 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
     ],
     providers: [
 		Calendar,
+		DatePicker,
         Config,
         DatePipe,
         SplashScreen,

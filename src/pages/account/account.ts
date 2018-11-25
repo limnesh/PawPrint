@@ -23,6 +23,7 @@ import { PrivacyPage } from '../privacy/privacy';
 import { ContactPage } from '../contact/contact';
 import { AboutPage } from '../about/about';
 import { SearchPage } from '../search/search';
+import { PetinfoPage } from '../petinfo/petinfo';
 
 // Pipe
 import { Static } from '../../pipes/static';
@@ -45,6 +46,7 @@ export class AccountPage {
 	ContactPage = ContactPage;
 	AboutPage = AboutPage;
 	SearchPage = SearchPage;
+	PetinfoPage=PetinfoPage;
 	isCache: boolean; isLogin: boolean; loadedOrder: boolean;
 	data: any = {};
 

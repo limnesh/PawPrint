@@ -3,7 +3,20 @@ page-appointment {
     		margin-bottom: 45px !important;
     		padding-bottom: 0 !important;
 	}*/
-	 
+
+	 .head-label {
+		background: #373A36;
+		font-size:2rem;
+		text-align: center;
+		}
+		
+	.detail-label {
+		font-size:1.9rem;
+		text-align: center;
+		}
+	.timelist-label {
+		font-size:1.9rem;
+		}
 	.checkbox-use-billing{
 		.checkbox{margin:0 5px 0 0!important;}
 		.item-inner{

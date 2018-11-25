@@ -84,7 +84,7 @@
 		<ion-col text-right primary *ngIf="coupon.value">-{{coupon.value|price}}</ion-col>
 	</ion-row> 
 	<button ion-button block icon-right margin-top (click)="gotoAppointment()" [disabled]="invalid" class="button-appointment">
-		<span text-uppercase>{{'appointment'|translate}}</span>
+		<span text-uppercase>APPOINTMENT<!--{{'appointment'|translate}}--></span>
 		<ion-icon name="ios-arrow-round-forward"></ion-icon>
 	</button>
 	<!--<button ion-button block icon-right margin-top (click)="gotoAddress()" [disabled]="invalid" class="button-checkout">

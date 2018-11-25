@@ -125,7 +125,7 @@
 	"account": {
 		"login": "LOGIN",
 		"signout": {
-			"title": "Modern Shop",
+			"title": "Pawprints",
 			"message": "Do you want to logout?",
 			"no": "Cancel",
 			"yes": "OK"

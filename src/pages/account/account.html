@@ -39,11 +39,15 @@
 			<ion-spinner item-right *ngIf="isLogin && !loadedOrder"></ion-spinner>
 			<ion-note item-right *ngIf="loadedOrder || !isLogin">{{data.order||0}}</ion-note>
 		</button>
-		<button ion-item detail-none color="light" [navPush]="FavoritePage">
+		<button ion-item detail-none color="light" [navPush]="PetinfoPage">
+			<ion-icon name="icon-favorite" item-left></ion-icon>
+			<ion-label>My Pets</ion-label>
+		</button>
+		<!--<button ion-item detail-none color="light" [navPush]="FavoritePage">
 			<ion-icon name="icon-favorite" item-left></ion-icon>
 			<ion-label>{{'account.favorite'|translate}}</ion-label>
 			<ion-note item-right>{{data.favorite||0}}</ion-note>
-		</button>
+		</button>-->
 		<ion-item color="light" detail-none>
 			<ion-icon name="icon-notification" item-left></ion-icon>
 			<ion-label>{{'account.push_notification'|translate}}</ion-label>

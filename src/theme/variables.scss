@@ -1,9 +1,9 @@
 $font-path: "../assets/fonts";
 
 @import "ionic.globals";
-
+/*
 $colors: (
-  primary:    #ff1b21,
+  primary:    #ff1b21, 
   secondary:  #f5f7f9,
   danger:     #f53d3d,
   success:    #339966,
@@ -11,6 +11,18 @@ $colors: (
   dark:       #000,
   gray:       #888580,
   navy:		  #009688,
+  azure:    #0079FE
+);
+*/
+$colors: (
+  primary:    #ff1b21, 
+  secondary:  #f5f7f9,
+  danger:     #f53d3d,
+  success:    #339966,
+  light:      #fff,
+  dark:       #373A36,
+  gray:       #919D9D,
+  navy:		  #373A36,
   azure:    #0079FE
 );
 @each $color in $colors{
@@ -47,6 +59,30 @@ $hairlines-width: 1px;
 $toolbar-ios-title-font-size: 1.8rem;
 $toolbar-ios-title-font-weight: 400;
 
+/*
+$toolbar-background: #fff;
+$tabs-background: #fff;
+$tabs-ios-tab-font-size: 11px;
+$tabs-ios-tab-opacity: 1;
+$tabs-tab-color-inactive: #000;
+$text-color: #5a5a5a;
+$toolbar-ios-button-color: #000;
+$button-ios-text-transform: none;
+$button-ios-font-size: 1.4rem;
+$item-ios-body-text-font-size: 1.5rem;
+$toolbar-ios-border-color: rgba(0, 0, 0, .1);
+$toolbar-ios-button-font-size: 1.4rem;
+$alert-ios-background-color: #fff;
+$alert-ios-message-text-color: #000;
+$alert-ios-button-text-color: #000;
+$list-ios-border-color: #f3f3f3;
+$refresher-border-color: none;
+$alert-ios-button-border-color: #ECEAEA;
+$list-ios-margin-bottom: 16px;
+$hairlines-width: 1px;
+$toolbar-ios-title-font-size: 1.8rem;
+$toolbar-ios-title-font-weight: 400;
+*/
 /*$modal-inset-min-width: 300px !default;
 $modal-inset-width: 300px;
 $modal-inset-min-height-small: 330px;
@@ -63,3 +99,5 @@ $variable-product-status-detail: 25px;
 @import "roboto";
 @import "noto-sans";
 @import "vspfonts";
+@import "latolight";
+@import "lesuper";

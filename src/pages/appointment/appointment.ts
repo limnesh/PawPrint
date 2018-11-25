@@ -3,6 +3,9 @@ import { Http, Headers } from '@angular/http';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { NavController, Platform , AlertController} from 'ionic-angular';
 
+import {DatePicker} from '@ionic-native/date-picker';
+import {Calendar} from '@ionic-native/calendar';
+//import {Platform} from 'ionic-angular';
 // Custom
 import { CoreValidator } from '../../validator/core';
 import { Storage } from '@ionic/storage';
@@ -20,7 +23,7 @@ import { LoginPage } from '../login/login';
 import { CheckoutPage } from '../checkout/checkout';
 import { AddressPage } from '../address/address';
 
-import { Calendar } from '@ionic-native/calendar';
+//import { Calendar } from '@ionic-native/calendar';
 import { AddEventPage } from '../add-event/add-event';
 import { EditEventPage } from '../edit-event/edit-event';
 
@@ -66,9 +69,40 @@ export class AppointmentPage {
     private platform: Platform,
     private Diagnostic: Diagnostic,
     private Device: Device,
-    public ngZone: NgZone
-	
+    public ngZone: NgZone,
+	private DatePicker: DatePicker
   ) {
+		
+	  	platform.ready().then(() => 
+			{
+				  let options = 
+				  {
+					date: new Date(),
+					mode: 'date'
+				  };
+
+				DatePicker.show(options).then(
+					date => 
+					{
+						if (typeof date == "string")
+							date = new Date(date);
+						//alert('Selected date: ' + date);
+					
+						var day = (date.getDate() <= 9 ? "0" + date.getDate() : date.getDate());
+						var month = (date.getMonth() + 1 <= 9 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1));
+						var dateString = date.getFullYear() + "-" + month + "-" + day;
+
+						this.strAppointmentDate = dateString;
+						this.getAppointTimes();
+					},
+					error => 
+					{
+					  alert('Error: ' + error);
+					}
+				);
+			}
+		);
+		
 	this.display_mode = display_mode;
     this.formAppointment = this.formBuilder.group({
       //billing_first_name: ['', Validators.required],
@@ -76,6 +110,7 @@ export class AppointmentPage {
       
     });
     this.getData();
+
   }
   ionViewDidEnter() {
     if (this.isCache) this.getData();

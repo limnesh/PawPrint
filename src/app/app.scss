@@ -10,7 +10,11 @@ html{
 		padding-bottom: 0 !important;
 	}
 }*/
+
+/*
 ion-icon[class*="ion-ios-icon-"], ion-icon[class*="ion-md-icon-"]{font-family:"vspfonts", "Roboto", "fontello"}
+*/
+ion-icon[class*="ion-ios-icon-"], ion-icon[class*="ion-md-icon-"]{font-family:"latolight", "lesuper", "vspfonts", "Roboto", "fontello"}
 .alert-message{overflow:auto}
 .back-button-icon-ios{font-size:2.5rem!important}
 .text-input-md{margin-left:8px!important}
@@ -490,5 +494,5 @@ html[dir="rtl"]{
 	font-weight: bold;
 	color: #000;
 }
-.footer-home{background:#0a1622}
+.footer-home{background:#373A36}
 	
