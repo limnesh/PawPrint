@@ -48,13 +48,22 @@
 				<ion-label floating><span light>Date of Birth</span></ion-label>
 				<ion-datetime dir="{{display_mode}}" light formControlName="PetDOB"></ion-datetime>
 			</ion-item>
-			<ion-item mode="md" bg-transparent no-padding>
-				<ion-label floating><span light>Gender</span></ion-label>
-				<ion-select formControlName="PetGender" class="select-option">
-					<ion-option value="m">Male</ion-option>
-					<ion-option value="f">Female</ion-option>
-				</ion-select>
-			</ion-item>
+			<div class="row">
+				<div class="column">
+				<ion-item mode="md" bg-transparent no-padding class="half-option">
+					<ion-label ><span light>Gender</span></ion-label>
+					<ion-toggle formControlName="PetGender" ></ion-toggle>
+					
+				</ion-item>
+				</div>
+				<div class="column">
+				<ion-item mode="md" bg-transparent no-padding class="half-option">
+					
+					<ion-label ><span light>Neutered</span></ion-label>
+					<ion-toggle toggle-class="sign_toggle" formControlName="PetNeutred" ></ion-toggle>
+				</ion-item>
+				</div>
+			</div>
 			<ion-item mode="md" bg-transparent no-padding>
 				<ion-label floating><span light>Size</span></ion-label>
 				<ion-range min="20" max="80" step="2" light formControlName="PetSize" color="danger" pin="true">

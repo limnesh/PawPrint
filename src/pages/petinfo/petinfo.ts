@@ -30,7 +30,8 @@ export class PetinfoPage {
 			PetBreed:['', Validators.required],
 			PetDOB:['', Validators.required],
 			PetGender:['', Validators.required],
-			PetSize:['', Validators.required]
+			PetSize:['', Validators.required],
+			PetNeutred:['', Validators.required]
 		});
 		
 		setTimeout(() => {

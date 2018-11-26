@@ -14,4 +14,38 @@ page-petinfo {
     border-radius: 25px;
 		overflow:hidden;
 	}
+	.half-option {
+		max-width: 90%;
+	}
+	.toggle{
+		$toggle-ios-background-color-off: #00f;
+		$toggle-ios-background-color-on: #0f0;
+		$toggle-md-track-background-color-off: #0ff;
+		$toggle-md-track-background-color-on: #0f0;
+	}
+	
+	
+.sign_toggle .toggle .handle{
+width: 45px;
+height: 47px;
+}
+
+.sign_toggle .toggle .track{
+width: 97px;
+height: 52px;
+}
+
+.sign_toggle .toggle input:checked + .track .handle {
+-webkit-transform: translate3d(20px, 0, 0);
+transform: translate3d(51px, 0, 0);
+background-color: #fff;
+}
+.column {
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row {
+    width: 100%;
+}
 }

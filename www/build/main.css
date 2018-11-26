@@ -40815,6 +40815,10 @@ page-order [border-dashed] {
   border-bottom: 1px dashed #CBCBCA;
 }
 
+page-petinfo {
+  /* Clear floats after the columns */
+}
+
 page-petinfo .content {
   background: url(../assets/images/petpage.png);
   background-size: 100% auto;
@@ -40831,6 +40835,34 @@ page-petinfo .profile-avatar {
   border: 2px solid #373A36;
   border-radius: 25px;
   overflow: hidden;
+}
+
+page-petinfo .half-option {
+  max-width: 90%;
+}
+
+page-petinfo .sign_toggle .toggle .handle {
+  width: 45px;
+  height: 47px;
+}
+
+page-petinfo .sign_toggle .toggle .track {
+  width: 97px;
+  height: 52px;
+}
+
+page-petinfo .sign_toggle .toggle input:checked + .track .handle {
+  -webkit-transform: translate3d(20px, 0, 0);
+  transform: translate3d(51px, 0, 0);
+  background-color: #fff;
+}
+
+page-petinfo .column {
+  width: 50%;
+}
+
+page-petinfo .row {
+  width: 100%;
 }
 
 page-popupads .disable-hover {
