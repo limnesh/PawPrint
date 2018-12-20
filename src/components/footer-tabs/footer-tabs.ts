@@ -6,7 +6,8 @@ import { HomePage } from '../../pages/home/home';
 import { CategoriesPage } from '../../pages/categories/categories';
 import { SearchPage } from '../../pages/search/search';
 import { AccountPage } from '../../pages/account/account';
-
+import { AboutPage } from '../../pages/about/about';
+import { ContactPage } from '../../pages/contact/contact';
 @Component({
 	selector: 'footer-tabs',
 	templateUrl: 'footer-tabs.html'
@@ -16,6 +17,8 @@ export class FooterTabsComponent {
 	CategoriesPage = CategoriesPage;
 	SearchPage = SearchPage;
 	AccountPage = AccountPage;
+	AboutPage = AboutPage;
+	ContactPage = ContactPage;
 	active: any;
 	constructor(public navCtrl: NavController) { }
 	ngOnInit() {

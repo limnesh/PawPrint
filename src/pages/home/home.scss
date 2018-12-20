@@ -1,6 +1,20 @@
 page-home {
 	.header .toolbar-title {display: flex;}
 	.footer{background:#0a1622}
+	.ion-grid {
+	  height: 100%;
+	  ion-row {
+		height: 16.66%;
+		color: #000;
+	  }
+	}
+	.paw-item{
+	color: #fff;
+	background: #968C83;
+	height: 100%;
+	font-size:3em;
+	font-family:"Roboto";
+	}
 	.popup-homepage {
         position: absolute;
         top: 0;
@@ -94,7 +108,7 @@ page-home {
 	.item-categories{
 		display:inline-block;
 		overflow:hidden;
-		width:$variable-item-categories-height;
+		width:100%;
 		height:$variable-item-categories-height;
 		margin-right:$variable-item-categories-margin;
 		white-space:normal;
@@ -105,6 +119,7 @@ page-home {
 			align-items: center;
 		}
 	}
+	
 	.client-say{
 		[mark]{@include background-opacity(#000, 0.45);}
 		.slides-client-say{
