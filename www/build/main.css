@@ -39565,6 +39565,12 @@ hide-show .hide-show-content {
   background: #BFB8AF;
 }
 
+page-about .getabout {
+  background-image: url("../assets/images/aboutus.jpg");
+  background-position: center;
+  background-size: 100%;
+}
+
 page-account .account-header [mark] {
   background: #000;
   background: rgba(0, 0, 0, 0.7);
