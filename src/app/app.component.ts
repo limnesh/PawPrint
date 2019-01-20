@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { App, Platform, AlertController } from 'ionic-angular';
+import { App, Platform, AlertController,ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Http } from '@angular/http';
@@ -11,35 +11,33 @@ import { TranslateService } from '../module/ng2-translate';
 import { Storage } from '@ionic/storage';
 import { Config } from '../service/config.service';
 import { Network } from '@ionic-native/network';
-import { AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
-import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Device } from '@ionic-native/device';
-
+import { SplashPage } from '../pages/splash/splash';
 // Page
 import { HomePage } from '../pages/home/home';
 
 declare var wordpress_url: string;
 declare var display_mode: string;
 declare var application_language: string;
-declare var google_analytics: string;
-declare var admob_android_banner: string;
-declare var admob_android_interstitial: string;
-declare var admob_ios_banner: string;
-declare var admob_ios_interstitial: string;
+
 
 @Component({
 	templateUrl: 'app.html',
-	providers: [Core, AdMobFree, GoogleAnalytics, ScreenOrientation, Device]
+	providers: [Core, ScreenOrientation, Device, SplashScreen]
 })
 export class MyApp {
+	SplashPage = SplashPage;
+//	rootPage: any = SplashPage;
 	HomePage = HomePage;
 	rootPage: any = HomePage;
+	
 	trans: Object;
 	isLoaded: boolean;
 	disconnect: boolean;
 	constructor(
 		platform: Platform,
+		modalCtrl: ModalController,
 		public translate: TranslateService,
 		public storage: Storage,
 		public http: Http,
@@ -48,17 +46,20 @@ export class MyApp {
 		public ngZone: NgZone,
 		public alertCtrl: AlertController,
 		public statusBar: StatusBar,
-		public SplashScreen: SplashScreen,
+		public splashScreen: SplashScreen,
 		public Network: Network,
 		public screenOrientation: ScreenOrientation,
-		public ga: GoogleAnalytics,
-		public admobFree : AdMobFree,
 		private device: Device,
 		public keyboard: Keyboard
 	) {
 		platform.ready().then(() => {
+			//SplashScreen.hide();
+			statusBar.styleDefault();
+			let splash = modalCtrl.create(SplashPage);
+            splash.present();
+			
 			statusBar.overlaysWebView(false);
-            statusBar.styleDefault();
+            //statusBar.styleDefault();
 			let html = document.querySelector('html');
         	html.setAttribute("dir", display_mode);
         	translate.setDefaultLang(application_language);
@@ -68,46 +69,14 @@ export class MyApp {
 				//keyboard.hideKeyboardAccessoryBar(true);
 				screenOrientation.lock('portrait');
 			 	let operating_system = '';
-				let admob: Object = {};
 				if (device.platform == 'Android') {
 					operating_system = 'Android';
-					admob = {
-						banner: admob_android_banner,
-						interstitial: admob_android_interstitial
-					};
+					
 				} else if (device.platform == 'iOS') {
 					operating_system = 'iOS';
-					admob = {
-						banner: admob_ios_banner,
-						interstitial: admob_ios_interstitial
-					};
+					
 				}
-				if(admob['banner']) {
-	                const bannerConfig: AdMobFreeBannerConfig = {
-	                    id: admob['banner'],
-	                    autoShow: false
-	                };
-	                admobFree.banner.config(bannerConfig);
-	                admobFree.banner.prepare()
-	                .then(() => {console.log('banner prepare');})
-	                .catch(e => console.log(e));  
-	            }
-
-	            if(admob['interstitial']) {
-	                const interstitialConfig: AdMobFreeInterstitialConfig = {
-	                    id: admob['interstitial'],
-	                    autoShow: false
-	                };
-	                admobFree.interstitial.config(interstitialConfig);
-	                admobFree.interstitial.prepare()
-	                .then(() => {console.log('interstitial prepare');
-	                }).catch(e => console.log(e));
-	            }
-	            if (google_analytics) {
-	            	ga.startTrackerWithId(google_analytics).then(() => {
-						ga.trackView(operating_system);
-					}).catch(e => console.log('Error starting GoogleAnalytics', e));;
-	            }
+				
 				Network.onDisconnect().subscribe(() => {
 					ngZone.run(() => { this.disconnect = true; });
 				});
@@ -115,10 +84,22 @@ export class MyApp {
 					ngZone.run(() => { this.disconnect = false; });
 				});
 			}
+			
+			
+			//this.hideSplashScreen();
+			//splashScreen.hide();
 		});
 		storage.get('text').then(val => {
 			let html = document.querySelector('html');
 			html.className = val;
 		});
-	}
+		
+	};
+	/*hideSplashScreen() {
+			if (this.splashScreen) {
+				   setTimeout(() => {
+					 this.splashScreen.hide();
+				   }, 500);
+			}
+		};*/
 }

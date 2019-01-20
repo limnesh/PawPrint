@@ -2,7 +2,6 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
 import { Pro } from '@ionic/pro';
 import { Injectable, Injector } from '@angular/core';
 
@@ -36,6 +35,7 @@ import { Static } from '../pipes/static';
 import { Viewmore } from '../pipes/viewmore';
 import { DatePipe } from '@angular/common';
 import { HomePage } from '../pages/home/home';
+import { SplashPage } from '../pages/splash/splash';
 import { CategoriesPage } from '../pages/categories/categories';
 import { DetailCategoryPage } from '../pages/detail-category/detail-category';
 import { SearchPage } from '../pages/search/search';
@@ -116,19 +116,20 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
     LatestPage,
     Static,
     Viewmore,
-	AddEventPage,
+    SplashPage,
+    AddEventPage,
     EditEventPage
   ],
   imports: [
     BrowserModule,
-	IonicModule.forRoot(MyApp, {
+    IonicModule.forRoot(MyApp, {
       backButtonText: '',
       backButtonIcon: 'md-arrow-back',
       mode: 'ios',
       pageTransition: 'md-transition',
       animate: false,
-	  scrollAssist: false,
-	  autoFocusAssist: false
+      scrollAssist: false,
+      autoFocusAssist: false
     }),
     HttpModule,
     TranslateModule.forRoot({
@@ -145,6 +146,7 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
     entryComponents: [
         MyApp,
         HomePage,
+		SplashPage,
         CategoriesPage,
         DetailCategoryPage,
         SearchPage,
@@ -185,7 +187,6 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
         Network,
         OneSignal,
         Keyboard,
-        StatusBar,
         SocialSharing,
         Toast,
         ScreenOrientation,

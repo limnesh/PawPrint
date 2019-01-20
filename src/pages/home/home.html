@@ -29,6 +29,9 @@
 	<ion-row>
 		<ion-item class='paw-item' *ngFor="let category of categories" [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">
 			<div  text-center [innerHTML]="category.name"></div>
+			<img *ngIf="category.modernshop_images_categories && category.modernshop_images_categories.modern_square" [src]="category.modernshop_images_categories.modern_square" />
+		<img *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png" />
+
 		</ion-item>
 	</ion-row>
 </ion-grid>

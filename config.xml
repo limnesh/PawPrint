@@ -34,39 +34,6 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-        <resource-file src="resources/android/frames/frame00.png" target="app/src/main/res/drawable-port-xxxhdpi/frame00.png" />
-        <resource-file src="resources/android/frames/frame01.png" target="app/src/main/res/drawable-port-xxxhdpi/frame01.png" />
-        <resource-file src="resources/android/frames/frame02.png" target="app/src/main/res/drawable-port-xxxhdpi/frame02.png" />
-        <resource-file src="resources/android/frames/frame03.png" target="app/src/main/res/drawable-port-xxxhdpi/frame03.png" />
-        <resource-file src="resources/android/frames/frame04.png" target="app/src/main/res/drawable-port-xxxhdpi/frame04.png" />
-        <resource-file src="resources/android/frames/frame05.png" target="app/src/main/res/drawable-port-xxxhdpi/frame05.png" />
-        <resource-file src="resources/android/frames/frame06.png" target="app/src/main/res/drawable-port-xxxhdpi/frame06.png" />
-        <resource-file src="resources/android/frames/frame07.png" target="app/src/main/res/drawable-port-xxxhdpi/frame07.png" />
-        <resource-file src="resources/android/frames/frame08.png" target="app/src/main/res/drawable-port-xxxhdpi/frame08.png" />
-        <resource-file src="resources/android/frames/frame09.png" target="app/src/main/res/drawable-port-xxxhdpi/frame09.png" />
-        <resource-file src="resources/android/frames/frame10.png" target="app/src/main/res/drawable-port-xxxhdpi/frame10.png" />
-        <resource-file src="resources/android/frames/frame11.png" target="app/src/main/res/drawable-port-xxxhdpi/frame11.png" />
-        <resource-file src="resources/android/frames/frame12.png" target="app/src/main/res/drawable-port-xxxhdpi/frame12.png" />
-        <resource-file src="resources/android/frames/frame13.png" target="app/src/main/res/drawable-port-xxxhdpi/frame13.png" />
-        <resource-file src="resources/android/frames/frame14.png" target="app/src/main/res/drawable-port-xxxhdpi/frame14.png" />
-        <resource-file src="resources/android/frames/frame15.png" target="app/src/main/res/drawable-port-xxxhdpi/frame15.png" />
-        <resource-file src="resources/android/frames/frame16.png" target="app/src/main/res/drawable-port-xxxhdpi/frame16.png" />
-        <resource-file src="resources/android/frames/frame17.png" target="app/src/main/res/drawable-port-xxxhdpi/frame17.png" />
-        <resource-file src="resources/android/frames/frame18.png" target="app/src/main/res/drawable-port-xxxhdpi/frame18.png" />
-        <resource-file src="resources/android/frames/frame19.png" target="app/src/main/res/drawable-port-xxxhdpi/frame19.png" />
-        <resource-file src="resources/android/frames/frame20.png" target="app/src/main/res/drawable-port-xxxhdpi/frame20.png" />
-        <resource-file src="resources/android/frames/frame21.png" target="app/src/main/res/drawable-port-xxxhdpi/frame21.png" />
-        <resource-file src="resources/android/frames/frame22.png" target="app/src/main/res/drawable-port-xxxhdpi/frame22.png" />
-        <resource-file src="resources/android/frames/frame23.png" target="app/src/main/res/drawable-port-xxxhdpi/frame23.png" />
-        <resource-file src="resources/android/frames/frame24.png" target="app/src/main/res/drawable-port-xxxhdpi/frame24.png" />
-        <resource-file src="resources/android/frames/frame25.png" target="app/src/main/res/drawable-port-xxxhdpi/frame25.png" />
-        <resource-file src="resources/android/frames/frame26.png" target="app/src/main/res/drawable-port-xxxhdpi/frame26.png" />
-        <resource-file src="resources/android/frames/frame27.png" target="app/src/main/res/drawable-port-xxxhdpi/frame27.png" />
-        <resource-file src="resources/android/frames/frame28.png" target="app/src/main/res/drawable-port-xxxhdpi/frame28.png" />
-        <resource-file src="resources/android/frames/frame29.png" target="app/src/main/res/drawable-port-xxxhdpi/frame29.png" />
-        <resource-file src="resources/android/frames/frame30.png" target="app/src/main/res/drawable-port-xxxhdpi/frame30.png" />
-        <resource-file src="resources/android/frames/frame31.png" target="app/src/main/res/drawable-port-xxxhdpi/frame31.png" />
-        <resource-file src="resources/android/frames/frame32.png" target="app/src/main/res/drawable-port-xxxhdpi/frame32.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -103,39 +70,6 @@
         <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />
         <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
-        <custom-resource catalog="frame00" idiom="universal" scale="1x" src="resources/ios/frames/frame00.png" type="image" />
-        <custom-resource catalog="frame01" idiom="universal" scale="1x" src="resources/ios/frames/frame01.png" type="image" />
-        <custom-resource catalog="frame02" idiom="universal" scale="1x" src="resources/ios/frames/frame02.png" type="image" />
-        <custom-resource catalog="frame03" idiom="universal" scale="1x" src="resources/ios/frames/frame03.png" type="image" />
-        <custom-resource catalog="frame04" idiom="universal" scale="1x" src="resources/ios/frames/frame04.png" type="image" />
-        <custom-resource catalog="frame05" idiom="universal" scale="1x" src="resources/ios/frames/frame05.png" type="image" />
-        <custom-resource catalog="frame06" idiom="universal" scale="1x" src="resources/ios/frames/frame06.png" type="image" />
-        <custom-resource catalog="frame07" idiom="universal" scale="1x" src="resources/ios/frames/frame07.png" type="image" />
-        <custom-resource catalog="frame08" idiom="universal" scale="1x" src="resources/ios/frames/frame08.png" type="image" />
-        <custom-resource catalog="frame09" idiom="universal" scale="1x" src="resources/ios/frames/frame09.png" type="image" />
-        <custom-resource catalog="frame10" idiom="universal" scale="1x" src="resources/ios/frames/frame10.png" type="image" />
-        <custom-resource catalog="frame11" idiom="universal" scale="1x" src="resources/ios/frames/frame11.png" type="image" />
-        <custom-resource catalog="frame12" idiom="universal" scale="1x" src="resources/ios/frames/frame12.png" type="image" />
-        <custom-resource catalog="frame13" idiom="universal" scale="1x" src="resources/ios/frames/frame13.png" type="image" />
-        <custom-resource catalog="frame14" idiom="universal" scale="1x" src="resources/ios/frames/frame14.png" type="image" />
-        <custom-resource catalog="frame15" idiom="universal" scale="1x" src="resources/ios/frames/frame15.png" type="image" />
-        <custom-resource catalog="frame16" idiom="universal" scale="1x" src="resources/ios/frames/frame16.png" type="image" />
-        <custom-resource catalog="frame17" idiom="universal" scale="1x" src="resources/ios/frames/frame17.png" type="image" />
-        <custom-resource catalog="frame18" idiom="universal" scale="1x" src="resources/ios/frames/frame18.png" type="image" />
-        <custom-resource catalog="frame19" idiom="universal" scale="1x" src="resources/ios/frames/frame19.png" type="image" />
-        <custom-resource catalog="frame20" idiom="universal" scale="1x" src="resources/ios/frames/frame20.png" type="image" />
-        <custom-resource catalog="frame21" idiom="universal" scale="1x" src="resources/ios/frames/frame21.png" type="image" />
-        <custom-resource catalog="frame22" idiom="universal" scale="1x" src="resources/ios/frames/frame22.png" type="image" />
-        <custom-resource catalog="frame23" idiom="universal" scale="1x" src="resources/ios/frames/frame23.png" type="image" />
-        <custom-resource catalog="frame24" idiom="universal" scale="1x" src="resources/ios/frames/frame24.png" type="image" />
-        <custom-resource catalog="frame25" idiom="universal" scale="1x" src="resources/ios/frames/frame25.png" type="image" />
-        <custom-resource catalog="frame26" idiom="universal" scale="1x" src="resources/ios/frames/frame26.png" type="image" />
-        <custom-resource catalog="frame27" idiom="universal" scale="1x" src="resources/ios/frames/frame27.png" type="image" />
-        <custom-resource catalog="frame28" idiom="universal" scale="1x" src="resources/ios/frames/frame28.png" type="image" />
-        <custom-resource catalog="frame29" idiom="universal" scale="1x" src="resources/ios/frames/frame29.png" type="image" />
-        <custom-resource catalog="frame30" idiom="universal" scale="1x" src="resources/ios/frames/frame30.png" type="image" />
-        <custom-resource catalog="frame31" idiom="universal" scale="1x" src="resources/ios/frames/frame31.png" type="image" />
-        <custom-resource catalog="frame32" idiom="universal" scale="1x" src="resources/ios/frames/frame32.png" type="image" />
     </platform>
     <preference name="OverrideUserAgent" value="Mozilla/5.0 My Browser" />
     <preference name="webviewbounce" value="false" />
@@ -148,15 +82,11 @@
     <preference name="LoadUrlTimeoutValue" value="700000" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="ShowSplashScreenSpinner" value="false" />
-    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreen" value="false" />
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
-    <preference name="SplashScreen" value="false" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="AnimatedSplashScreenAnimationDuration" value="5" />
-    <preference name="AnimatedSplashScreenAnimationRepeatCount" value="0" />
-    <preference name="AnimatedSplashScreenIosImages" value="frame00.png,frame01.png,frame02.png,frame03.png,frame04.png,frame05.png,frame06.png,frame07.png,frame08.png,frame09.png,frame10.png,frame11.png,frame12.png,frame13.png,frame14.png,frame15.png,frame16.png,frame17.png,frame18.png,frame19.png,frame20.png,frame21.png,frame22.png,frame23.png,frame24.png,frame25.png,frame26.png,frame27.png,frame28.png,frame29.png,frame30.png,frame31.png,frame32.png" />
-    <preference name="AnimatedSplashScreenAndroidImages" value="frame00,frame01,frame02,frame03,frame04,frame05,frame06,frame07,frame08,frame09,frame10,frame11,frame12,frame13,frame14,frame15,frame16,frame17,frame18,frame19,frame20,frame21,frame22,frame23,frame24,frame25,frame26,frame27,frame28,frame29,frame30,frame31,frame32" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="1000" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
         <string>Need camera access to take pictures</string>
@@ -184,7 +114,6 @@
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
     <plugin name="cordova-plugin-request-location-accuracy" spec="^2.2.3" />
     <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
-    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.3.2" />
@@ -195,6 +124,8 @@
     <plugin name="onesignal-cordova-plugin" spec="2.1.0" />
     <plugin name="cordova-plugin-datepicker" spec="~0.9.3" />
     <plugin name="cordova-plugin-animated-splashscreen" spec="^1.1.3" />
+    <plugin name="cordova-plugin-enable-multidex" spec="^0.1.3" />
+    <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
     <engine name="android" spec="6.3.0" />
     <engine name="ios" spec="4.5.4" />
     <engine name="browser" spec="5.0.3" />

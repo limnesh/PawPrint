@@ -177,7 +177,7 @@ export class HomePage {
 		this.storage.set('require', true);
 	}
 	getData(isRefreshing: boolean = false, refresher = null) {
-		this.http.get(wordpress_url + '/wp-json/wooslider/product/getslider')
+		/*this.http.get(wordpress_url + '/wp-json/wooslider/product/getslider')
 			.subscribe(res => {
 				if (isRefreshing) delete this.slides;
 				this.slides = res.json();
@@ -194,8 +194,8 @@ export class HomePage {
 			.subscribe(res => {
 				if (isRefreshing) delete this.clientSay;
 				this.clientSay = res.json();
-			});
-		this.loadLatest();
+			});*/
+		//this.loadLatest();
 		if (isRefreshing) {
 			this.categories = [];
 			this.loadCategories(refresher);
