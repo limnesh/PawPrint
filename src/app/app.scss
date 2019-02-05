@@ -14,8 +14,8 @@ html{
 }
 /*ion-content {
 	.scroll-content, .fixed-content {
-		margin-bottom: 45px !important;
-		padding-bottom: 0 !important;
+		margin-bottom: 45px ;
+		padding-bottom: 0 ;
 	}
 }*/
 
@@ -24,9 +24,9 @@ ion-icon[class*="ion-ios-icon-"], ion-icon[class*="ion-md-icon-"]{font-family:"v
 */
 ion-icon[class*="ion-ios-icon-"], ion-icon[class*="ion-md-icon-"]{font-family:"latolight", "lesuper", "vspfonts", "Roboto", "fontello"}
 .alert-message{overflow:auto}
-.back-button-icon-ios{font-size:2.5rem!important}
-.text-input-md{margin-left:8px!important}
-.item-md .text-input-ios{margin-left:8px!important}
+.back-button-icon-ios{font-size:2.5rem}
+.text-input-md{margin-left:8px}
+.item-md .text-input-ios{margin-left:8px}
 .cloned-input{display:none}
 .input-has-focus .label-ios[floating]{
 	color:color($colors, primary);
@@ -40,10 +40,10 @@ p{margin:8px 0}
 ::placeholder{
     text-overflow:ellipsis;
 }
-::-webkit-input-placeholder{text-overflow:ellipsis!important;}
-::-moz-placeholder{text-overflow:ellipsis!important;}
-:-moz-placeholder{text-overflow:ellipsis!important;}
-:-ms-input-placeholder{text-overflow:ellipsis!important;}
+::-webkit-input-placeholder{text-overflow:ellipsis;}
+::-moz-placeholder{text-overflow:ellipsis;}
+:-moz-placeholder{text-overflow:ellipsis;}
+:-ms-input-placeholder{text-overflow:ellipsis;}
 
 html[dir="ltr"]{
 	[float-left]{float:left}
@@ -59,6 +59,7 @@ html[dir="rtl"]{
 	}
 	.item-ios.item-block .item-inner {
 	   padding-right: 0px; 
+	   padding-left: 0px;
 	}
 	page-address{
 		.label-ios {
@@ -113,7 +114,7 @@ html[dir="rtl"]{
 		}
 	}
 	page-detail-order {
-		[text-left] {text-align: left !important;}
+		[text-left] {text-align: left ;}
 		.checkout-term {
 			.term-note{
 				padding-left: 0;
@@ -129,15 +130,22 @@ html[dir="rtl"]{
 		}
 		hide-show .button-change [this-title] .icon {
 		    float: right;
-		    margin-left: 8px !important;
+		    margin-left: 8px ;
 		}
 		.item-order-detail{padding-right: 0;}
 		[margin-right-order]{margin-left: 16px;}
-		[float-right] {float: left !important;}
-		[float-left] {float: right !important;}
+		[float-right] {float: left ;}
+		[float-left] {float: right ;}
 	}
 	.item-md.item-block .item-inner {
 	  padding-right: 0px;
+	  padding-left: 0px;
+	  padding-top: 0px;
+	  padding-bottom: 0px;
+	  	  margin-right: 0px;
+	  margin-left: 0px;
+	  margin-top: 0px;
+	  margin-bottom: 0px;
 	}
 	.label-ios {
 	  margin: 11px 0px 11px 10px;
@@ -151,15 +159,15 @@ html[dir="rtl"]{
 		left:auto;
 		right:25px;
 	}
-	[text-right]{text-align:left !important}
-	[text-left]{text-align:right !important}
-	[margin-left] {margin-right: 16px !important;}
-	[margin-right] {margin-left: 16px !important;}
+	[text-right]{text-align:left }
+	[text-left]{text-align:right }
+	[margin-left] {margin-right: 16px ;}
+	[margin-right] {margin-left: 16px ;}
 	page-detail-category .filter-list ion-col .product-detail{
 		/*padding-right: 8px;*/
 	}
 	page-detail .product-slides .product-favorite {
-		left:15px !important;
+		left:15px ;
 	}
 	.favorite{
 		left:-16px;
@@ -236,18 +244,18 @@ html[dir="rtl"]{
 }
 [disable-transform=true]{
 	position:fixed;
-	transform:none!important;
+	transform:none;
 }
 [relative]{position:relative}
 [absolute]{position:absolute}
 [overflow]{overflow:auto}
 [width-100], [size-full]{width:100%}
 [height-100], [size-full]{height:100%}
-[no-padding-hard]{padding:0!important}
+[no-padding-hard]{padding:0}
 [no-padding-left]{padding-left:0}
 [padding-4]{padding:4px}
 [padding-4-vertical]{padding:4px 0}
-[padding-8]{padding:8px}
+[padding-8]{padding:3px}
 [margin-auto]{
 	display:block;
 	margin:0 auto
@@ -395,21 +403,21 @@ html[dir="rtl"]{
 [icon-sale]{
     top:4px;
 	left:-3px;
-    width:36px!important;
-	height:auto!important;
+    width:36px;
+	height:auto;
 }
 [icon-outstock] {
     top: 4px;
     left: -2px;
-    width: 68px !important;
-    height: auto !important;
+    width: 68px ;
+    height: auto ;
 }
 [text-underline]{text-decoration:underline;}
 .disable-hover{
 	.button-effect{display:none;}
 }
 .button-clear{
-	&.activated{background:none!important;}
+	&.activated{background:none;}
 }
 .select-address{
 	.alert-button-group{
@@ -427,7 +435,7 @@ html[dir="rtl"]{
 		border-radius: 14px;
 		height: 28px;
 		padding: 0 10px;
-		opacity: 1 !important;
+		opacity: 1 ;
 		margin: 5px 0 0;
 		.icon-cart-add{
 			font-size: 18px;
@@ -497,7 +505,7 @@ html[dir="rtl"]{
 	color: #000;
 }
 .simple-price > ins {
-	text-decoration: none !important;
+	text-decoration: none ;
 	font-size: 120% ;
 	font-weight: bold;
 	color: #000;

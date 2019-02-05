@@ -1,9 +1,11 @@
 <ion-header (swipe)="onSwipeContent($event)">
   <ion-navbar>
-    <ion-item mode="md" class="search-input">
-      <ion-input #TextInput autocomplete="on" autocorrect = "on" placeholder="{{'search.title'|translate}}" clearInput [(ngModel)]="keyword" (keyup.enter)="search()">
+    <!--<ion-item mode="md" class="search-input">
+		<ion-input #TextInput autocomplete="on" autocorrect = "on" placeholder="{{'search.title'|translate}}" clearInput [(ngModel)]="keyword" (keyup.enter)="search()">-->
+
+      <ion-input #TextInput autocomplete="on" autocorrect = "on" placeholder="Type to Search" clearInput [(ngModel)]="keyword" (keyup.enter)="search()">
       </ion-input>
-    </ion-item>
+    <!--</ion-item>-->
     <ion-buttons end>
       <button-cart #cart icon="icon-bag"></button-cart>
     </ion-buttons>

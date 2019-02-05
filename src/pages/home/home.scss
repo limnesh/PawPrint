@@ -1,20 +1,64 @@
 page-home {
+/*.input-wrapper
+			{
+			margin: 0px;
+	padding:0px;
+			}
+			.item-inner
+		{
+		margin: 0px;
+	padding:0px;
+	}
+	.ion-item
+	{
+	margin: 0px;
+	padding:0px;
+		.item-inner
+		{
+		margin: 0px;
+	padding:0px;
+			.input-wrapper
+			{
+			margin: 0px;
+	padding:0px;
+			}
+		}
+	}
+
+
+*/
 	.header .toolbar-title {display: flex;}
 	.footer{background:#0a1622}
-	.ion-grid {
+	.scroll-content {
+				margin: 0px;
+				padding:0px;
+				justify-content: center;
+
+			}
+
+			.homelist{
+				margin: 0px;
+				padding:0px;
+				height:auto;
+			}
+
+		
+/*	.ion-grid {
 	  height: 100%;
 	  ion-row {
+	  margin: 0px;
+	padding:0px;
 		height: 25%;
 		color: #000;
 	  }
-	}
-	.paw-item{
+	}*/
+/*	.paw-item{
 	color: #fff;
-	background: #fff;/*#968C83;*/
+	background: #fff;/*#968C83;
 	height: 100%;
 	font-size:1.8em;
 	font-family:"Roboto";
-	}
+	}*/
 	.popup-homepage {
         position: absolute;
         top: 0;
@@ -92,7 +136,7 @@ page-home {
 			}
 		}
 	}
-	[name="icon-tag"]{top:10px;}
+	/*[name="icon-tag"]{top:10px;}
 	.scroll-categories{
 		height:$variable-item-categories-height;
 		white-space:nowrap;
@@ -104,8 +148,8 @@ page-home {
 				.button{padding:0 8px;}
 			}
 		}
-	}
-	.item-categories{
+	}*/
+	/*.item-categories{
 		display:inline-block;
 		overflow:hidden;
 		width:100%;
@@ -118,7 +162,7 @@ page-home {
 		.row {
 			align-items: center;
 		}
-	}
+	}*/
 	
 	.client-say{
 		[mark]{@include background-opacity(#000, 0.45);}

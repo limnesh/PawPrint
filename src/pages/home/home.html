@@ -6,38 +6,43 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+<!--
 <div class="popup-homepage" *ngIf="popup_homepage">
     <div class="popup-overlay"></div>
     <div class="popup-img">
     	<ion-icon class="icon-closepopup icomoon-close-thin" name="ios-close" (click)="closePopup()"></ion-icon>
-        <!-- <span class="icomoon-close-thin" (click)="popup_homepage=null"></span> -->
+        <!-- <span class="icomoon-close-thin" (click)="popup_homepage=null"></span>
         <img src="{{popup_homepage.popup}}" (click)="openLink(popup_homepage.link_popup, true)">
     </div>
-</div>
+</div> -->
 <ion-content>
-<!-- Refresh -->
+<!-- Refresh 
 <ion-refresher (ionRefresh)="doRefresh($event)">
-	<ion-refresher-content
+	<ion-refresher-content>
 		[pullingIcon]="'general.pullingIcon'|translate"
 		[pullingText]="'general.pullToRefresh'|translate"
 		[refreshingSpinner]="'general.refreshingSpinner'|translate"
 		[refreshingText]="'general.refreshing'|translate">
 	</ion-refresher-content>
-</ion-refresher>
+</ion-refresher>-->
 
-<ion-grid class = 'ion-grid'>
-	<ion-row>
-		<ion-item class='paw-item' *ngFor="let category of categories" [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">
-			<div  text-center [innerHTML]="category.name"></div>
-		<!--	<img *ngIf="category.modernshop_images_categories && category.modernshop_images_categories.modern_square" [src]="category.modernshop_images_categories.modern_square" />
+
+
+		<!--<ion-item class='paw-item' *ngFor="let category of categories" [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">-->
+
+		<ion-item  *ngFor="let category of categories" [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">
+		 <div class= "homelist" >
+		<!--	<div  text-center [innerHTML]="category.name"></div>
+			<img *ngIf="category.modernshop_images_categories && category.modernshop_images_categories.modern_square" [src]="category.modernshop_images_categories.modern_square" />
 		<img *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png" />
 -->
-<img *ngIf="category.image.src && category.image.src" [src]="category.image.src" />
-		<img *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png" />
 
+		<img  style="width: 100%; height: 100%;"  *ngIf="category.image.src && category.image.src" [src]="category.image.src" />
+		<!--<ion-img  style="width: 100%; height: 100%;"  *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png"></ion-img>-->
+</div>
 		</ion-item>
-	</ion-row>
-</ion-grid>
+
+
 
 <!--<ion-scroll dir="{{displays}}" *ngIf="loadedCategories && 0<categories.length" scrollY="true" class="scroll-categories">
 	<div relative *ngFor="let category of categories" class="item-categories" [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">
