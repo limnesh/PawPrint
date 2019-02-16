@@ -86,7 +86,7 @@
 						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getVariation()">
 							<ion-item float-left *ngFor="let option of attr.options" no-padding>
 								<ion-label [attr.text-center]="(attr.name|uppercase)=='SIZE'?true:null">{{option}}</ion-label>
-								<ion-radio [value]="(option|lowercase)"></ion-radio>
+								<ion-radio [value]="(option|lowercase)" (ionSelect)="radioChecked()"></ion-radio>
 							</ion-item>
 						</ion-list>
 					</div>

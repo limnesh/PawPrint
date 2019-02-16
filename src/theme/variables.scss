@@ -3,7 +3,7 @@ $font-path: "../assets/fonts";
 @import "ionic.globals";
 /*
 $colors: (
-  primary:    #373A36, 
+  primary:    #000002, 
   secondary:  #f5f7f9,
   danger:     #f53d3d,
   success:    #339966,
@@ -15,14 +15,14 @@ $colors: (
 );
 */
 $colors: (
-  primary:    #373A36, 
+  primary:    #000002, 
   secondary:  #f5f7f9,
   danger:     #f53d3d,
   success:    #339966,
-  light:      #BFB8AF,
-  dark:       #373A36,
-  gray:       #919D9D,
-  navy:		  #373A36,
+  light:      #DACEDB,
+  dark:       #000002,
+  gray:       #000004,
+  navy:		  #000002,
   azure:    #0079FE
 );
 @each $color in $colors{
@@ -35,21 +35,21 @@ $colors: (
     background: $color;
     background: rgba($color, $opacity);
 }
-$toolbar-background: #BFB8AF;
-$tabs-background: #BFB8AF;
+$toolbar-background: #BBA8BD;
+$tabs-background: #BBA8BD;
 $tabs-ios-tab-font-size: 11px;
 $tabs-ios-tab-opacity: 1;
-$tabs-tab-color-inactive: #373A36;
+$tabs-tab-color-inactive: #000002;
 $text-color: #5a5a5a;
-$toolbar-ios-button-color: #373A36;
+$toolbar-ios-button-color: #000002;
 $button-ios-text-transform: none;
 $button-ios-font-size: 1.4rem;
 $item-ios-body-text-font-size: 1.5rem;
 $toolbar-ios-border-color: rgba(0, 0, 0, .1);
 $toolbar-ios-button-font-size: 1.4rem;
-$alert-ios-background-color: #BFB8AF;
-$alert-ios-message-text-color: #373A36;
-$alert-ios-button-text-color: #373A36;
+$alert-ios-background-color: #CFC2D1;
+$alert-ios-message-text-color: #000002;
+$alert-ios-button-text-color: #000002;
 $list-ios-border-color: #f3f3f3;
 $refresher-border-color: none;
 $alert-ios-button-border-color: #ECEAEA;

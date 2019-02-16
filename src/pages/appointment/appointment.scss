@@ -3,11 +3,52 @@ page-appointment {
     		margin-bottom: 45px !important;
     		padding-bottom: 0 !important;
 	}*/
-
+     .attribute-time{
+		align: center;
+		ion-list{margin:10px 0}
+		ion-item{
+			
+			width:70px;
+			background: #6A5268;
+			color:#fff;
+			min-height:30px;
+			line-height:30px;
+			border:2px solid #e1e1e1;
+			display:inline-block;
+			margin-right:10px;
+			margin-bottom:10px;
+			&.item-radio-checked{
+				border-color:color($colors, primary, base);
+				&:after{
+					/*font-family:"vspfonts";*/
+					font-family:"latolight";
+					content:"\e034";
+					position:absolute;
+					bottom:-2px;
+					right:-2px;
+					line-height:13px;
+					color:color($colors, primary, base);
+				}
+				ion-label{color:#000}
+			}
+			.item-inner{
+				padding:0!important;
+				border-bottom:none!important;
+				.input-wrapper{
+					ion-label{margin:0}
+				}
+				ion-radio{
+					margin:0;
+					.radio-icon{display:none}
+				}
+			}
+		}
+	}
 	 .head-label {
-		background: #373A36;
-		font-size:2rem;
+		background: #6A5268;
+		font-size:1.5rem;
 		text-align: center;
+		color:#fff;
 		}
 		
 	.detail-label {

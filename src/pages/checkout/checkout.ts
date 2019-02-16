@@ -48,11 +48,11 @@ export class CheckoutPage {
 		public config: Config,
 	) {
 		translate.get('checkout').subscribe(trans => this.trans = trans);
-		core.showLoading();
+		//core.showLoading();
 		this.playerID = config['userID'];
 	}
 	ionViewDidEnter() {
-		this.core.showLoading();
+		//this.core.showLoading();
 		this.storageMul.get(['login', 'user', 'cart', 'coupon', 'useBilling', 'AppointmentDate']).then(val => {
 			if (val["login"] && val["login"]["token"]) this.login = val["login"];
 			if (val["user"]) this.user = val["user"];
@@ -144,7 +144,7 @@ export class CheckoutPage {
 		if (shipping['tax']) shipping['tax'].forEach(tax => this.data['_shipping_tax'] += tax['value']);
 	}
 	confirm() {
-		this.core.showLoading();
+		//this.core.showLoading();
 		let params = {};
 		params['products'] = JSON.stringify(this.products);
 		Object.assign(params, this.core.filterProfile(this.user));

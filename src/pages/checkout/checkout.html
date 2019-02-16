@@ -40,7 +40,7 @@
 	<hide-show color="light" show="true" no-border>
 		<span this-title>
 			<ion-icon name="icon-time" icon-big></ion-icon>
-			<b dark>{{'checkout.shipping_method'|translate}}</b>
+			<b>{{'checkout.shipping_method'|translate}}</b>
 		</span>
 		<div this-content>
 			<ion-list radio-group [(ngModel)]="shipping" class="list-shipping" no-margin>
@@ -61,7 +61,7 @@
 	<hide-show color="light" show="true" no-border>
 		<div width-100 this-title text-left>
 			<ion-icon name="icon-list-4" icon-big></ion-icon>
-			<b dark>{{'checkout.order_detail'|translate}}</b>
+			<b>{{'checkout.order_detail'|translate}}</b>
 			<span float-right margin-right>{{(cart|ObjectToArray).length}} {{'checkout.item'|translate}}</span>
 		</div>
 		<div this-content>

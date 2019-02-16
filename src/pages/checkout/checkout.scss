@@ -1,5 +1,14 @@
 page-checkout {
 	.item-divider .item-inner{margin:0;}
+	.button-ios {
+		border-radius: 4px;
+		height: 2.8em;
+		font-size: 1.4rem;
+		color: #fff;
+		background-color: #6A5268;
+		margin: 0.4rem 0.2rem;
+		padding: 0 1em;
+	}
 	.address{
 		hide-show .hide-show-content{border-top:none;}
 	}

@@ -96,14 +96,18 @@ export class CartPage {
 		
 	}
 	validate() {
-		this.core.showLoading();
+		//this.core.showLoading();
 		let params = {};
 		let products: Object[] = [];
 		new ObjectToArray().transform(this.data).forEach(product => {
 			let now = {};
 			now['product_id'] = product['id'];
 			now['quantity'] = product['quantity'];
-			if (product['variation_id']) now['variation_id'] = product['variation_id'];
+			console.log(product);
+			if (product['variation_id']) 
+			{
+				now['variation_id'] = product['variation_id'];
+			}
 			products.push(now);
 		});
 		params['products'] = JSON.stringify(products);
@@ -223,7 +227,7 @@ export class CartPage {
 			);
 			return;
 		}
-		this.core.showLoading();
+		//this.core.showLoading();
 		let params = {};
 		let products: Object[] = [];
 		new ObjectToArray().transform(this.data).forEach(product => {
@@ -320,12 +324,14 @@ export class CartPage {
 		let total = 0;
 		for (var key in this.data) {
 			let product = this.data[key];
+			console.log(product);
 			if (Number(product.sale_price) > 0) {
 				total += Number(product.sale_price) * product.quantity;
 			} else {
 				total += Number(product.regular_price) * product.quantity;
 			}
 		}
+		
 		return total;
 	}
 	gotoAppointment() {

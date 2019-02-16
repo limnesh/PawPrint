@@ -172,34 +172,10 @@ export class AppointmentPage {
    
   	getAppointTimes() {
 		
+		//this.core.showLoading();
 		
-		
-		
-		/*let alert = this.alertCtrl.create({
-						message: this.strAppointmentDate,
-						cssClass: 'alert-no-title',
-						buttons: ['OK']
-					});
-					alert.present();*/
-		
-		
-		this.core.showLoading();
-		//let params = {};
-
-		
-		//params['date'] = '2018-06-01';
-
-		//let option = {};
-		//let headers = new Headers();
-		//headers.set('Content-Type', 'text/plain');
-		//if (this.login && this.login['token']) {
-			
-			//headers.set('Authorization', 'Bearer ' + this.login["token"]);
-			//option['withCredentials'] = true;
-			//option['headers'] = headers;
-		//}
-		//const options = {headers, params, responseType: 'text' as 'text'};,options
-		this.http.get(wordpress_url + '/getschedules.php'+'?date='+this.strAppointmentDate)
+		this.schAvailableTimes = "08:30;09:15;10:15;12:20;13:10;14:45".split(";");
+		/*this.http.get(wordpress_url + '/getschedules.php'+'?date='+this.strAppointmentDate)
 							.subscribe(res => {
 				console.log(res);
 				this.core.hideLoading();
@@ -219,13 +195,8 @@ export class AppointmentPage {
 				
 				 
 
-				/*let alert = this.alertCtrl.create({
-						message: result,
-						cssClass: 'alert-no-title',
-						buttons: ['OK']
-					});
-					alert.present();*/
-			});
+				
+			});*/
 	}
 
 }

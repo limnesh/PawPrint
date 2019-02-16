@@ -1,6 +1,6 @@
 // var wordpress_url = "https://modernshop.taydomobile.com";
 // var wordpress_url = "https://dev.taydotech.com/datnt/wordpress";
-var wordpress_url = "http://pawprintsbh.com";
+var wordpress_url = "https://pawprintsbh.com";
 var wordpress_per_page = 10;
 var request_timeout = 30000;
 var open_target_blank = true;

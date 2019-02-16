@@ -62,6 +62,7 @@ export class DetailPage {
 		this.id = navParams.get("id");
 		this.storage.get('favorite').then((val) => { if (val) this.favorite = val;});
 		this.getData();
+		
 	}
 	ionViewDidEnter() {
 		this.buttonCart.update();
@@ -91,7 +92,11 @@ export class DetailPage {
 					product['quantity'] = 1;
 				});
 			}
-			if (this.detail['type'] == 'variable') this.images = this.detail['wooconnector_crop_images'].slice();
+			if (this.detail['type'] == 'variable') 
+			{
+				this.images = this.detail['wooconnector_crop_images'].slice();
+				console.log(this.detail);
+			}
 			//create attributes
 			if (this.detail.attributes) {
 				this.detail.attributes.forEach((val) => {
@@ -100,6 +105,8 @@ export class DetailPage {
 						this.attributes[val["name"]].id = val["id"];
 						this.attributes[val["name"]].name = val["name"];
 						this.attributes[val["name"]].option = val["options"][0].toLowerCase();
+						//this.attributes[val["name"]].price = 
+						//console.log(val["price"]);
 					}
 				});
 			}
@@ -173,6 +180,34 @@ export class DetailPage {
 		if(!this.platform.is('cordova')) return;
 		this.PhotoViewer.show(src);
 	}
+	radioChecked()
+	{
+		var strName = this.detail["slug"] + '-'+this.attributes.Size.option;
+		var price = this.detail["price"];
+		var sale_price = this.detail["sale_price"];
+		var regular_price = this.detail["regular_price"];
+		var currVariation;
+		this.detail.variations.forEach(function(element) {
+			//console.log(strName);
+			//console.log(element.slug);
+			console.log(element.price);
+			if(strName==element.slug)
+			{
+				sale_price	 = element.sale_price;
+				regular_price	 = element.regular_price;
+				price	 = element.price;
+				currVariation = element;
+			}
+			
+			
+		});
+		this.detail["price"]= price;
+		this.detail["sale_price"]= sale_price;
+		this.detail["regular_price"]= regular_price;
+		this.variation = currVariation;
+		//console.log(this.attributes.Size.option);
+		
+	}
 	getVariation() {
 		if (this.detail["type"] == "variable" && this.detail["variations"].length > 0) {
 			let attr = new ObjectToArray().transform(this.attributes);
@@ -192,6 +227,7 @@ export class DetailPage {
 					}
 				}
 			);
+			this.radioChecked();
 		}
 	}
 	share() {
@@ -221,12 +257,17 @@ export class DetailPage {
 			if (this.detail["type"] == "variable") {
 				if (this.variation != 0) {
 					data.variation_id = this.variation;
-					// idCart += '_' + this.variation;
+					console.log(this.variation);
+					
+				idCart += '_' + this.variation["id"].toString();
+					console.log(idCart);
 				} else {
 					this.noVariation();
 					return;
 				}
 			}
+			console.log(this.detail);
+			console.log(this.variation);
 			data.idCart = idCart;
 			data.id = this.detail["id"];
 			data.name = this.detail["name"];
