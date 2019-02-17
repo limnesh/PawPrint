@@ -119,6 +119,7 @@ export class AppointmentPage {
 
   }
   getData() {
+	  
     /*this.storageMul.get(['login', 'useBilling', 'user']).then(val => {
       if (val['login']) this.login = val['login'];
       
@@ -173,9 +174,9 @@ export class AppointmentPage {
   	getAppointTimes() {
 		
 		//this.core.showLoading();
-		
-		this.schAvailableTimes = "08:30;09:15;10:15;12:20;13:10;14:45".split(";");
-		/*this.http.get(wordpress_url + '/getschedules.php'+'?date='+this.strAppointmentDate)
+		if (this.platform.is('cordova'))
+		{
+		  this.http.get(wordpress_url + '/getschedules.php'+'?date='+this.strAppointmentDate)
 							.subscribe(res => {
 				console.log(res);
 				this.core.hideLoading();
@@ -196,7 +197,13 @@ export class AppointmentPage {
 				 
 
 				
-			});*/
+			});
+	  }
+	  else
+	  {
+		this.schAvailableTimes = "08:30;09:15;10:15;12:20;13:10;14:45".split(";");
+	  }
+		/**/
 	}
 
 }

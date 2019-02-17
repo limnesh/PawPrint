@@ -40381,6 +40381,11 @@ page-about .getabout {
   background-size: 100%;
 }
 
+page-account .item-ios-dark {
+  color: #fff;
+  background-color: #6A5268;
+}
+
 page-account .account-header [mark] {
   background: #000;
   background: rgba(0, 0, 0, 0.7);
@@ -41851,10 +41856,15 @@ page-popupads .popup-content .fixed-content, page-popupads .popup-content .scrol
   margin-top: 0px !important;
 }
 
+page-profile .item-ios-dark {
+  color: #fff;
+  background-color: #6A5268;
+}
+
 page-profile .profile-avatar {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: 0%;
   overflow: hidden;
 }
 

@@ -65,7 +65,18 @@ export class CheckoutPage {
 						let now = {};
 						now['product_id'] = product['id'];
 						now['quantity'] = product['quantity'];
-						if (product['variation_id']) now['variation_id'] = product['variation_id'];
+						if (product['variation_id']) 
+						{
+							//now['variation_id'] = product['variation_id'];
+							console.log(product['variation_id']);
+							console.log(product['variation_id']['id']);
+							//$vid = product['variation_id']['id'];
+							
+							//$post_data_var =(object) [ 'id' => 25 ];
+								
+							 //console.log(json_encode($post_data_var));
+							now['variation_id'] = {'id':product['variation_id']['id']};
+						};
 						this.products.push(now);
 					});
 					let params = {};
@@ -84,7 +95,9 @@ export class CheckoutPage {
 						option['withCredentials'] = true;
 						option['headers'] = headers;
 					}
+					console.log(option);
 					this.http.get(wordpress_url + '/wp-json/wooconnector/calculator/getall', option).subscribe(res => {
+						console.log(res);
 						this.data = res.json();
 						if (this.data['total']['discount']) {
 							this.coupon = this.data['total']['discount'];
@@ -199,8 +212,8 @@ export class CheckoutPage {
 		console.log(res);
 		let order_id;
 		let checkoutUrl = wordpress_url + '/wooconnector-checkout/?data_key=' + res;
-		if (this.platform.is('cordova')) {
-			this.platform.ready().then(() => {
+		//if (this.platform.is('cordova')) {
+			//this.platform.ready().then(() => {
 				let isCheckout: boolean = false;
 				let openCheckout = this.InAppBrowser.create(checkoutUrl, '_blank', 'location=no,closebuttoncaption=Close,hardwareback=yes,footer=yes');
 				openCheckout.on('loadstart').subscribe(res => {
@@ -230,8 +243,8 @@ export class CheckoutPage {
 						error => { console.log(error); }
 					);
 				});
-			});
-		}
+			//});
+		//}
 	}
 	showTerms(){
 		 let alert = this.alertCtrl.create({

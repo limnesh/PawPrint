@@ -1554,7 +1554,7 @@ var AccountPage = /** @class */ (function () {
     };
     AccountPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-account',template:/*ion-inline-start:"C:\MobileApp\modernshop\modernshopv2.0\src\pages\account\account.html"*/'<ion-content>\n	<div relative overflow class="account-header" text-center (swipe)="onSwipeContent($event)">\n		<img float-left width-100 src="assets/images/account-bg.png" />\n		<div mark absolute top left width-100 height-100></div>\n		<ion-row center padding absolute top left width-100 height-100>\n			<ion-col secondary>\n				<button absolute ion-button color="light" clear navPop class="button-back">\n					<ion-icon icon-big name="md-arrow-back"></ion-icon>\n				</button>\n				<div *ngIf="!isLogin">\n					<div class="account-avatar" margin-auto>\n						<ion-icon name="icon-account"></ion-icon>\n					</div>\n					<button ion-button color="light" clear [navPush]="LoginPage" class="disable-hover">\n						<b>{{\'account.login\'|translate}}</b>\n					</button>\n				</div>\n				<div *ngIf="isLogin">\n					<div class="account-avatar" margin-auto>\n						<ion-icon *ngIf="!data.user.mobiconnector_avatar" name="icon-account" [navPush]="ProfilePage"></ion-icon>\n						<img *ngIf="data.user.mobiconnector_avatar" [src]="data.user.mobiconnector_avatar" [navPush]="ProfilePage" width-100 height-100 />\n					</div>\n					<button absolute ion-button color="light" clear (click)="signOut()" class="disable-hover button-signout">\n						<ion-icon icon-big name="icon-logout"></ion-icon>\n					</button>\n					<h4 no-margin [navPush]="ProfilePage">\n						<b light>{{data.user.display_name}}</b>\n						<ion-icon font-80 name="icon-pen"></ion-icon>\n					</h4>\n					<h5 no-margin>{{data.user.user_email}}</h5>\n				</div>\n			</ion-col>\n		</ion-row>\n	</div>\n	<ion-list no-margin class="account-list" (swipe)="onSwipeContent($event)">\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="isLogin?OrderPage:LoginPage">\n			<ion-icon name="icon-list-4" item-left></ion-icon>\n			<ion-label>{{\'account.my_order\'|translate}}</ion-label>\n			<ion-spinner item-right *ngIf="isLogin && !loadedOrder"></ion-spinner>\n			<ion-note item-right *ngIf="loadedOrder || !isLogin">{{data.order||0}}</ion-note>\n		</button>\n		<!--<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="PetinfoPage">\n			<ion-icon name="icon-favorite" item-left></ion-icon>\n			<ion-label>My Pets</ion-label>\n		</button>-->\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="FavoritePage">\n			<ion-icon name="basket" item-left></ion-icon>\n			<ion-label>{{\'account.favorite\'|translate}}</ion-label>\n			<ion-note item-right>{{data.favorite||0}}</ion-note>\n		</button>\n		<ion-item class="item item-block item-ios item-ios-dark" color="light" detail-none>\n			<ion-icon name="icon-notification" item-left></ion-icon>\n			<ion-label>{{\'account.push_notification\'|translate}}</ion-label>\n			<ion-toggle mode="md" item-right [(ngModel)]="data.notification" (ngModelChange)="notification()"></ion-toggle>\n		</ion-item>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="changeTextSize()">\n			<ion-icon name="icon-font" item-left></ion-icon>\n			<ion-label>{{\'account.text_size.title\'|translate}}</ion-label>\n			<ion-note item-right text-capitalize *ngIf="data.text">{{\'account.text_size.option.\'+data.text|translate}}</ion-note>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="shareApp()">\n			<ion-icon name="icon-send" item-left></ion-icon>\n			<ion-label>{{\'account.app_share\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="rateApp()">\n			<ion-icon name="icon-star-out" item-left></ion-icon>\n			<ion-label>{{\'account.rate_us\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="TermsPage">\n			<ion-icon name="icon-list" item-left></ion-icon>\n			<ion-label>{{\'account.terms_of_use\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="PrivacyPage">\n			<ion-icon name="icon-list-lock" item-left></ion-icon>\n			<ion-label>{{\'account.privacy_policy\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="ContactPage">\n			<ion-icon name="icon-location" item-left></ion-icon>\n			<ion-label>{{\'account.contact_us\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="AboutPage">\n			<ion-icon name="icon-info" item-left></ion-icon>\n			<ion-label>{{\'account.about_us\'|translate}}</ion-label>\n		</button>\n		<ion-item mode="md">\n			<ion-label text-center>{{\'account.version\'|translate}}</ion-label>\n		</ion-item>\n	</ion-list>\n</ion-content>\n\n<ion-footer (swipe)="onSwipeContent($event)"><ion-toolbar><footer-tabs></footer-tabs></ion-toolbar></ion-footer>'/*ion-inline-end:"C:\MobileApp\modernshop\modernshopv2.0\src\pages\account\account.html"*/,
+            selector: 'page-account',template:/*ion-inline-start:"C:\MobileApp\modernshop\modernshopv2.0\src\pages\account\account.html"*/'<ion-content>\n	<div relative overflow class="account-header" text-center (swipe)="onSwipeContent($event)">\n		<img float-left width-100 src="assets/images/account-bg.png" />\n		<div mark absolute top left width-100 height-100></div>\n		<ion-row center padding absolute top left width-100 height-100>\n			<ion-col secondary>\n				<button absolute ion-button color="light" clear navPop class="button-back">\n					<ion-icon icon-big name="md-arrow-back"></ion-icon>\n				</button>\n				<div *ngIf="!isLogin">\n					<div class="account-avatar" margin-auto>\n						<ion-icon name="icon-account"></ion-icon>\n					</div>\n					<button ion-button color="light" clear [navPush]="LoginPage" class="disable-hover">\n						<b>{{\'account.login\'|translate}}</b>\n					</button>\n				</div>\n				<div *ngIf="isLogin">\n					<div class="account-avatar" margin-auto>\n						<ion-icon *ngIf="!data.user.mobiconnector_avatar" name="icon-account" [navPush]="ProfilePage"></ion-icon>\n						<img *ngIf="data.user.mobiconnector_avatar" [src]="data.user.mobiconnector_avatar" [navPush]="ProfilePage" width-100 height-100 />\n					</div>\n					<button absolute ion-button color="light" clear (click)="signOut()" class="disable-hover button-signout">\n						<ion-icon icon-big name="icon-logout"></ion-icon>\n					</button>\n					<h4 no-margin [navPush]="ProfilePage">\n						<b light>{{data.user.display_name}}</b>\n						<ion-icon font-80 name="icon-pen"></ion-icon>\n					</h4>\n					<h5 no-margin>{{data.user.user_email}}</h5>\n				</div>\n			</ion-col>\n		</ion-row>\n	</div>\n	<ion-list no-margin class="account-list" (swipe)="onSwipeContent($event)">\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="isLogin?OrderPage:LoginPage">\n			<ion-icon name="icon-list-4" item-left></ion-icon>\n			<ion-label>{{\'account.my_order\'|translate}}</ion-label>\n			<ion-spinner item-right *ngIf="isLogin && !loadedOrder"></ion-spinner>\n			<ion-note item-right *ngIf="loadedOrder || !isLogin">{{data.order||0}}</ion-note>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="PetinfoPage">\n			<ion-icon name="icon-favorite" item-left></ion-icon>\n			<ion-label>My Pets</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="FavoritePage">\n			<ion-icon name="basket" item-left></ion-icon>\n			<ion-label>{{\'account.favorite\'|translate}}</ion-label>\n			<ion-note item-right>{{data.favorite||0}}</ion-note>\n		</button>\n		<ion-item class="item item-block item-ios item-ios-dark" color="light" detail-none>\n			<ion-icon name="icon-notification" item-left></ion-icon>\n			<ion-label>{{\'account.push_notification\'|translate}}</ion-label>\n			<ion-toggle mode="md" item-right [(ngModel)]="data.notification" (ngModelChange)="notification()"></ion-toggle>\n		</ion-item>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="changeTextSize()">\n			<ion-icon name="icon-font" item-left></ion-icon>\n			<ion-label>{{\'account.text_size.title\'|translate}}</ion-label>\n			<ion-note item-right text-capitalize *ngIf="data.text">{{\'account.text_size.option.\'+data.text|translate}}</ion-note>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="shareApp()">\n			<ion-icon name="icon-send" item-left></ion-icon>\n			<ion-label>{{\'account.app_share\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="rateApp()">\n			<ion-icon name="icon-star-out" item-left></ion-icon>\n			<ion-label>{{\'account.rate_us\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="TermsPage">\n			<ion-icon name="icon-list" item-left></ion-icon>\n			<ion-label>{{\'account.terms_of_use\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="PrivacyPage">\n			<ion-icon name="icon-list-lock" item-left></ion-icon>\n			<ion-label>{{\'account.privacy_policy\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="ContactPage">\n			<ion-icon name="icon-location" item-left></ion-icon>\n			<ion-label>{{\'account.contact_us\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="AboutPage">\n			<ion-icon name="icon-info" item-left></ion-icon>\n			<ion-label>{{\'account.about_us\'|translate}}</ion-label>\n		</button>\n		<ion-item mode="md">\n			<ion-label text-center>{{\'account.version\'|translate}}</ion-label>\n		</ion-item>\n	</ion-list>\n</ion-content>\n\n<ion-footer (swipe)="onSwipeContent($event)"><ion-toolbar><footer-tabs></footer-tabs></ion-toolbar></ion-footer>'/*ion-inline-end:"C:\MobileApp\modernshop\modernshopv2.0\src\pages\account\account.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_6__service_storage_multi_service__["a" /* StorageMulti */], __WEBPACK_IMPORTED_MODULE_11__ionic_native_device__["a" /* Device */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
@@ -1921,8 +1921,16 @@ var CheckoutPage = /** @class */ (function () {
                         var now = {};
                         now['product_id'] = product['id'];
                         now['quantity'] = product['quantity'];
-                        if (product['variation_id'])
-                            now['variation_id'] = product['variation_id'];
+                        if (product['variation_id']) {
+                            //now['variation_id'] = product['variation_id'];
+                            console.log(product['variation_id']);
+                            console.log(product['variation_id']['id']);
+                            //$vid = product['variation_id']['id'];
+                            //$post_data_var =(object) [ 'id' => 25 ];
+                            //console.log(json_encode($post_data_var));
+                            now['variation_id'] = { 'id': product['variation_id']['id'] };
+                        }
+                        ;
                         _this.products.push(now);
                     });
                     var params = {};
@@ -1942,7 +1950,9 @@ var CheckoutPage = /** @class */ (function () {
                         option['withCredentials'] = true;
                         option['headers'] = headers;
                     }
+                    console.log(option);
                     _this.http.get(wordpress_url + '/wp-json/wooconnector/calculator/getall', option).subscribe(function (res) {
+                        console.log(res);
                         _this.data = res.json();
                         if (_this.data['total']['discount']) {
                             _this.coupon = _this.data['total']['discount'];
@@ -2077,40 +2087,40 @@ var CheckoutPage = /** @class */ (function () {
         console.log(res);
         var order_id;
         var checkoutUrl = wordpress_url + '/wooconnector-checkout/?data_key=' + res;
-        if (this.platform.is('cordova')) {
-            this.platform.ready().then(function () {
-                var isCheckout = false;
-                var openCheckout = _this.InAppBrowser.create(checkoutUrl, '_blank', 'location=no,closebuttoncaption=Close,hardwareback=yes,footer=yes');
-                openCheckout.on('loadstart').subscribe(function (res) {
-                    console.log(res);
-                    var url = wordpress_url;
-                    if (res.url.indexOf(url) != 0)
-                        url = url.replace('http', 'https');
-                    console.log(url);
-                    if ((res.url.indexOf(url) == 0 && res.url.indexOf('order-received') != -1)) {
-                        order_id = (res.url.split('?')[0]).split('order-received/')[1].replace("/", "");
-                        var params = {};
-                        params['id'] = order_id;
-                        if (_this.login && _this.login['token']) {
-                            params['token'] = true;
-                        }
-                        else
-                            params['token'] = false;
-                        _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_11__thanks_thanks__["a" /* ThanksPage */], { params: params }).then(function () {
-                            openCheckout.close();
-                            _this.storageMul.remove(['cart', 'coupon']);
-                        });
-                    }
-                    else if (res.url.indexOf('cancel_order') != -1 && res.url.indexOf('paypal.com') == -1) {
-                        openCheckout.close();
-                    }
-                });
-                openCheckout.on('loaderror').subscribe(function (res) {
+        //if (this.platform.is('cordova')) {
+        //this.platform.ready().then(() => {
+        var isCheckout = false;
+        var openCheckout = this.InAppBrowser.create(checkoutUrl, '_blank', 'location=no,closebuttoncaption=Close,hardwareback=yes,footer=yes');
+        openCheckout.on('loadstart').subscribe(function (res) {
+            console.log(res);
+            var url = wordpress_url;
+            if (res.url.indexOf(url) != 0)
+                url = url.replace('http', 'https');
+            console.log(url);
+            if ((res.url.indexOf(url) == 0 && res.url.indexOf('order-received') != -1)) {
+                order_id = (res.url.split('?')[0]).split('order-received/')[1].replace("/", "");
+                var params = {};
+                params['id'] = order_id;
+                if (_this.login && _this.login['token']) {
+                    params['token'] = true;
+                }
+                else
+                    params['token'] = false;
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_11__thanks_thanks__["a" /* ThanksPage */], { params: params }).then(function () {
                     openCheckout.close();
-                    _this.Toast.showLongBottom(_this.trans['message']).subscribe(function (toast) { }, function (error) { console.log(error); });
+                    _this.storageMul.remove(['cart', 'coupon']);
                 });
-            });
-        }
+            }
+            else if (res.url.indexOf('cancel_order') != -1 && res.url.indexOf('paypal.com') == -1) {
+                openCheckout.close();
+            }
+        });
+        openCheckout.on('loaderror').subscribe(function (res) {
+            openCheckout.close();
+            _this.Toast.showLongBottom(_this.trans['message']).subscribe(function (toast) { }, function (error) { console.log(error); });
+        });
+        //});
+        //}
     };
     CheckoutPage.prototype.showTerms = function () {
         var _this = this;
@@ -2315,30 +2325,29 @@ var AppointmentPage = /** @class */ (function () {
         }
     };
     AppointmentPage.prototype.getAppointTimes = function () {
+        var _this = this;
         //this.core.showLoading();
-        this.schAvailableTimes = "08:30;09:15;10:15;12:20;13:10;14:45".split(";");
-        /*this.http.get(wordpress_url + '/getschedules.php'+'?date='+this.strAppointmentDate)
-                            .subscribe(res => {
+        if (this.platform.is('cordova')) {
+            this.http.get(wordpress_url + '/getschedules.php' + '?date=' + this.strAppointmentDate)
+                .subscribe(function (res) {
                 console.log(res);
-                this.core.hideLoading();
+                _this.core.hideLoading();
                 var result = res.text();
-                if (result=="5468")
-                {
-                    this.schSelectedTime=null;
-                    this.schAvailableTimes = null;
+                if (result == "5468") {
+                    _this.schSelectedTime = null;
+                    _this.schAvailableTimes = null;
                 }
-                else
-                {
-                    this.schSelectedTime=null;
-                    result = result.substring(0,result.length-1);
-                    this.schAvailableTimes = result.split(";");
-                    
+                else {
+                    _this.schSelectedTime = null;
+                    result = result.substring(0, result.length - 1);
+                    _this.schAvailableTimes = result.split(";");
                 }
-                
-                 
-
-                
-            });*/
+            });
+        }
+        else {
+            this.schAvailableTimes = "08:30;09:15;10:15;12:20;13:10;14:45".split(";");
+        }
+        /**/
     };
     AppointmentPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -2774,7 +2783,7 @@ var SplashPage = /** @class */ (function () {
         this.splashScreen.hide();
         setTimeout(function () {
             _this.viewCtrl.dismiss();
-        }, 10000);
+        }, 3000);
     };
     SplashPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -4701,8 +4710,10 @@ var MyApp = /** @class */ (function () {
         platform.ready().then(function () {
             //SplashScreen.hide();
             statusBar.styleDefault();
-            var splash = modalCtrl.create(__WEBPACK_IMPORTED_MODULE_13__pages_splash_splash__["a" /* SplashPage */]);
-            splash.present();
+            //let splash = modalCtrl.create(SplashPage);
+            //splash.present();
+            var home = modalCtrl.create(__WEBPACK_IMPORTED_MODULE_14__pages_home_home__["a" /* HomePage */]);
+            home.present();
             statusBar.overlaysWebView(false);
             //statusBar.styleDefault();
             var html = document.querySelector('html');

@@ -55,9 +55,10 @@ export class MyApp {
 		platform.ready().then(() => {
 			//SplashScreen.hide();
 			statusBar.styleDefault();
-			let splash = modalCtrl.create(SplashPage);
-            splash.present();
-			
+			//let splash = modalCtrl.create(SplashPage);
+            //splash.present();
+			let home = modalCtrl.create(HomePage);
+            home.present();
 			statusBar.overlaysWebView(false);
             //statusBar.styleDefault();
 			let html = document.querySelector('html');

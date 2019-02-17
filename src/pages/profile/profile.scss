@@ -1,8 +1,12 @@
 page-profile {
+	.item-ios-dark {
+		color: #fff;
+		background-color: #6A5268;
+	}
 	.profile-avatar{
 		width:100px;
 		height:100px;
-		border-radius:50%;
+		border-radius:0%;
 		overflow:hidden;
 	}
 	.edit-form{

@@ -1,4 +1,8 @@
 page-account {
+	.item-ios-dark {
+		color: #fff;
+		background-color: #6A5268;
+	}
 	.account-header{
 		[mark]{@include background-opacity(#000, 0.7);}
 		.account-avatar{
