@@ -40381,6 +40381,11 @@ page-about .getabout {
   background-size: 100%;
 }
 
+page-about .home-background {
+  background: url("../assets/images/aboutus.jpg") no-repeat fixed center;
+  background-size: 100%;
+}
+
 page-account .item-ios-dark {
   color: #fff;
   background-color: #6A5268;
@@ -40395,7 +40400,7 @@ page-account .account-header .account-avatar {
   font-size: 500%;
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: 10%;
   overflow: hidden;
 }
 

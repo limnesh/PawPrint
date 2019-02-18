@@ -34,7 +34,7 @@ const wordpress_order = wordpress_url + '/wp-json/wooconnector/order';
 @Component({
 	selector: 'page-account',
 	templateUrl: 'account.html',
-	providers: [StorageMulti, Device]
+	providers: [StorageMulti, Device, Core]
 })
 export class AccountPage {
 	LoginPage = LoginPage;

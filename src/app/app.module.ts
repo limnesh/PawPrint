@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Pro } from '@ionic/pro';
 import { Injectable, Injector } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 Pro.init('d32002e9', {
   appVersion: '1.1.2'
 })
@@ -121,6 +121,7 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
     EditEventPage
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: '',
@@ -176,7 +177,7 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
     EditEventPage
     ],
     providers: [
-		Calendar,
+	    Calendar,
 		DatePicker,
         Config,
         DatePipe,
