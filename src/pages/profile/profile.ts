@@ -82,6 +82,7 @@ export class ProfilePage {
 		let params = this.formEdit.value;
 		params["display_name"] = params["first_name"] + " " + params["last_name"];
 		if(this.avatar != this.data["mobiconnector_avatar"]) params["user_profile_picture"] = this.avatar;
+		console.log(params);
 		params = this.core.objectToURLParams(params);
 		let headers = new Headers();
 		headers.set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');

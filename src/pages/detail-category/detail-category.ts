@@ -29,7 +29,7 @@ export class DetailCategoryPage {
 	DetailCategoryPage = DetailCategoryPage;
 	id: Number; page = 1; sort: string = '-date'; range: Object = { lower: 0, upper: 0 };
 	data: Object = {}; favorite: Object = {}; products: Object[] = []; attributes: Object[] = [];
-	filter: Object = { grid: true, open: null, value: {}, valueCustom: {} }; filtering: boolean;
+	filter: Object = { grid: false, open: null, value: {}, valueCustom: {} }; filtering: boolean;//limnesh
 	categories: Object[] = []; loaded: boolean; over: boolean;
 	noResuilt:boolean = false; quantity: Number = 1; trans: Object = {};
 	actionCart: Object = [];

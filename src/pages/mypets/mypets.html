@@ -1,0 +1,36 @@
+<!--
+  Generated template for the MypetsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+	<ion-title>My Pets</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-item  *ngFor="let pet of pets"><!-- [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">-->
+	<ion-row padding-8 wrap	>
+	<ion-col padding-8 relative attr.width-50>
+			<img float-left *ngIf="pet.file_name" [src]="'https://pawprintsbh.com/uploads/'+pet.file_name" />
+			</ion-col>
+			<ion-col padding-8 relative attr.width-50>
+			<div  text-left [innerHTML]="pet.pet_name"></div>
+			<div  text-left [innerHTML]="pet.pet_category"></div>
+			<div  text-left [innerHTML]="pet.pet_breed"></div>
+			</ion-col>
+		<!--	<img *ngIf="category.modernshop_images_categories && category.modernshop_images_categories.modern_square" [src]="category.modernshop_images_categories.modern_square" />
+		<img *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png" />
+-->
+
+		<!--<img  style="width: 100%; height: 100%;"  *ngIf="category.image.src && category.image.src" [src]="category.image.src" />
+		<ion-img  style="width: 100%; height: 100%;"  *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png"></ion-img>-->
+	</ion-row>
+	</ion-item>
+	<button  ion-button block icon-right margin-top [navPush]="PetinfoPage" [disabled]="!is_loggedin" ><!--class="button-checkout"-->
+				<span text-uppercase>Add<!--{{'appointment.checkout'|translate}}--></span>
+				<ion-icon name="ios-arrow-round-forward"></ion-icon>
+	</button>
+</ion-content>
+<ion-footer><ion-toolbar><footer-tabs></footer-tabs></ion-toolbar></ion-footer>

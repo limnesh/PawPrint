@@ -50,6 +50,7 @@ import { OrderPage } from '../pages/order/order';
 import { FavoritePage } from '../pages/favorite/favorite';
 import { TermsPage } from '../pages/terms/terms';
 import { PetinfoPage } from '../pages/petinfo/petinfo';
+import { MypetsPage } from '../pages/mypets/mypets';
 import { PrivacyPage } from '../pages/privacy/privacy';
 import { ContactPage } from '../pages/contact/contact';
 import { AboutPage } from '../pages/about/about';
@@ -98,7 +99,8 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
     FavoritePage,
     TermsPage,
     PetinfoPage,
-    PrivacyPage,
+    MypetsPage,
+	PrivacyPage,
     ContactPage,
     AboutPage,
     PopupadsPage,
@@ -162,7 +164,8 @@ import { EditEventPage } from '../pages/edit-event/edit-event';
         FavoritePage,
         TermsPage,
         PetinfoPage,
-        PrivacyPage,
+        MypetsPage,
+		PrivacyPage,
         ContactPage,
         AboutPage,
         ProfilePage,

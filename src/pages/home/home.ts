@@ -116,11 +116,11 @@ export class HomePage {
 				}, error => {
 					showAlertfirst();
 				});
-				http.get(wordpress_url + '/wp-json/wooconnector/settings/getactivelocaltion')
-				.subscribe(location => {
-					config.set('countries', location.json()['countries']);
-					config.set('states', location.json()['states']);
-				});
+			//	http.get(wordpress_url + '/wp-json/wooconnector/settings/getactivelocaltion')
+			//	.subscribe(location => {
+			//		config.set('countries', location.json()['countries']);
+			//		config.set('states', location.json()['states']);
+			//	});
 				let showAlertfirst = () => {
 					translate.get('general').subscribe(trans => {
 						let alert = alertCtrl.create({
@@ -148,10 +148,14 @@ export class HomePage {
 			};
 			getstatic();
 			});
+			this.getData();
+			
 		});
 		storage.get('require').then(val =>{
 		    if (!val) this.getPopupHomePage();
 		});
+		
+		
 	}
 	ionViewDidEnter() {
 		if (this.statictext) this.buttonCart.update(); 

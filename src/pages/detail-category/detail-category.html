@@ -158,8 +158,10 @@
 			</div>
 		</div>
 		<button ion-button absolute top right clear no-margin (click)="changeFavorite(product)"
-		[color]="favorite[product.id] ? 'primary' : 'dark'" [hidden]="filter.grid" class="disable-hover btn-favorite">
-				<ion-icon name="icon-favorite"></ion-icon>
+		[color]="favorite[product.id] ? 'primary' : 'primary'" [hidden]="filter.grid" class="disable-hover btn-favorite">
+				<!--<ion-icon name="icon-favorite"></ion-icon>-->
+				
+				<ion-icon [name]="favorite[product.id] ? 'heart':'icon-favorite'"></ion-icon>
 		</button>
 	</ion-col>
 </ion-row>

@@ -33,7 +33,7 @@ export class SearchPage {
 	keyword: string;
 	products: Object[] = []; attributes: Object[] = [];
 	page = 1; sort: string = '-date_created_gmt'; range: Object = { lower: 0, upper: 0 };
-	filter: Object = { grid: true, open: null, value: {}, valueCustom: {} }; filtering: boolean;
+	filter: Object = { grid: false, open: null, value: {}, valueCustom: {} }; filtering: boolean;//limnesh
 	grid: boolean = true;
 	favorite: Object = {};
 	trans: Object = {};

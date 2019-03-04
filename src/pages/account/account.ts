@@ -24,6 +24,7 @@ import { ContactPage } from '../contact/contact';
 import { AboutPage } from '../about/about';
 import { SearchPage } from '../search/search';
 import { PetinfoPage } from '../petinfo/petinfo';
+import { MypetsPage } from '../mypets/mypets';
 
 // Pipe
 import { Static } from '../../pipes/static';
@@ -47,6 +48,7 @@ export class AccountPage {
 	AboutPage = AboutPage;
 	SearchPage = SearchPage;
 	PetinfoPage=PetinfoPage;
+	MypetsPage = MypetsPage;
 	isCache: boolean; isLogin: boolean; loadedOrder: boolean;
 	data: any = {};
 

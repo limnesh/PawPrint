@@ -31,7 +31,8 @@
 		</div>
 		<button ion-button absolute *ngIf="detail.name" (click)="changeFavorite()"
 		 class="product-favorite disable-hover" light-bg>
-			<ion-icon [color]="favorite[id] ?'primary':'gray'" icon-big name="md-heart"></ion-icon>
+			<!--<ion-icon [color]="favorite[id] ?'primary':'gray'" icon-big name="md-heart"></ion-icon>-->
+			<ion-icon icon-big color='primary' [name]="favorite[id] ? 'heart':'icon-favorite'"></ion-icon>
 		</button>
 		<div absolute bottom primary-bg product-sale *ngIf="detail.sale_price">
 			<span light>{{(detail.sale_price/detail.regular_price*100)-100|number:'1.0-0'}}%</span>

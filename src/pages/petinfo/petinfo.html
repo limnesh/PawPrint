@@ -7,14 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>My Pet</ion-title>
+    <ion-title>Add my Pet</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content class="page-petinfo" padding>
-	<div float-left>
+	<div float-center>
 		<div class="profile-avatar" margin-auto>
 			<img *ngIf="avatar" [src]="avatar"  (click)="editAvatar()">
 			<img *ngIf="!avatar" src="assets/images/dogprofile.png" (click)="editAvatar()">
@@ -26,33 +26,67 @@
 	</div>
 	<ion-list no-margin>
 	
-	  <div [formGroup]="formPetInfo">
-		
+	<div > <!--[formGroup]="formPetInfo">-->
+		<!--<div class="row">
+			<div class="column">
+			<ion-item mode="md" bg-transparent no-padding class="half-option">
+				<ion-label floating><span light>Pet ID</span></ion-label>
+				<ion-input dir="{{display_mode}}" light [(ngModel)]="pet_id"></ion-input>
+			</ion-item>
+			</div>
+			<div class="column">
+			<ion-item mode="md" bg-transparent no-padding class="half-option">
+				<ion-label floating><span light>User ID</span></ion-label>
+				<ion-input dir="{{display_mode}}" light [(ngModel)]="userid"></ion-input>
+			</ion-item>
+			</div>
+		</div>-->
 			<ion-item mode="md" bg-transparent no-padding>
 				<ion-label floating><span light>Pet Name</span></ion-label>
-				<ion-input dir="{{display_mode}}" light formControlName="PetName"></ion-input>
+				<ion-input dir="{{display_mode}}" light [(ngModel)]="pet_name"></ion-input>
 			</ion-item>
-			<ion-item mode="md" bg-transparent no-padding>
-				<ion-label floating><span light>Breed</span></ion-label><!--[selectOptions]="selectOptions" -->
-				  <ion-select formControlName="PetBreed" class="select-option">
-					<ion-option value="a">Retrievers (Labrador)</ion-option>
-					<ion-option value="b">German Shepherd Dogs</ion-option>
-					<ion-option value="c">Retrievers (Golden)</ion-option>
-					<ion-option value="d">French Bulldogs</ion-option>
-					<ion-option value="e">Bulldogs</ion-option>
-					<ion-option value="f">Beagles</ion-option>
-					<ion-option value="g">Poodles</ion-option>
+		<div class="row">
+			<div class="column">
+			<ion-item mode="md" bg-transparent no-padding class="half-option">
+				<ion-label floating><span light>Type</span></ion-label><!--[selectOptions]="selectOptions" -->
+				  <ion-select [(ngModel)]="pet_category" class="select-option">
+					<ion-option value="Dog">Dog</ion-option>
+					<ion-option value="Cat">Cat</ion-option>
+					<ion-option value="Parrot">Parrot</ion-option>
+					<ion-option value="Other">Other</ion-option>
+					
 				  </ion-select>
 			</ion-item>
-			<ion-item mode="md" bg-transparent no-padding>
-				<ion-label floating><span light>Date of Birth</span></ion-label>
-				<ion-datetime dir="{{display_mode}}" light formControlName="PetDOB"></ion-datetime>
+			</div>
+			<div class="column">
+			<ion-item mode="md" bg-transparent no-padding class="half-option">
+				<ion-label floating><span light>Breed</span></ion-label>
+				<ion-input dir="{{display_mode}}" light [(ngModel)]="pet_breed"></ion-input>
 			</ion-item>
-			<div class="row">
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+			<ion-item mode="md" bg-transparent no-padding class="half-option">
+				<ion-label floating><span light>Date of Birth</span></ion-label>
+				<ion-datetime dir="{{display_mode}}" light [(ngModel)]="pet_dob"></ion-datetime>
+			</ion-item>
+			</div>
+			<div class="column">
+			</div>
+		</div>
+			<ion-item mode="md" bg-transparent no-padding>
+				<ion-label floating><span light>Size</span></ion-label>
+				<ion-range min="20" max="80" step="2" light [(ngModel)]="pet_size" color="danger" pin="true">
+					<ion-icon small range-left name="paw"></ion-icon>
+					<ion-icon large range-right name="paw"></ion-icon>
+				</ion-range>
+			</ion-item>
+			<!--<div class="row">pet_breed
 				<div class="column">
 				<ion-item mode="md" bg-transparent no-padding class="half-option">
 					<ion-label ><span light>Gender</span></ion-label>
-					<ion-toggle formControlName="PetGender" ></ion-toggle>
+					<ion-toggle [(ngModel)]="PetGender" ></ion-toggle>
 					
 				</ion-item>
 				</div>
@@ -60,18 +94,17 @@
 				<ion-item mode="md" bg-transparent no-padding class="half-option">
 					
 					<ion-label ><span light>Neutered</span></ion-label>
-					<ion-toggle toggle-class="sign_toggle" formControlName="PetNeutred" ></ion-toggle>
+					<ion-toggle toggle-class="sign_toggle" [(ngModel)]="PetNeutred" ></ion-toggle>
 				</ion-item>
 				</div>
-			</div>
-			<ion-item mode="md" bg-transparent no-padding>
-				<ion-label floating><span light>Size</span></ion-label>
-				<ion-range min="20" max="80" step="2" light formControlName="PetSize" color="danger" pin="true">
-					<ion-icon small range-left name="paw"></ion-icon>
-					<ion-icon large range-right name="paw"></ion-icon>
-				</ion-range>
-			</ion-item>
+			</div>-->
+			
 	</div>
 
 	</ion-list>
+	<button  ion-button block icon-right margin-top (click)="postData()" ><!--[disabled]="!schSelectedTime" >-->
+				<span text-uppercase>UPDATE<!--{{'appointment.checkout'|translate}}--></span>
+				<!--<ion-icon name="ios-arrow-round-forward"></ion-icon>-->
+	</button>
 </ion-content>
+<ion-footer><ion-toolbar><footer-tabs></footer-tabs></ion-toolbar></ion-footer>

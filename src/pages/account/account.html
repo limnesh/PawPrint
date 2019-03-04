@@ -39,7 +39,7 @@
 			<ion-spinner item-right *ngIf="isLogin && !loadedOrder"></ion-spinner>
 			<ion-note item-right *ngIf="loadedOrder || !isLogin">{{data.order||0}}</ion-note>
 		</button>
-		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="PetinfoPage">
+		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="MypetsPage">
 			<ion-icon name="icon-favorite" item-left></ion-icon>
 			<ion-label>My Pets</ion-label>
 		</button>
