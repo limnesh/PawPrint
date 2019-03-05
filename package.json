@@ -22,6 +22,7 @@
     "@angular/platform-browser": "5.2.10",
     "@angular/platform-browser-dynamic": "5.2.10",
     "@ionic-native/admob-free": "4.7.0",
+    "@ionic-native/base64": "^5.2.0",
     "@ionic-native/calendar": "4.7.0",
     "@ionic-native/camera": "4.7.0",
     "@ionic-native/core": "4.7.0",
@@ -95,8 +96,8 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "^3.2.1",
-    "typescript": "~2.6.2"
+    "@ionic/app-scripts": "^3.2.2",
+    "typescript": "~2.4.2"
   },
   "description": "Pawprints Application",
   "cordova": {
@@ -137,7 +138,8 @@
       "cordova-plugin-datepicker": {},
       "cordova-plugin-animated-splashscreen": {},
       "cordova-plugin-enable-multidex": {},
-      "cordova-plugin-splashscreen": {}
+      "cordova-plugin-splashscreen": {},
+      "com-badrit-base64": {}
     }
   }
 }

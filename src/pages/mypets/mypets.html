@@ -10,23 +10,25 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-	<ion-item  *ngFor="let pet of pets"><!-- [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">-->
-	<ion-row padding-8 wrap	>
-	<ion-col padding-8 relative attr.width-50>
-			<img float-left *ngIf="pet.file_name" [src]="'https://pawprintsbh.com/uploads/'+pet.file_name" />
+	<ion-item  *ngFor="let pet of pets" [navPush]="PetinfoPage" [navParams]="{id:pet.pet_id}">
+		<ion-row padding-8 wrap	>
+			<ion-col padding-8  width-25>
+				<div class="profile-avatar" margin-auto>
+					<img float-left *ngIf="pet.file_name" [src]="'https://pawprintsbh.com/uploads/'+pet.file_name" />
+				</div>
 			</ion-col>
-			<ion-col padding-8 relative attr.width-50>
-			<div  text-left [innerHTML]="pet.pet_name"></div>
-			<div  text-left [innerHTML]="pet.pet_category"></div>
-			<div  text-left [innerHTML]="pet.pet_breed"></div>
+			<ion-col  padding-8  width-75>
+				<div  class= "pet-name" text-left [innerHTML]="pet.pet_name"></div>
+				<div  class= "pet-cat" text-left [innerHTML]="pet.pet_category"></div>
+				<div  class= "pet-breed" text-left [innerHTML]="pet.pet_breed"></div>
 			</ion-col>
-		<!--	<img *ngIf="category.modernshop_images_categories && category.modernshop_images_categories.modern_square" [src]="category.modernshop_images_categories.modern_square" />
-		<img *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png" />
--->
+			<!--	<img *ngIf="category.modernshop_images_categories && category.modernshop_images_categories.modern_square" [src]="category.modernshop_images_categories.modern_square" />
+			<img *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png" />
+	-->
 
-		<!--<img  style="width: 100%; height: 100%;"  *ngIf="category.image.src && category.image.src" [src]="category.image.src" />
-		<ion-img  style="width: 100%; height: 100%;"  *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png"></ion-img>-->
-	</ion-row>
+			<!--<img  style="width: 100%; height: 100%;"  *ngIf="category.image.src && category.image.src" [src]="category.image.src" />
+			<ion-img  style="width: 100%; height: 100%;"  *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png"></ion-img>-->
+		</ion-row>
 	</ion-item>
 	<button  ion-button block icon-right margin-top [navPush]="PetinfoPage" [disabled]="!is_loggedin" ><!--class="button-checkout"-->
 				<span text-uppercase>Add<!--{{'appointment.checkout'|translate}}--></span>

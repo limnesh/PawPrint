@@ -14,6 +14,7 @@ import { Network } from '@ionic-native/network';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Device } from '@ionic-native/device';
 import { SplashPage } from '../pages/splash/splash';
+
 // Page
 import { HomePage } from '../pages/home/home';
 

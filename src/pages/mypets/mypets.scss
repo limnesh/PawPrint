@@ -1,3 +1,50 @@
 page-mypets {
 
+.col{
+align-items: left;
+}
+.content{
+		background:url(../assets/images/login-bg.png);
+		background-size:100% auto;
+		color:#000;
+		padding-left:0px;
+		.item-block{
+			vertical-align:top;
+				background-color:#CCB8CD;
+				padding-left:0px;
+				
+			}
+		.item-inner{
+		vertical-align:top;
+				background-color:#CCB8CD;
+				padding-left:0px;
+				
+			}
+		.row{
+			.col{
+			vertical-align:top;
+			}
+		}
+		
+	}
+
+.pet-name{
+color:#000;
+font-size:25px;
+}
+.pet-cat{
+color:#000;
+font-size:18px;
+}
+.pet-breed{
+color:#000;
+font-size:18px;
+}
+	.profile-avatar{
+		width:90px;
+		height:90px;
+		border: 2px solid #000002;
+    border-radius: 10px;
+		overflow:hidden;
+	}
 }

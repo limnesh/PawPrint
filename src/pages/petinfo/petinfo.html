@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Add my Pet</ion-title>
+    <ion-title>Update my Pet</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +17,8 @@
 	<div float-center>
 		<div class="profile-avatar" margin-auto>
 			<img *ngIf="avatar" [src]="avatar"  (click)="editAvatar()">
-			<img *ngIf="!avatar" src="assets/images/dogprofile.png" (click)="editAvatar()">
+			<img *ngIf="(!avatar) && (!file_name)" src="assets/images/dogprofile.png" (click)="editAvatar()">
+			<img *ngIf="(!avatar) && file_name" [src]="file_name" (click)="editAvatar()"/>
 		</div>
 		<button ion-button clear icon-left color="dark" margin-auto (click)="editAvatar()" class="disable-hover">
 			<ion-icon name="icon-pen"></ion-icon>
@@ -102,9 +103,19 @@
 	</div>
 
 	</ion-list>
-	<button  ion-button block icon-right margin-top (click)="postData()" ><!--[disabled]="!schSelectedTime" >-->
-				<span text-uppercase>UPDATE<!--{{'appointment.checkout'|translate}}--></span>
-				<!--<ion-icon name="ios-arrow-round-forward"></ion-icon>-->
-	</button>
+	<ion-row padding-8 wrap	>
+			<ion-col padding-8 >
+				<button  ion-button block icon-right margin-top (click)="postData()" ><!--[disabled]="!schSelectedTime" >-->
+							<span text-uppercase>UPDATE<!--{{'appointment.checkout'|translate}}--></span>
+							<!--<ion-icon name="ios-arrow-round-forward"></ion-icon>-->
+				</button>
+			</ion-col>
+			<ion-col padding-8 >
+				<button  ion-button block icon-right margin-top (click)="deleteData()" ><!--[disabled]="!schSelectedTime" >-->
+							<span text-uppercase>DELETE<!--{{'appointment.checkout'|translate}}--></span>
+							<!--<ion-icon name="ios-arrow-round-forward"></ion-icon>-->
+				</button>
+			</ion-col>
+		</ion-row>
 </ion-content>
 <ion-footer><ion-toolbar><footer-tabs></footer-tabs></ion-toolbar></ion-footer>

@@ -41722,6 +41722,59 @@ page-login .content .login-form .item .wrong-password span {
   line-height: 18px;
 }
 
+page-mypets .col {
+  -webkit-box-align: left;
+  -webkit-align-items: left;
+  -ms-flex-align: left;
+  align-items: left;
+}
+
+page-mypets .content {
+  background: url(../assets/images/login-bg.png);
+  background-size: 100% auto;
+  color: #000;
+  padding-left: 0px;
+}
+
+page-mypets .content .item-block {
+  vertical-align: top;
+  background-color: #CCB8CD;
+  padding-left: 0px;
+}
+
+page-mypets .content .item-inner {
+  vertical-align: top;
+  background-color: #CCB8CD;
+  padding-left: 0px;
+}
+
+page-mypets .content .row .col {
+  vertical-align: top;
+}
+
+page-mypets .pet-name {
+  color: #000;
+  font-size: 25px;
+}
+
+page-mypets .pet-cat {
+  color: #000;
+  font-size: 18px;
+}
+
+page-mypets .pet-breed {
+  color: #000;
+  font-size: 18px;
+}
+
+page-mypets .profile-avatar {
+  width: 90px;
+  height: 90px;
+  border: 2px solid #000002;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 page-order .item-order {
   border-bottom: 1px solid #E4E2DF;
 }

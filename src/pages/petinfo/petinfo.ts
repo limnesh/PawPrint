@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Toast } from '@ionic-native/toast';
 import { Camera } from '@ionic-native/camera';
-import { NavController } from 'ionic-angular';
+import { NavController , NavParams} from 'ionic-angular';
 //import { HttpClient,  HttpHeaders } from '@angular/common/http';
 import { Http, Headers, } from '@angular/http';
 import { Core } from '../../service/core.service';
@@ -10,6 +10,7 @@ import { Storage } from '@ionic/storage';
 import { StorageMulti } from '../../service/storage-multi.service';
 import { LoginPage } from '../login/login';
 import { URLSearchParams } from '@angular/http';
+import { Events } from 'ionic-angular';
 declare var wordpress_url: string;
 @Component({
 	selector: 'page-petinfo',
@@ -19,7 +20,10 @@ declare var wordpress_url: string;
 export class PetinfoPage {
 	formPetInfo: FormGroup;
 	avatar:string;
+	file_name:string;
+	id: string;
 	login: Object = {};
+	pets: Object[] = [];
 	//selectOptions: selectOptions;
 	faded: boolean = false;
 	LoginPage = LoginPage;
@@ -40,6 +44,8 @@ export class PetinfoPage {
 	//private http:HttpClient,
 	private storage: Storage,
 	private navCtrl: NavController,
+	private navParams: NavParams,
+	private events: Events,
     private storageMul: StorageMulti
 	
 	) 
@@ -49,7 +55,16 @@ export class PetinfoPage {
 		  subTitle: 'Select your dog breed',
 		  mode: 'md'
 		};*/
-		this.getData();
+		this.id = navParams.get('id');
+		
+		if(!this.id)
+		{
+			this.getData();
+		}
+		else
+		{
+			this.loadPet(this.id);
+		}
 		//alert(this.login['username']);
 		
 		//alert(this.is_loggedin);
@@ -72,6 +87,47 @@ export class PetinfoPage {
 		},100);
 	}
 	
+	loadPet(id:string) {
+		console.log(id);
+		
+		var headers = new Headers();
+		headers.append("Accept", 'application/json');
+		headers.append('Content-Type', 'application/json' );
+		//const requestOptions = new RequestOptions({ headers: headers });
+
+		this.http.get(wordpress_url+'/petdataget.php?pet_id='+id)
+		.subscribe(res => {
+			this.pets = res.json();
+			console.log(this.pets);
+			if(this.pets)
+			{
+				this.pet_id=this.pets[0]["pet_id"];
+				this.userid=this.pets[0]["userid"];
+				this.pet_name=this.pets[0]["pet_name"];
+				this.pet_category=this.pets[0]["pet_category"];
+				this.pet_breed=this.pets[0]["pet_breed"];
+				this.pet_dob=this.pets[0]["pet_dob"];
+				this.pet_size=this.pets[0]["pet_size"];
+				if(this.pets[0]["file_name"])
+				{
+					this.file_name = wordpress_url+'/uploads/'+this.pets[0]["file_name"];
+				}
+				/*this.base64.encodeFile(strImage).then((base64File: string) => {
+					this.avatar = base64File;
+				}, (err) => {
+					console.log(err);
+				});*/
+				
+			}
+		}, err => {
+			console.log(err);
+			this.Toast.showShortBottom(err.json()["message"]).subscribe(
+				toast => {},
+				error => {console.log(error);}
+			);
+		});
+		
+	}
 	
 	editAvatar(){
 		this.Camera.getPicture({
@@ -87,6 +143,58 @@ export class PetinfoPage {
 		}, (err) => {});
 	}
 	
+	deleteData(){
+		let headers = new Headers();
+		//headers.set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		headers.set('Content-Type', 'application/json; charset=UTF-8');
+		
+
+		const params = new FormData();
+		params["pet_id"] = this.pet_id;
+		if(this.id)
+		{
+			params["mode"] = "delete";
+			this.core.showLoading();
+			console.log(JSON.stringify(params));
+			this.http.post(wordpress_url+'/petdataupload.php',JSON.stringify(params),{
+				headers: headers,
+				withCredentials: false
+			} )
+			.subscribe(res => {
+				console.log(res);
+					this.core.hideLoading();
+					//var result = res.text();
+					this.events.publish('RefreshPetsPage');
+					this.navCtrl.pop();
+					/*if (result=="5468")
+					{
+						console.log("One Hi");
+					}
+					else
+					{
+						console.log("One H2222223");					
+					}*/
+				//this.gotoLogin();
+			}, err => {
+				this.core.hideLoading();
+				/*this.Toast.showShortBottom(err.json()["message"]).subscribe(
+					toast => {},
+					error => {console.log(error);}
+				);*/
+				console.log(err);
+			});
+		}
+		else
+		{
+			this.events.publish('RefreshPetsPage');
+			this.navCtrl.pop();
+		}
+		
+		
+		
+		
+		
+	};
 	postData(){
 		let headers = new Headers();
 		//headers.set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
@@ -112,6 +220,14 @@ export class PetinfoPage {
 		params["pet_dob"] = this.pet_dob;
 		params["pet_size"] = this.pet_size;
 		params["data"] = this.avatar;
+		if(this.id)
+		{
+			params["mode"] = "edit";
+		}
+		else
+		{
+			params["mode"] = "add";
+		}
 		
 		
 
@@ -174,6 +290,7 @@ export class PetinfoPage {
 			console.log(res);
 				this.core.hideLoading();
 				//var result = res.text();
+				this.events.publish('RefreshPetsPage');
 				this.navCtrl.pop();
 				/*if (result=="5468")
 				{

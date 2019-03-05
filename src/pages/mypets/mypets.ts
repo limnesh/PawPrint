@@ -11,6 +11,7 @@ import { StorageMulti } from '../../service/storage-multi.service';
 //import { URLSearchParams } from '@angular/http';
 import { LoginPage } from '../login/login';
 import { PetinfoPage } from '../petinfo/petinfo';
+import { Events } from 'ionic-angular';
 
 declare var wordpress_url: string;
 @Component({
@@ -39,6 +40,7 @@ export class MypetsPage {
     private storageMul: StorageMulti,
 	private alertCtrl: AlertController,
     private navCtrl: NavController,
+	private events: Events,
 	platform: Platform,
 	) 
 	{
@@ -48,6 +50,11 @@ export class MypetsPage {
 		setTimeout(() => {
 				this.faded = true;
 		},100);
+		
+		
+		events.subscribe('RefreshPetsPage',() => {
+			this.loadPets(this.login['username']);
+		});
 	}
 	
 	
