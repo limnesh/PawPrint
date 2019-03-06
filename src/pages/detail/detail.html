@@ -188,7 +188,7 @@
 		</div>
 		<!-- Buy The Look -->
 		<div margin-top light-bg *ngIf="detail.modernshop_look_images && 0<detail.modernshop_look_images.length">
-			<div padding-horizontal padding-top><h6 no-margin dark>{{'detail.buy_the_look'|translate}}</h6></div>
+			<div padding-horizontal padding-top><h6 no-margin dark>Related Products</h6></div>
 			<ion-row padding-8 wrap>
 				<ion-col padding-8 width-50 *ngFor="let product of detail.modernshop_look_images" [navPush]="DetailPage" [navParams]="{id:product.id}">
 					<div relative overflow>
