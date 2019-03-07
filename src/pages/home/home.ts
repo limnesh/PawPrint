@@ -70,6 +70,7 @@ export class HomePage {
 		private screenOrientation: ScreenOrientation,
 		public modalCtrl: ModalController
 	) {
+		this.loadCategories();
 		this.display = display_mode;
 		platform.ready().then(() => {
 			if (platform.is('cordova')) {
@@ -148,7 +149,8 @@ export class HomePage {
 			};
 			getstatic();
 			});
-			this.getData();
+			//this.getData(); Limnesh
+			
 			
 		});
 		storage.get('require').then(val =>{
@@ -208,7 +210,7 @@ export class HomePage {
 	doRefresh(refresher) {
 		this.loadedProducts = false;
 		this.loadedCategories = false;
-		this.getData(true, refresher);
+		//this.getData(true, refresher);
 	}
 	loadLatest() {
 		this.products = []
@@ -252,14 +254,15 @@ export class HomePage {
 			this.http.get(wordpress_url + '/wp-json/wooconnector/product/getcategories', {
 				search: this.core.objectToURLParams(params)
 			}).subscribe(res => {
-				if (res.json() && res.json().length > 0) this.categories = this.categories.concat(res.json());
+				if (res.json() && res.json().length > 0) this.categories = res.json();
+				/*if (res.json() && res.json().length > 0) this.categories = this.categories.concat(res.json());
 				if (res.json() && res.json().length == 100) {
 					params.cat_num_page++;
 					loadCategories();
 				} else {
 					if (refresher) refresher.complete();
 					this.loadedCategories = true;
-				}
+				}*/
 			});
 		};
 		loadCategories();
@@ -285,7 +288,7 @@ export class HomePage {
 		this.loadedProducts = false;
 		this.loadLatest();
 	}
-	onSwipe(e) {
+	/*onSwipe(e) {
 		if (e['deltaX'] < -150 || e['deltaX'] > 150) {
 			if (e['deltaX'] > 0) {
 				if (this.latestIndex == 0) this.changeLatest(0);
@@ -302,5 +305,5 @@ export class HomePage {
 	viewAll() {
 		if (this.latesting) this.navCtrl.push(this.DetailCategoryPage, { id: this.latesting });
 		else this.navCtrl.push(this.LatestPage);
-	}
+	}*/
 }
