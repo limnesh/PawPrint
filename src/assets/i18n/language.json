@@ -125,7 +125,7 @@
 	"account": {
 		"login": "LOGIN",
 		"signout": {
-			"title": "Pawprints",
+			"title": "Paw Prints",
 			"message": "Do you want to logout?",
 			"no": "Cancel",
 			"yes": "OK"
@@ -172,7 +172,7 @@
 	},
 	"cart": {
 		"title": "Shopping cart",
-		"empty": "You don't like empty",
+		"empty": "Your cart is empty",
 		"shop": "Shop Now !",
 		"qty": "Qty:",
 		"have_coupon": "Have a Coupon?",

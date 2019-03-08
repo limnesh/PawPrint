@@ -10,7 +10,7 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_network__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__config_service__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -167,7 +167,7 @@ var Core = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -543,7 +543,7 @@ var TranslateService = (function () {
 
 /***/ }),
 
-/***/ 129:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -553,17 +553,17 @@ var TranslateService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_core_service__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_onesignal__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_onesignal__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_config_service__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_screen_orientation__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_screen_orientation__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__detail_detail__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__categories_categories__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__detail_category_detail_category__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__categories_categories__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__detail_category_detail_category__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__latest_latest__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__favorite_favorite__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__about_about__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__terms_terms__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__terms_terms__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__privacy_privacy__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__contact_contact__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__popupads_popupads__ = __webpack_require__(247);
@@ -627,7 +627,6 @@ var HomePage = /** @class */ (function () {
         this.clientSay = [];
         this.latestIndex = null;
         this.faded = false;
-        this.loadCategories();
         this.display = display_mode;
         platform.ready().then(function () {
             if (platform.is('cordova')) {
@@ -671,7 +670,8 @@ var HomePage = /** @class */ (function () {
                         config.set('required_login', res.json()['required_login']);
                         _this.statictext = config['text_static'];
                         _this.buttonCart;
-                        _this.getData();
+                        //this.getData();
+                        //this.loadCategories();
                     }, function (error) {
                         showAlertfirst();
                     });
@@ -708,6 +708,7 @@ var HomePage = /** @class */ (function () {
                 getstatic();
             });
             //this.getData(); Limnesh
+            _this.loadCategories();
         });
         storage.get('require').then(function (val) {
             if (!val)
@@ -906,398 +907,6 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 132:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailCategoryPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_core_service__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_toast__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pipes_object_to_array__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__detail_detail__ = __webpack_require__(35);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-// Custom
-
-
-
-
-//Pipes
-
-// Page
-
-var DetailCategoryPage = /** @class */ (function () {
-    function DetailCategoryPage(navParams, core, http, storage, translate, Toast) {
-        var _this = this;
-        this.navParams = navParams;
-        this.core = core;
-        this.http = http;
-        this.storage = storage;
-        this.Toast = Toast;
-        this.DetailPage = __WEBPACK_IMPORTED_MODULE_9__detail_detail__["a" /* DetailPage */];
-        this.DetailCategoryPage = DetailCategoryPage_1;
-        this.page = 1;
-        this.sort = '-date';
-        this.range = { lower: 0, upper: 0 };
-        this.data = {};
-        this.favorite = {};
-        this.products = [];
-        this.attributes = [];
-        this.filter = { grid: false, open: null, value: {}, valueCustom: {} };
-        this.categories = [];
-        this.noResuilt = false;
-        this.quantity = 1;
-        this.trans = {};
-        this.actionCart = [];
-        this.cartArray = {};
-        this.faded = false;
-        this.loaddata = false;
-        translate.get('detail').subscribe(function (trans) { return _this.trans = trans; });
-        this.id = navParams.get('id');
-        console.log("category id:");
-        console.log(this.id);
-        var params = { term_id: this.id };
-        http.get(wordpress_url + '/wp-json/wooconnector/product/getcategories', {
-            search: core.objectToURLParams(params)
-        }).subscribe(function (res) {
-            _this.data = res.json();
-            _this.getProducts().subscribe(function (products) {
-                if (products && products.length > 0) {
-                    _this.checkCart();
-                    _this.noResuilt = false;
-                    _this.page++;
-                    _this.products = products;
-                    _this.loaded = true;
-                    _this.loaddata = true;
-                    setTimeout(function () {
-                        _this.faded = true;
-                    }, 100);
-                    http.get(wordpress_url + '/wp-json/wooconnector/product/getattribute')
-                        .subscribe(function (res) {
-                        _this.attributes = res.json();
-                        _this.attributes['custom'] = new __WEBPACK_IMPORTED_MODULE_8__pipes_object_to_array__["a" /* ObjectToArray */]().transform(_this.attributes['custom']);
-                        _this.reset();
-                    });
-                }
-                else {
-                    _this.loaddata = true;
-                    _this.noResuilt = true;
-                }
-            });
-            _this.loadCategories();
-        });
-    }
-    DetailCategoryPage_1 = DetailCategoryPage;
-    DetailCategoryPage.prototype.ionViewDidEnter = function () {
-        this.checkCart();
-        this.getFavorite();
-        this.buttonCart.update();
-    };
-    DetailCategoryPage.prototype.checkCart = function () {
-        var _this = this;
-        this.storage.get('cart').then(function (val) {
-            var cartNew = Object.assign([], val);
-            _this.cartArray = {};
-            cartNew.forEach(function (productCart) {
-                _this.cartArray[productCart['id']] = productCart['id'];
-            });
-        });
-    };
-    DetailCategoryPage.prototype.loadCategories = function () {
-        var _this = this;
-        var params = { cat_num_page: 1, cat_per_page: 100, parent: this.id };
-        this.http.get(wordpress_url + '/wp-json/wooconnector/product/getcategories', {
-            search: this.core.objectToURLParams(params)
-        }).subscribe(function (res) {
-            if (res.json() && res.json().length > 0)
-                _this.categories = _this.categories.concat(res.json());
-            if (res.json() && res.json().length == 100) {
-                params.cat_num_page++;
-                _this.loadCategories();
-            }
-        });
-    };
-    ;
-    DetailCategoryPage.prototype.getFavorite = function () {
-        var _this = this;
-        this.storage.get('favorite').then(function (val) { if (val)
-            _this.favorite = val; });
-    };
-    DetailCategoryPage.prototype.getProducts = function () {
-        var _this = this;
-        return new __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"](function (observable) {
-            var tmpFilter = [];
-            for (var filter in _this.filter['value']) {
-                var attr = _this.filter['value'][filter];
-                if (Object.keys(attr).length > 0)
-                    for (var option in attr) {
-                        if (attr[option]) {
-                            var now = {};
-                            now['keyattr'] = filter;
-                            now['valattr'] = option;
-                            now['type'] = 'attributes';
-                            tmpFilter.push(now);
-                        }
-                    }
-                ;
-            }
-            for (var filter in _this.filter['valueCustom']) {
-                var attr = _this.filter['value'][filter];
-                if (attr && Object.keys(attr).length > 0)
-                    for (var option in attr) {
-                        if (attr[option]) {
-                            var now = {};
-                            now['keyattr'] = filter;
-                            now['valattr'] = option;
-                            now['type'] = 'custom';
-                            tmpFilter.push(now);
-                        }
-                    }
-                ;
-            }
-            var params = {
-                'post_category': _this.id.toString(),
-                'post_num_page': _this.page,
-                'post_per_page': wordpress_per_page,
-            };
-            var sortParams = _this.core.addSortToSearchParams(params, _this.sort);
-            if (tmpFilter.length == 0 && !_this.range['lower'] && !_this.range['upper']) {
-                _this.http.get(wordpress_url + '/wp-json/wooconnector/product/getproduct', {
-                    search: _this.core.objectToURLParams(params)
-                }).subscribe(function (products) {
-                    observable.next(products.json());
-                    observable.complete();
-                });
-            }
-            else {
-                if (tmpFilter.length > 0)
-                    params['attribute'] = JSON.stringify(tmpFilter);
-                if (_this.range['lower'] != 0)
-                    params['min_price'] = _this.range['lower'];
-                if (_this.range['upper'] != 0)
-                    params['max_price'] = _this.range['upper'];
-                _this.http.get(wordpress_url + '/wp-json/wooconnector/product/getproductbyattribute', {
-                    search: _this.core.objectToURLParams(params)
-                }).subscribe(function (products) {
-                    observable.next(products.json());
-                    observable.complete();
-                });
-            }
-        });
-    };
-    DetailCategoryPage.prototype.doRefresh = function (refresher) {
-        var _this = this;
-        this.page = 1;
-        this.faded = false;
-        this.getProducts().subscribe(function (products) {
-            if (products && products.length > 0)
-                _this.page++;
-            _this.products = [];
-            _this.products = products;
-            _this.over = false;
-            setTimeout(function () {
-                _this.faded = true;
-            }, 100);
-            refresher.complete();
-        });
-    };
-    DetailCategoryPage.prototype.load = function (infiniteScroll) {
-        var _this = this;
-        this.getProducts().subscribe(function (products) {
-            if (products && products.length > 0) {
-                _this.page++;
-                _this.products = _this.products.concat(products);
-            }
-            else
-                _this.over = true;
-            infiniteScroll.complete();
-        });
-    };
-    DetailCategoryPage.prototype.openCategory = function () {
-        if (this.filter['open'] == 'category')
-            this.filter['open'] = null;
-        else
-            this.filter['open'] = 'category';
-    };
-    DetailCategoryPage.prototype.openFilter = function () {
-        if (this.filter['open'] == 'filter')
-            this.filter['open'] = null;
-        else
-            this.filter['open'] = 'filter';
-    };
-    DetailCategoryPage.prototype.openSort = function () {
-        if (this.filter['open'] == 'sort')
-            this.filter['open'] = null;
-        else
-            this.filter['open'] = 'sort';
-    };
-    DetailCategoryPage.prototype.changeFavorite = function (product) {
-        if (this.favorite[product["id"]]) {
-            delete this.favorite[product["id"]];
-            this.storage.set('favorite', this.favorite);
-        }
-        else {
-            var data = {
-                id: product["id"],
-                name: product["name"],
-                regular_price: product["regular_price"],
-                sale_price: product["sale_price"],
-                price: product["price"],
-                on_sale: product["on_sale"],
-                price_html: product["price_html"],
-                type: product["type"]
-            };
-            if (product["modernshop_images"])
-                data['images'] = product["modernshop_images"][0].modern_square;
-            this.favorite[product["id"]] = data;
-            this.storage.set('favorite', this.favorite);
-        }
-    };
-    DetailCategoryPage.prototype.reset = function () {
-        var _this = this;
-        this.filter['value'] = {};
-        this.filter['valueCustom'] = {};
-        this.attributes['attributes'].forEach(function (attr) {
-            _this.filter['value'][attr['slug']] = {};
-        });
-        this.attributes['custom'].forEach(function (attr) {
-            _this.filter['valueCustom'][attr['slug']] = {};
-        });
-        this.range = { lower: 0, upper: 0 };
-    };
-    DetailCategoryPage.prototype.runFilter = function () {
-        var _this = this;
-        this.openFilter();
-        this.page = 1;
-        this.products = [];
-        this.faded = false;
-        this.loaded = false;
-        this.loaddata = false;
-        this.filtering = true;
-        this.getProducts().subscribe(function (products) {
-            if (products && products.length > 0) {
-                _this.page++;
-                _this.products = products;
-                _this.filtering = false;
-                _this.loaded = true;
-                _this.loaddata = true;
-                setTimeout(function () {
-                    _this.faded = true;
-                }, 100);
-            }
-            else {
-                _this.loaddata = true;
-                _this.noResuilt = true;
-            }
-        });
-    };
-    DetailCategoryPage.prototype.runSort = function () {
-        var _this = this;
-        this.filter['open'] = null;
-        this.page = 1;
-        this.products = [];
-        this.loaded = false;
-        this.faded = false;
-        this.loaddata = false;
-        this.getProducts().subscribe(function (products) {
-            if (products && products.length > 0) {
-                _this.page++;
-                _this.products = products;
-                _this.loaded = true;
-                _this.loaddata = true;
-                setTimeout(function () {
-                    _this.faded = true;
-                }, 100);
-            }
-            else {
-                _this.loaddata = true;
-                _this.noResuilt = true;
-            }
-        });
-    };
-    DetailCategoryPage.prototype.addtoCart = function (detail) {
-        var _this = this;
-        if (!detail['in_stock']) {
-            this.Toast.showShortBottom("Out of Stock").subscribe(function (toast) { }, function (error) { console.log(error); });
-            return;
-        }
-        var data = {};
-        var idCart = detail["id"];
-        data.idCart = idCart;
-        data.id = detail["id"];
-        data.name = detail["name"];
-        if (detail["wooconnector_crop_images"])
-            data.images = detail["wooconnector_crop_images"][0].wooconnector_medium;
-        data.regular_price = detail["regular_price"];
-        data.sale_price = detail["sale_price"];
-        data.price = detail["price"];
-        data.quantity = this.quantity;
-        data.sold_individually = detail['sold_individually'];
-        this.storage.get('cart').then(function (val) {
-            var individually = false;
-            if (!val)
-                val = {};
-            if (!val[idCart])
-                val[idCart] = data;
-            else {
-                if (!detail['sold_individually'])
-                    val[idCart].quantity += data.quantity;
-                else
-                    individually = true;
-            }
-            if (individually) {
-                _this.Toast.showShortBottom(_this.trans['individually']['before'] + detail['name'] + _this.trans['individually']['after']).subscribe(function (toast) { }, function (error) { console.log(error); });
-            }
-            else
-                _this.storage.set('cart', val).then(function () {
-                    _this.checkCart();
-                    _this.buttonCart.update();
-                    if (!detail['in_stock'] && detail['backorders'] == 'notify') {
-                        _this.Toast.showShortBottom(_this.trans["addOut"]).subscribe(function (toast) { }, function (error) { console.log(error); });
-                    }
-                    else {
-                        _this.Toast.showShortBottom(_this.trans["add"]).subscribe(function (toast) { }, function (error) { console.log(error); });
-                    }
-                });
-        });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('cart'),
-        __metadata("design:type", Object)
-    ], DetailCategoryPage.prototype, "buttonCart", void 0);
-    DetailCategoryPage = DetailCategoryPage_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-detail-category',template:/*ion-inline-start:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\detail-category\detail-category.html"*/'<ion-header>\n  <ion-navbar>\n    <span [innerHTML]="data.name"></span>\n	<!--<ion-title><span no-wrap [innerHTML]="data.name"></span></ion-title>-->\n	<ion-buttons end>\n		<button-cart #cart icon="icon-bag"></button-cart>\n	</ion-buttons>\n  </ion-navbar>\n  <ion-toolbar class="header-filter">\n	<button *ngIf="categories && 0<categories.length" ion-button clear color="dark" no-margin (click)="openCategory()" class="disable-hover button-drop">\n		<span [attr.primary]="filter.open==\'category\' ? true : null">{{\'categories.category\'|translate}}</span>\n		<ion-icon name="md-arrow-dropdown"></ion-icon>\n	</button>\n	<button ion-button clear color="dark" no-margin (click)="openFilter()" class="disable-hover button-drop">\n		<span [attr.primary]="filter.open==\'filter\' ? true : null">{{\'categories.filter\'|translate}}</span>\n		<ion-icon name="md-arrow-dropdown"></ion-icon>\n	</button>\n	<button ion-button clear color="dark" no-margin (click)="openSort()" class="disable-hover button-drop">\n		<span [attr.primary]="filter.open==\'sort\' ? true : null">{{\'categories.sort\'|translate}}</span>\n		<ion-icon name="md-arrow-dropdown"></ion-icon>\n	</button>\n	<div float-right>\n		<button float-right ion-button clear color="dark" no-margin class="disable-hover"\n		[ngClass]="{\'disabled\':filter.grid}" (click)="filter.grid=false">\n			<ion-icon name="icon-order"></ion-icon>\n		</button>\n		<button float-right ion-button clear color="dark" no-margin class="disable-hover"\n		[ngClass]="{\'disabled\':!filter.grid}" (click)="filter.grid=true">\n			<ion-icon name="icon-grid-out"></ion-icon>\n		</button>\n	</div>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n<!-- Refresh -->\n<ion-refresher (ionRefresh)="doRefresh($event)">\n	<ion-refresher-content\n		[pullingIcon]="\'general.pullingIcon\'|translate"\n		[pullingText]="\'general.pullToRefresh\'|translate"\n		[refreshingSpinner]="\'general.refreshingSpinner\'|translate"\n		[refreshingText]="\'general.refreshing\'|translate">\n	</ion-refresher-content>\n</ion-refresher>\n<!-- Category -->\n<ion-scroll tappable *ngIf="filter.open==\'category\'" ion-fixed width-100 height-100 mark (click)="filter.open=null" scrollY="true" class="list-categories">\n	<button detail-none ion-item *ngFor="let category of categories" [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">\n		<ion-label dark [innerHTML]="category.name"></ion-label>\n	</button>\n</ion-scroll>\n<!-- Filter -->\n<div *ngIf="filter.open==\'filter\'" ion-fixed width-100 height-100 light-bg>\n	<ion-scroll width-100 height-100 scrollY="true">\n		<ion-list>\n			\n			<hide-show color="light" *ngFor="let attr of attributes.attributes" class="filter-attribute">\n				<span this-title><b text-capitalize [innerHTML]="attr.name"></b></span>\n				<ion-list wrap this-content padding-bottom>\n					<ion-row>\n						<ion-col no-padding width-50 *ngFor="let term of attr.term">\n							<ion-item>\n								<ion-label >{{term.name}}</ion-label>\n								<ion-checkbox [(ngModel)]="filter.value[attr.slug][term.slug]"></ion-checkbox>\n							</ion-item>\n						</ion-col>\n					</ion-row>\n				</ion-list>\n			</hide-show> \n			<hide-show color="light" *ngFor="let attr of attributes.custom" class="filter-attribute">\n				<span this-title><b text-capitalize [innerHTML]="attr.name"></b></span>\n				<ion-list wrap this-content padding-bottom>\n					<ion-row>\n						<ion-col width-50 *ngFor="let term of attr.term|ObjectToArray" no-padding>\n							<ion-item>\n								<ion-label>{{term.name}}</ion-label>\n								<ion-checkbox [(ngModel)]="filter.valueCustom[attr.slug][term.slug]"></ion-checkbox>\n							</ion-item>\n						</ion-col>\n					</ion-row>\n				</ion-list>\n			</hide-show> \n			<!-- Range Price -->\n			<hide-show color="light">\n				<span this-title>\n					<b>{{\'categories.price_range\'|translate}}</b>\n					<span>{{range.lower|price}}</span><span *ngIf="0<range.upper"> - {{range.upper|price}}</span>\n				</span>\n				<ion-range mode="md" this-content dualKnobs="true" [min]="attributes.min_price" [max]="attributes.max_price" [(ngModel)]="range">\n				</ion-range>\n			</hide-show> \n		</ion-list>\n	</ion-scroll>\n</div>\n<!-- Sort -->\n<div *ngIf="filter.open==\'sort\'" ion-fixed width-100 height-100 mark tappable (click)="filter.open=null">\n	<ion-list radio-group [(ngModel)]="sort" class="list-sort" (ngModelChange)="runSort()">\n		<ion-item *ngFor="let option of \'categories.sortData\'|translate">\n			<ion-label [innerHTML]="option.text"></ion-label>\n			<ion-radio [value]="option.value"></ion-radio>\n		</ion-item>\n	</ion-list>		\n</div>\n<!-- List products -->\n<div width-100 text-center padding *ngIf="!loaddata"><ion-spinner name="ios"></ion-spinner></div>\n<ion-row padding-8 wrap *ngIf="0< products.length" class="faded-content" [ngClass]="{\'filter-list\':!filter.grid, \'faded-has-content\':faded}">\n	<ion-col padding-8 relative [attr.width-50]="filter.grid ? true : null" *ngFor="let product of products" class="product-block">\n		<div [navPush]="DetailPage" [navParams]="{id:product.id}" relative class="product-image clearfix">\n			<img float-left *ngIf="product.modernshop_images && product.modernshop_images[0].modern_square" [src]="product.modernshop_images[0].modern_square" />\n			<img float-left *ngIf="!product.modernshop_images || !product.modernshop_images[0].modern_square" src="assets/images/no-image.png" />\n			<div absolute bottom primary-bg product-sale *ngIf="product.sale_price && product.type!=\'variable\' && product.type!=\'grouped\'" class="sale">\n				<span light>{{(product.sale_price/product.regular_price*100)-100|number:\'1.0-0\'}}%</span>\n			</div>\n			<img absolute icon-sale *ngIf="(product.type==\'variable\'||product.type==\'grouped\') && product.on_sale" src="assets/images/icon-sale.png" />\n		</div>\n		<div class="product-info clearfix">\n			<div [navPush]="DetailPage" [navParams]="{id:product.id}">\n				<span class="product-title" dark  float-left width-100 [innerHTML]="product.name"></span>\n				<p [attr.no-margin]="filter.grid ? null : true" width-100>\n					<span class="product-price" *ngIf="product.type!=\'variable\' && product.type!=\'grouped\'" font-90>\n						<!-- <b dark font-120>{{product.price*1||0|price}}</b>\n						<span *ngIf="product.sale_price" margin-left text-through>{{product.regular_price*1|price}}</span> -->\n						<span class="simple-price" [innerHTML]="product.price_html"></span>\n					</span>\n					<span class="product-price" *ngIf="product.type==\'variable\' || product.type==\'grouped\'" font-90>\n						<b dark font-120 [innerHTML]="product.price_html"></b>\n					</span>\n				</p>\n				<div [hidden]="filter.grid">\n					<div class="rate">\n						<div class="rating" [style.width]="product.average_rating*20+\'%\'"></div>\n					</div>\n				</div>\n				<!-- <span class="product-title" dark [innerHTML]="product.name"></span> -->\n				\n				<div *ngIf="product.type==\'variable\' && 0< product.attributes.length" [hidden]="filter.grid">\n					<div *ngFor="let attribute of product.attributes|filter:{variation:true}">\n						<span [innerHTML]="attribute.name"></span>: \n						<span dark>{{attribute.options|ArrayJoin:\', \'}}</span>\n					</div>\n				</div>\n				<!-- <div [hidden]="filter.grid" overflow>\n					<div float-left primary no-wrap class="sale">{{\'categories.sold\'|translate}} {{product.total_sales}}</div>\n				</div> -->\n			</div>\n			<div class="button-cart-list" *ngIf="product.type!=\'variable\' && product.type!=\'grouped\' && product.type!=\'external\'">\n				<button ion-button class="button-cart" [disabled]="!product.price" (tap)="addtoCart(product)">\n					<div float-left width-100 font-weight-500>\n						<ion-icon class="icon-cart-add" name="icon-iconcartadd" primary></ion-icon>\n						<span primary class="add-to-cart">{{\'categories.addtocart\' | translate}}</span>\n					</div>\n				</button>\n				<ion-icon *ngIf="cartArray[product.id] == product.id" float-right class="icon-cart-iconcartcheck" name="icon-iconcartcheck" primary></ion-icon>\n			</div>\n			<div class="button-cart-list-option" *ngIf="product.type==\'variable\' || product.type==\'grouped\' || product.type==\'external\'" [navPush]="DetailPage" [navParams]="{id:product.id}">\n				<button ion-button class="button-cart">\n					<div float-left width-100 font-weight-500>\n						<span class="add-to-cart">{{\'categories.chooseoption\' | translate}}</span>\n					</div>\n				</button>\n			</div>\n		</div>\n		<button ion-button absolute top right clear no-margin (click)="changeFavorite(product)"\n		[color]="favorite[product.id] ? \'primary\' : \'primary\'" [hidden]="filter.grid" class="disable-hover btn-favorite">\n				<!--<ion-icon name="icon-favorite"></ion-icon>-->\n				\n				<ion-icon [name]="favorite[product.id] ? \'heart\':\'icon-favorite\'"></ion-icon>\n		</button>\n	</ion-col>\n</ion-row>\n<div padding *ngIf="products.length < 1 && noResuilt" text-center style="margin:0 auto;">{{\'general.no_data\'|translate}}</div>\n<ion-infinite-scroll (ionInfinite)="load($event)" *ngIf="!over && !filtering">\n	<ion-infinite-scroll-content></ion-infinite-scroll-content>\n</ion-infinite-scroll>\n</ion-content>\n<ion-footer>\n	<ion-toolbar>\n		<footer-tabs></footer-tabs>\n		<ion-row absolute width-100 height-100 top left light-bg [hidden]="filter.open!=\'filter\'">\n			<ion-col no-padding height-100>\n				<button ion-button full height-100 color="secondary" (click)="reset()">\n					<span>{{\'general.reset\'|translate}}</span>\n				</button>\n			</ion-col>\n			<ion-col no-padding height-100>\n				<button ion-button full height-100 (click)="runFilter()">\n					<span>{{\'categories.done\'|translate}}</span>\n				</button>\n			</ion-col>\n		</ion-row>\n		<div absolute width-100 height-100 top left mark [hidden]="filter.open!=\'sort\' && filter.open!=\'category\'" tappable (click)="filter.open=null"></div>\n	</ion-toolbar>\n</ion-footer>'/*ion-inline-end:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\detail-category\detail-category.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_4__service_core_service__["a" /* Core */], __WEBPACK_IMPORTED_MODULE_8__pipes_object_to_array__["a" /* ObjectToArray */]]
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__service_core_service__["a" /* Core */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_core_service__["a" /* Core */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__["c" /* TranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__["c" /* TranslateService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_7__ionic_native_toast__["a" /* Toast */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ionic_native_toast__["a" /* Toast */]) === "function" && _f || Object])
-    ], DetailCategoryPage);
-    return DetailCategoryPage;
-    var DetailCategoryPage_1, _a, _b, _c, _d, _e, _f;
-}());
-
-//# sourceMappingURL=detail-category.js.map
-
-/***/ }),
-
 /***/ 133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1308,9 +917,9 @@ var DetailCategoryPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__module_ng2_translate__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_social_sharing__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_social_sharing__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_storage_multi_service__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_onesignal__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_onesignal__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_in_app_browser__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__service_config_service__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__service_core_service__ = __webpack_require__(11);
@@ -1319,11 +928,11 @@ var DetailCategoryPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__profile_profile__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__order_order__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__favorite_favorite__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__terms_terms__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__terms_terms__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__privacy_privacy__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__contact_contact__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__about_about__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__search_search__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__search_search__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__petinfo_petinfo__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__mypets_mypets__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pipes_static__ = __webpack_require__(245);
@@ -1529,7 +1138,7 @@ var AccountPage = /** @class */ (function () {
     };
     AccountPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-account',template:/*ion-inline-start:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\account\account.html"*/'<ion-content>\n	<div relative overflow class="account-header" text-center (swipe)="onSwipeContent($event)">\n		<img float-left width-100 src="assets/images/account-bg.png" />\n		<div mark absolute top left width-100 height-100></div>\n		<ion-row center padding absolute top left width-100 height-100>\n			<ion-col secondary>\n				<button absolute ion-button color="light" clear navPop class="button-back">\n					<ion-icon icon-big name="md-arrow-back"></ion-icon>\n				</button>\n				<div *ngIf="!isLogin">\n					<div class="account-avatar" margin-auto>\n						<ion-icon name="icon-account"></ion-icon>\n					</div>\n					<button ion-button color="light" clear [navPush]="LoginPage" class="disable-hover">\n						<b>{{\'account.login\'|translate}}</b>\n					</button>\n				</div>\n				<div *ngIf="isLogin">\n					<div class="account-avatar" margin-auto>\n						<ion-icon *ngIf="!data.user.mobiconnector_avatar" name="icon-account" [navPush]="ProfilePage"></ion-icon>\n						<img *ngIf="data.user.mobiconnector_avatar" [src]="data.user.mobiconnector_avatar" [navPush]="ProfilePage" width-100 height-100 />\n					</div>\n					<button absolute ion-button color="light" clear (click)="signOut()" class="disable-hover button-signout">\n						<ion-icon icon-big name="icon-logout"></ion-icon>\n					</button>\n					<h4 no-margin [navPush]="ProfilePage">\n						<b light>{{data.user.display_name}}</b>\n						<ion-icon font-80 name="icon-pen"></ion-icon>\n					</h4>\n					<h5 no-margin>{{data.user.user_email}}</h5>\n				</div>\n			</ion-col>\n		</ion-row>\n	</div>\n	<ion-list no-margin class="account-list" (swipe)="onSwipeContent($event)">\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="isLogin?OrderPage:LoginPage">\n			<ion-icon name="icon-list-4" item-left></ion-icon>\n			<ion-label>{{\'account.my_order\'|translate}}</ion-label>\n			<ion-spinner item-right *ngIf="isLogin && !loadedOrder"></ion-spinner>\n			<ion-note item-right *ngIf="loadedOrder || !isLogin">{{data.order||0}}</ion-note>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="MypetsPage">\n			<ion-icon name="icon-favorite" item-left></ion-icon>\n			<ion-label>My Pets</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="FavoritePage">\n			<ion-icon name="basket" item-left></ion-icon>\n			<ion-label>{{\'account.favorite\'|translate}}</ion-label>\n			<ion-note item-right>{{data.favorite||0}}</ion-note>\n		</button>\n		<ion-item class="item item-block item-ios item-ios-dark" color="light" detail-none>\n			<ion-icon name="icon-notification" item-left></ion-icon>\n			<ion-label>{{\'account.push_notification\'|translate}}</ion-label>\n			<ion-toggle mode="md" item-right [(ngModel)]="data.notification" (ngModelChange)="notification()"></ion-toggle>\n		</ion-item>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="changeTextSize()">\n			<ion-icon name="icon-font" item-left></ion-icon>\n			<ion-label>{{\'account.text_size.title\'|translate}}</ion-label>\n			<ion-note item-right text-capitalize *ngIf="data.text">{{\'account.text_size.option.\'+data.text|translate}}</ion-note>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="shareApp()">\n			<ion-icon name="icon-send" item-left></ion-icon>\n			<ion-label>{{\'account.app_share\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="rateApp()">\n			<ion-icon name="icon-star-out" item-left></ion-icon>\n			<ion-label>{{\'account.rate_us\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="TermsPage">\n			<ion-icon name="icon-list" item-left></ion-icon>\n			<ion-label>{{\'account.terms_of_use\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="PrivacyPage">\n			<ion-icon name="icon-list-lock" item-left></ion-icon>\n			<ion-label>{{\'account.privacy_policy\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="ContactPage">\n			<ion-icon name="icon-location" item-left></ion-icon>\n			<ion-label>{{\'account.contact_us\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="AboutPage">\n			<ion-icon name="icon-info" item-left></ion-icon>\n			<ion-label>{{\'account.about_us\'|translate}}</ion-label>\n		</button>\n		<ion-item mode="md">\n			<ion-label text-center>{{\'account.version\'|translate}}</ion-label>\n		</ion-item>\n	</ion-list>\n</ion-content>\n\n<ion-footer (swipe)="onSwipeContent($event)"><ion-toolbar><footer-tabs></footer-tabs></ion-toolbar></ion-footer>'/*ion-inline-end:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\account\account.html"*/,
+            selector: 'page-account',template:/*ion-inline-start:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\account\account.html"*/'<ion-content>\n	<div relative overflow class="account-header" text-center (swipe)="onSwipeContent($event)">\n		<img float-left width-100 src="assets/images/account-bg.png" />\n		<div mark absolute top left width-100 height-100></div>\n		<ion-row center padding absolute top left width-100 height-100>\n			<ion-col secondary>\n				<button absolute ion-button color="light" clear navPop class="button-back">\n					<ion-icon icon-big name="md-arrow-back"></ion-icon>\n				</button>\n				<div *ngIf="!isLogin">\n					<div class="account-avatar" margin-auto>\n						<ion-icon name="icon-account"></ion-icon>\n					</div>\n					<button ion-button color="light" clear [navPush]="LoginPage" class="disable-hover">\n						<b>{{\'account.login\'|translate}}</b>\n					</button>\n				</div>\n				<div *ngIf="isLogin">\n					<div class="account-avatar" margin-auto>\n						<ion-icon *ngIf="!data.user.mobiconnector_avatar" name="icon-account" [navPush]="ProfilePage"></ion-icon>\n						<img *ngIf="data.user.mobiconnector_avatar" [src]="data.user.mobiconnector_avatar" [navPush]="ProfilePage" width-100 height-100 />\n					</div>\n					<button absolute ion-button color="light" clear (click)="signOut()" class="disable-hover button-signout">\n						<ion-icon icon-big name="icon-logout"></ion-icon>\n					</button>\n					<h4 no-margin [navPush]="ProfilePage">\n						<b light>{{data.user.display_name}}</b>\n						<ion-icon font-80 name="icon-pen"></ion-icon>\n					</h4>\n					<h5 no-margin>{{data.user.user_email}}</h5>\n				</div>\n			</ion-col>\n		</ion-row>\n	</div>\n	<ion-list no-margin class="account-list" (swipe)="onSwipeContent($event)">\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="isLogin?OrderPage:LoginPage">\n			<ion-icon name="icon-list-4" item-left></ion-icon>\n			<ion-label>{{\'account.my_order\'|translate}}</ion-label>\n			<ion-spinner item-right *ngIf="isLogin && !loadedOrder"></ion-spinner>\n			<ion-note item-right *ngIf="loadedOrder || !isLogin">{{data.order||0}}</ion-note>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="MypetsPage">\n			<ion-icon name="icon-favorite" item-left></ion-icon>\n			<ion-label>My Pets</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="FavoritePage">\n			<ion-icon name="basket" item-left></ion-icon>\n			<ion-label>{{\'account.favorite\'|translate}}</ion-label>\n			<ion-note item-right>{{data.favorite||0}}</ion-note>\n		</button>\n		<ion-item class="item item-block item-ios item-ios-dark" color="light" detail-none>\n			<ion-icon name="icon-notification" item-left></ion-icon>\n			<ion-label>{{\'account.push_notification\'|translate}}</ion-label>\n			<ion-toggle mode="md" item-right [(ngModel)]="data.notification" (ngModelChange)="notification()"></ion-toggle>\n		</ion-item>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="changeTextSize()">\n			<ion-icon name="icon-font" item-left></ion-icon>\n			<ion-label>{{\'account.text_size.title\'|translate}}</ion-label>\n			<ion-note item-right text-capitalize *ngIf="data.text">{{\'account.text_size.option.\'+data.text|translate}}</ion-note>\n		</button>\n		<!--<button class="item item-block item-ios item-ios-dark" color="light" (click)="shareApp()">\n			<ion-icon name="icon-send" item-left></ion-icon>\n			<ion-label>{{\'account.app_share\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" (click)="rateApp()">\n			<ion-icon name="icon-star-out" item-left></ion-icon>\n			<ion-label>{{\'account.rate_us\'|translate}}</ion-label>\n		</button>-->\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="TermsPage">\n			<ion-icon name="icon-list" item-left></ion-icon>\n			<ion-label>{{\'account.terms_of_use\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="PrivacyPage">\n			<ion-icon name="icon-list-lock" item-left></ion-icon>\n			<ion-label>{{\'account.privacy_policy\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="ContactPage">\n			<ion-icon name="icon-location" item-left></ion-icon>\n			<ion-label>{{\'account.contact_us\'|translate}}</ion-label>\n		</button>\n		<button class="item item-block item-ios item-ios-dark" color="light" [navPush]="AboutPage">\n			<ion-icon name="icon-info" item-left></ion-icon>\n			<ion-label>{{\'account.about_us\'|translate}}</ion-label>\n		</button>\n		<ion-item mode="md">\n			<ion-label text-center>{{\'account.version\'|translate}}</ion-label>\n		</ion-item>\n	</ion-list>\n</ion-content>\n\n<ion-footer (swipe)="onSwipeContent($event)"><ion-toolbar><footer-tabs></footer-tabs></ion-toolbar></ion-footer>'/*ion-inline-end:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\account\account.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_6__service_storage_multi_service__["a" /* StorageMulti */], __WEBPACK_IMPORTED_MODULE_11__ionic_native_device__["a" /* Device */], __WEBPACK_IMPORTED_MODULE_10__service_core_service__["a" /* Core */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */],
@@ -1819,7 +1428,7 @@ var PrivacyPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_toast__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_core_service__ = __webpack_require__(11);
@@ -2164,9 +1773,9 @@ var PetinfoPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_toast__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__service_config_service__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pipes_object_to_array__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__address_address__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__address_address__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__thanks_thanks__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__terms_terms__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__terms_terms__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__appointment_appointment__ = __webpack_require__(139);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2501,7 +2110,7 @@ var CheckoutPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_device__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__login_login__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__checkout_checkout__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__address_address__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__address_address__ = __webpack_require__(73);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2700,7 +2309,7 @@ var AppointmentPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_translate_pipe__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_translate_service__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_translate_service__ = __webpack_require__(128);
 /* unused harmony namespace reexport */
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__src_translate_service__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__src_translate_service__["b"]; });
@@ -2824,7 +2433,7 @@ var Config = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslatePipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__translate_service__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__translate_service__ = __webpack_require__(128);
 
 
 var TranslatePipe = (function () {
@@ -3059,7 +2668,7 @@ var Parser = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SplashPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__ = __webpack_require__(125);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3489,7 +3098,7 @@ var SignupPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_core_service__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__validator_core__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_toast__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__module_ng2_translate__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3755,7 +3364,7 @@ var DetailOrderPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_toast__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_core_service__ = __webpack_require__(11);
@@ -4138,7 +3747,7 @@ var PopupadsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__service_core_service__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__service_config_service__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pipes_object_to_array__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__address_address__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__address_address__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__login_login__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__detail_detail__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__appointment_appointment__ = __webpack_require__(139);
@@ -4648,9 +4257,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_keyboard__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_keyboard__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_screen_orientation__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_screen_orientation__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_about_footer_about_footer__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_button_cart_button_cart__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_footer_tabs_footer_tabs__ = __webpack_require__(350);
@@ -4667,11 +4276,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pipes_static__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pipes_viewmore__ = __webpack_require__(359);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_common__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_home_home__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_home_home__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_splash_splash__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_categories_categories__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_detail_category_detail_category__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_search_search__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_categories_categories__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_detail_category_detail_category__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_search_search__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_account_account__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_login_login__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_signup_signup__ = __webpack_require__(241);
@@ -4681,7 +4290,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_rating_rating__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_order_order__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_favorite_favorite__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_terms_terms__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_terms_terms__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_petinfo_petinfo__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_mypets_mypets__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_privacy_privacy__ = __webpack_require__(136);
@@ -4689,18 +4298,18 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_about_about__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_popupads_popupads__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_profile_profile__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_address_address__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_address_address__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_appointment_appointment__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_checkout_checkout__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_detail_order_detail_order__ = __webpack_require__(243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_thanks_thanks__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_latest_latest__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_splash_screen__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__ionic_native_camera__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_splash_screen__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__ionic_native_camera__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__ionic_native_in_app_browser__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__ionic_native_network__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__ionic_native_onesignal__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__ionic_native_social_sharing__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__ionic_native_network__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__ionic_native_onesignal__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__ionic_native_social_sharing__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__ionic_native_toast__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__ionic_native_calendar__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__ionic_native_date_picker__ = __webpack_require__(253);
@@ -4935,7 +4544,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_toast__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_keyboard__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_keyboard__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__signup_signup__ = __webpack_require__(241);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5073,18 +4682,18 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_core_service__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_keyboard__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_keyboard__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__service_config_service__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_network__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_screen_orientation__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_network__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_screen_orientation__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_device__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_splash_splash__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_home_home__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_home_home__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5344,7 +4953,7 @@ var ButtonCartComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_core_service__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_toast__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_photo_viewer__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__ = __webpack_require__(44);
@@ -5352,7 +4961,7 @@ var ButtonCartComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pipes_object_to_array__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__comments_comments__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__detail_category_detail_category__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__detail_category_detail_category__ = __webpack_require__(68);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5745,12 +5354,12 @@ var DetailPage = /** @class */ (function () {
                 _this.storage.set('cart', val).then(function () {
                     _this.buttonCart.update();
                     if (alertContent != '') {
-                        var alert = _this.alertCtrl.create({
+                        var alert_1 = _this.alertCtrl.create({
                             cssClass: 'alert-no-title',
                             message: alertContent,
                             buttons: [_this.trans['grouped']['button']]
                         });
-                        alert.present();
+                        alert_1.present();
                     }
                     else {
                         _this.Toast.showShortBottom(_this.trans["add"]).subscribe(function (toast) { }, function (error) { console.log(error); });
@@ -5792,13 +5401,24 @@ var DetailPage = /** @class */ (function () {
     ], DetailPage.prototype, "buttonCart", void 0);
     DetailPage = DetailPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-detail',template:/*ion-inline-start:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\detail\detail.html"*/'<ion-header>\n	<ion-navbar>\n		<ion-title>{{\'detail.title\'|translate}}</ion-title>\n		<ion-buttons end>\n			<button-cart #cart icon="icon-bag"></button-cart>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content secondary-bg>\n	<!-- Refresh -->\n	<ion-refresher (ionRefresh)="doRefresh($event)">\n		<ion-refresher-content [pullingIcon]="\'general.pullingIcon\'|translate" [pullingText]="\'general.pullToRefresh\'|translate"\n		 [refreshingSpinner]="\'general.refreshingSpinner\'|translate" [refreshingText]="\'general.refreshing\'|translate">\n		</ion-refresher-content>\n	</ion-refresher>\n	<!-- Slides -->\n	<div relative class="product-slides faded-content" padding-4 light-bg  [ngClass]="{\'faded-has-content\':faded}">\n		<ion-slides *ngIf="detail.wooconnector_crop_images" (ionSlideDidChange)="changeSlides($event)" pager="true" dir="{{display}}">\n			<ion-slide *ngFor="let image of detail.wooconnector_crop_images">\n				<img float-left *ngIf="image.wooconnector_large" [src]="image.wooconnector_large" (click)="viewImage(image.wooconnector_large)"\n				/>\n				<img float-left *ngIf="!image.wooconnector_large" src="assets/images/no-image.png" />\n			</ion-slide>\n		</ion-slides>\n		<div absolute class="product-status" *ngIf="detail.in_stock">\n			<img float-left *ngIf="detail.on_sale" src="assets/images/instock.png" />\n		</div>\n		<div absolute class="product-status" *ngIf="!detail.in_stock">\n			<img float-left *ngIf="detail.on_sale" src="assets/images/outstock.png" />\n		</div>\n		<button ion-button absolute *ngIf="detail.name" (click)="changeFavorite()"\n		 class="product-favorite disable-hover" light-bg>\n			<!--<ion-icon [color]="favorite[id] ?\'primary\':\'gray\'" icon-big name="md-heart"></ion-icon>-->\n			<ion-icon icon-big color=\'primary\' [name]="favorite[id] ? \'heart\':\'icon-favorite\'"></ion-icon>\n		</button>\n		<div absolute bottom primary-bg product-sale *ngIf="detail.sale_price">\n			<span light>{{(detail.sale_price/detail.regular_price*100)-100|number:\'1.0-0\'}}%</span>\n		</div>\n		<div absolute text-center padding-4 width-100 class="slides-info" *ngIf="detail.wooconnector_crop_images" dir="ltr">\n			<span light padding-4>{{slides}} of {{detail.wooconnector_crop_images.length}}</span>\n		</div>\n	</div>\n	<!-- Button Home -->\n	<button ion-button ion-fixed bottom margin color="light" class="button-home" (click)="popToRoot()">\n		<ion-icon name="icon-home-2" primary></ion-icon>\n	</button>\n	<!-- Body -->\n	<div width-100 text-center padding *ngIf="!loaddata"><ion-spinner name="ios" ></ion-spinner></div>\n	<div *ngIf="detail.name" (swipe)="onSwipe($event)" class="faded-content" [ngClass]="{\'faded-has-content\':faded}">\n		<!-- Info -->\n		<div padding light-bg>\n			<h3 *ngIf="detail.type!=\'grouped\' && detail.price" no-margin>\n				<span margin-right *ngIf="detail.sale_price" font-80>\n					<span text-through>{{detail.regular_price*1|price}}</span>\n				</span>\n				<b dark font-110>{{detail.price*1||0|price}}</b>\n			</h3>\n			<h3 *ngIf="detail.type==\'grouped\'" no-margin dark>\n				<b font-80 [innerHTML]="detail.price_html"></b>\n			</h3>\n			<span font-110 dark [innerHTML]="detail.name"></span>\n			<ion-row center class="product-rate" [navPush]="CommentsPage" [navParams]="{id:detail.id,data:detail.wooconnector_reviews,allow:reviews_allowed}">\n				<div class="rate">\n					<div class="rating" [style.width]="rating*20+\'%\'"></div>\n				</div>\n				<span margin-left no-wrap>{{ratingCount}} {{\'detail.rating\'|translate}} & {{reviewCount.length}} {{\'detail.review\'|translate}}</span>\n				<ion-icon margin-left name="ios-arrow-forward"></ion-icon>\n			</ion-row>\n		</div>\n		<!-- Attributes -->\n		<div padding margin-top light-bg *ngIf="detail.type!=\'grouped\' && detail.type!=\'external\'">\n			<!--<div *ngIf="detail.type==\'simple\'">\n				<div *ngFor="let attr of detail.attributes">\n					\n					<div *ngIf="(attr.name|uppercase)!=\'COLOR\'" [ngClass]="(attr.name|uppercase)==\'SIZE\' ? \'attribute-size\':\'attribute-default\'">\n						<div text-uppercase><b dark>{{attr.name}}</b></div>\n						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getSimpleAttributes()">\n							<ion-item float-left *ngFor="let option of attr.options" no-padding>\n								<ion-label [attr.text-center]="(attr.name|uppercase)==\'SIZE\'?true:null">{{option}}</ion-label>\n								<ion-radio [value]="(option|lowercase)" (ionSelect)="radioChecked()"></ion-radio>\n							</ion-item>\n						</ion-list>\n					</div>\n				</div>\n			</div>-->\n			<div *ngIf="detail.type==\'variable\'">\n				<div *ngFor="let attr of detail.attributes | filter:{variation:true}">\n					<!-- Color -->\n					<div *ngIf="(attr.name|uppercase)==\'COLOR\'" class="attribute-color">\n						<div text-uppercase><b dark>{{attr.name}}</b></div>\n						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getVariation()">\n							<ion-item float-left margin-right *ngFor="let option of attr.options" no-padding>\n								<ion-radio [value]="(option|lowercase)" [style.background]="option"></ion-radio>\n							</ion-item>\n						</ion-list>\n					</div>\n					<!-- Size or Orther -->\n					<div *ngIf="(attr.name|uppercase)!=\'COLOR\' && (attr.name|uppercase)!=\'SUB_CATEGORY_ID\'" [ngClass]="(attr.name|uppercase)==\'SIZE\' ? \'attribute-size\':\'attribute-default\'">\n						<div text-uppercase><b dark>{{attr.name}}</b></div>\n						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getVariation()">\n							<ion-item float-left *ngFor="let option of attr.options" no-padding>\n								<ion-label [attr.text-center]="(attr.name|uppercase)==\'SIZE\'?true:null">{{option}}</ion-label>\n								<ion-radio [value]="(option|lowercase)" (ionSelect)="radioChecked()"></ion-radio>\n							</ion-item>\n						</ion-list>\n					</div>\n				</div>\n			</div>\n			<!-- Quantum & Price-->\n			<div text-uppercase dark no-wrap class="quantity-title">\n				<b>{{\'detail.quantity\'|translate}}</b>\n				<b float-right>{{\'detail.price\'|translate}}</b>\n			</div>\n			<ion-row dark class="quantity-price" wrap>\n				<ion-col no-padding *ngIf="!detail.sold_individually">\n					<button-quantity float-left [(ngModel)]="quantity" [max]="(detail.manage_stock && !detail.backorders_allowed)?detail.stock_quantity:false"></button-quantity>\n				</ion-col>\n				<ion-col no-padding *ngIf="detail.sold_individually">\n					<h3 no-margin><b>1</b></h3>\n				</ion-col>\n				<ion-col no-padding text-right>\n					<h3 no-margin><b>{{detail.price*quantity||0|price}}</b></h3>\n				</ion-col>\n			</ion-row>\n		</div>\n		<!-- Grouped -->\n		<div padding-horizontal border-bottom light-bg *ngIf="detail.type==\'grouped\'">\n			<ion-row *ngFor="let product of groupedProduct; let i = index" class="item-product-grouped">\n				<ion-col no-padding [navPush]="DetailPage" [navParams]="{id:product.id}">\n					<div dark><b [innerHTML]="product.name"></b></div>\n					<span *ngIf="product.sale_price" font-80>\n					<span text-through>{{product.regular_price*1|price}}</span>\n					</span>\n					<b dark>{{product.price*1||0|price}}</b>\n					<ion-badge font-80 *ngIf="product.sale_price">{{(product.sale_price/product.regular_price*100)-100|number:\'1.0-0\'}}%</ion-badge>\n					<span *ngIf="!detail.in_stock" font-80>\n					{{\'detail.outStock\'|translate}}\n				</span>\n				</ion-col>\n				<ion-col *ngIf="product.type==\'variable\' || product.type==\'external\'" width-33 no-padding>\n					<button ion-button clear no-margin [navPush]="DetailPage" [navParams]="{id:product.id}" class="disable-hover">\n					<span *ngIf="product.type==\'variable\'">{{\'detail.grouped.variable\'|translate}}</span>\n					<span *ngIf="product.type==\'external\'" text-underline>{{product.button_text}}</span>\n				</button>\n				</ion-col>\n				<ion-col *ngIf="product.type==\'simple\' && detail.in_stock" width-33 no-padding>\n					<ion-item mode="md" *ngIf="product.sold_individually">\n						<ion-checkbox mode="md" [(ngModel)]="groupedProduct[i].quantity" value="1"></ion-checkbox>\n					</ion-item>\n					<button-quantity *ngIf="!product.sold_individually" float-left [(ngModel)]="groupedProduct[i].quantity" min="0" [max]="(product.manage_stock && !product.backorders_allowed)?product.stock_quantity:null"></button-quantity>\n				</ion-col>\n			</ion-row>\n		</div>\n		<!-- About This Item -->\n		<div padding margin-top light-bg border-bottom class="about-this-item" *ngIf="detail.type!=\'grouped\' && (detail.sku || detail.manage_stock || 0< detail.attributes.length)">\n			<div margin-bottom><h6 no-margin dark>{{\'detail.about_this_item\'|translate}}</h6></div>\n			<ion-row *ngIf="detail.sku">\n				<ion-col><b>{{\'detail.sku\'|translate}}</b></ion-col>\n				<ion-col>{{detail.sku}}</ion-col>\n			</ion-row>\n			<ion-row *ngIf="detail.dimensions && detail.dimensions.height">\n				<ion-col><b>{{\'detail.height\'|translate}}</b></ion-col>\n				<ion-col>{{detail.dimensions.height}}</ion-col>\n			</ion-row>\n			<ion-row *ngIf="detail.dimensions && detail.dimensions.length">\n				<ion-col><b>{{\'detail.length\'|translate}}</b></ion-col>\n				<ion-col>{{detail.dimensions.length}}</ion-col>\n			</ion-row>\n			<ion-row *ngIf="detail.dimensions && detail.dimensions.width">\n				<ion-col><b>{{\'detail.width\'|translate}}</b></ion-col>\n				<ion-col>{{detail.dimensions.width}}</ion-col>\n			</ion-row>\n			<ion-row *ngIf="detail.manage_stock">\n				<ion-col><b>{{\'detail.quantity\'|translate}}</b></ion-col>\n				<ion-col>{{detail.stock_quantity||0}} {{\'detail.available\'|translate}}</ion-col>\n			</ion-row>\n			<ion-row *ngFor="let attribute of detail.attributes">\n				<div *ngIf="(attribute.name|uppercase)!=\'SUB_CATEGORY_ID\'"> \n				<ion-col text-capitalize><b>{{attribute.name}}</b></ion-col>\n				<ion-col>{{attribute.options|ArrayJoin}}</ion-col>\n				</div>\n			</ion-row>\n		</div>\n		<!-- Item Description -->\n		<div padding-horizontal light-bg class="detail-description" *ngIf="description">\n			<div padding-top><h6 no-margin dark>{{\'detail.item_description\'|translate}}</h6></div>\n			<div *ngIf="!viewMore" [innerHtml]="description|viewmore" class="description-content"></div>\n			<div *ngIf="viewMore" [innerHtml]="description" class="description-content disable-hover"></div>\n			<button ion-button clear (click)="viewMore=!viewMore" font-80 no-padding no-margin>\n			<div *ngIf="!viewMore">{{\'detail.view_more\'|translate}}</div>\n			<div *ngIf="viewMore">{{\'detail.view_less\'|translate}}</div>\n		</button>\n		</div>\n		<!-- Buyer Protection -->\n		<div margin-top class="buyer-protection">\n			<div class="buyer-icon">\n				<ion-icon name="icon-safe" success></ion-icon>\n			</div>\n			<div class="buyer-content" padding>\n				<div><b dark [innerHTML]="\'modern_buyer_product_title\'|static"></b></div>\n				<div [innerHTML]="\'modern_description_buyer_product\'|static"></div>\n			</div>\n		</div>\n		<!-- Buy The Look -->\n		<div margin-top light-bg *ngIf="detail.modernshop_look_images && 0<detail.modernshop_look_images.length">\n			<div padding-horizontal padding-top><h6 no-margin dark>Related Products</h6></div>\n			<ion-row padding-8 wrap>\n				<ion-col padding-8 width-50 *ngFor="let product of detail.modernshop_look_images" [navPush]="DetailPage" [navParams]="{id:product.id}">\n					<div relative overflow>\n						<img float-left *ngIf="product.images && product.images.modern_square" [src]="product.images.modern_square" />\n						<img float-left *ngIf="!product.images || !product.images.modern_square" src="assets/images/no-image.png" />\n						<div absolute bottom primary-bg product-sale *ngIf="product.sale_price">\n							<span light>{{(product.sale_price/product.regular_price*100)-100|number:\'1.0-0\'}}%</span>\n						</div>\n					</div>\n					<p float-left width-100>\n						<span *ngIf="product.type!=\'variable\' && product.type!=\'grouped\'">\n						<!-- <b dark font-120>{{product.price*1||0|price}}</b>\n						<span *ngIf="product.sale_price" margin-left text-through>{{product.regular_price*1|price}}</span> -->\n						<span dark class="simple-price" [innerHTML]="product.price_html"></span>\n						</span>\n						<span *ngIf="product.type==\'variable\' || product.type==\'grouped\'">\n						<b dark font-120 [innerHTML]="product.price_html"></b>\n					</span>\n					</p>\n					<span float-left width-100 [innerHTML]="product.name"></span>\n				</ion-col>\n			</ion-row>\n		</div>\n	</div>\n	<ion-infinite-scroll (ionInfinite)="load($event)" *ngIf="!over" threshold="1%" position="bottom">\n		<ion-infinite-scroll-content></ion-infinite-scroll-content>\n	</ion-infinite-scroll>\n</ion-content>\n<ion-footer class="detail-footer">\n	<ion-toolbar no-padding-hard>\n		<ion-row *ngIf="detail.name">\n			<ion-col border-right no-padding>\n				<button ion-button full clear color="dark" (click)="share()" class="disable-hover">\n				<ion-icon icon-big name="icon-share"></ion-icon>\n			</button>\n			</ion-col>\n			<ion-col no-padding>\n				<button ion-button full clear class="disable-hover" color="dark" [navPush]="CommentsPage" [navParams]="{id:detail.id,data:detail.wooconnector_reviews,allow:reviews_allowed}">\n				<ion-icon icon-big name="icon-chat"></ion-icon>\n				<ion-badge absolute>{{detail.rating_count}}</ion-badge>\n			</button>\n			</ion-col>\n			<ion-col width-50 primary-bg text-center no-padding>\n				<button ion-button full clear class="disable-hover" [disabled]="!(detail.price*1) && detail.price.html == \'\'" color="light" (click)="addToCart()">\n					<h5 no-margin *ngIf="detail.type!=\'external\'">{{\'detail.addToCart\'|translate}}</h5>\n					<span *ngIf="detail.type==\'external\'" no-wrap-ellipsis>\n						<ion-icon name="icon-link"></ion-icon>\n						<span>{{detail.button_text}}</span>\n					</span>\n				</button>\n			</ion-col>\n		</ion-row>\n	</ion-toolbar>\n</ion-footer>'/*ion-inline-end:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\detail\detail.html"*/,
+            selector: 'page-detail',template:/*ion-inline-start:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\detail\detail.html"*/'<ion-header>\n	<ion-navbar>\n		<ion-title>{{\'detail.title\'|translate}}</ion-title>\n		<ion-buttons end>\n			<button-cart #cart icon="icon-bag"></button-cart>\n		</ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content secondary-bg>\n	<!-- Refresh -->\n	<ion-refresher (ionRefresh)="doRefresh($event)">\n		<ion-refresher-content [pullingIcon]="\'general.pullingIcon\'|translate" [pullingText]="\'general.pullToRefresh\'|translate"\n		 [refreshingSpinner]="\'general.refreshingSpinner\'|translate" [refreshingText]="\'general.refreshing\'|translate">\n		</ion-refresher-content>\n	</ion-refresher>\n	<!-- Slides -->\n	<div relative class="product-slides faded-content" padding-4 light-bg  [ngClass]="{\'faded-has-content\':faded}">\n		<ion-slides *ngIf="detail.wooconnector_crop_images" (ionSlideDidChange)="changeSlides($event)" pager="true" dir="{{display}}">\n			<ion-slide *ngFor="let image of detail.wooconnector_crop_images">\n				<img float-left *ngIf="image.wooconnector_large" [src]="image.wooconnector_large" (click)="viewImage(image.wooconnector_large)"\n				/>\n				<img float-left *ngIf="!image.wooconnector_large" src="assets/images/no-image.png" />\n			</ion-slide>\n		</ion-slides>\n		<div absolute class="product-status" *ngIf="detail.in_stock">\n			<img float-left *ngIf="detail.on_sale" src="assets/images/instock.png" />\n		</div>\n		<div absolute class="product-status" *ngIf="!detail.in_stock">\n			<img float-left *ngIf="detail.on_sale" src="assets/images/outstock.png" />\n		</div>\n		<button ion-button absolute *ngIf="detail.name" (click)="changeFavorite()"\n		 class="product-favorite disable-hover" light-bg>\n			<!--<ion-icon [color]="favorite[id] ?\'primary\':\'gray\'" icon-big name="md-heart"></ion-icon>-->\n			<ion-icon icon-big color=\'primary\' [name]="favorite[id] ? \'heart\':\'icon-favorite\'"></ion-icon>\n		</button>\n		<div absolute bottom primary-bg product-sale *ngIf="detail.sale_price">\n			<span light>{{(detail.sale_price/detail.regular_price*100)-100|number:\'1.0-0\'}}%</span>\n		</div>\n		<div absolute text-center padding-4 width-100 class="slides-info" *ngIf="detail.wooconnector_crop_images" dir="ltr">\n			<span light padding-4>{{slides}} of {{detail.wooconnector_crop_images.length}}</span>\n		</div>\n	</div>\n	<!-- Button Home -->\n	<button ion-button ion-fixed bottom margin color="light" class="button-home" (click)="popToRoot()">\n		<ion-icon name="icon-home-2" primary></ion-icon>\n	</button>\n	<!-- Body -->\n	<div width-100 text-center padding *ngIf="!loaddata"><ion-spinner name="ios" ></ion-spinner></div>\n	<div *ngIf="detail.name" (swipe)="onSwipe($event)" class="faded-content" [ngClass]="{\'faded-has-content\':faded}">\n		<!-- Info -->\n		<div padding light-bg>\n			<h3 *ngIf="detail.type!=\'grouped\' && detail.price" no-margin>\n				<span margin-right *ngIf="detail.sale_price" font-80>\n					<span text-through>{{detail.regular_price*1|price}}</span>\n				</span>\n				<b dark font-110>{{detail.price*1||0|price}}</b>\n			</h3>\n			<h3 *ngIf="detail.type==\'grouped\'" no-margin dark>\n				<b font-80 [innerHTML]="detail.price_html"></b>\n			</h3>\n			<span font-110 dark [innerHTML]="detail.name"></span>\n			<ion-row center class="product-rate" [navPush]="CommentsPage" [navParams]="{id:detail.id,data:detail.wooconnector_reviews,allow:reviews_allowed}">\n				<div class="rate">\n					<div class="rating" [style.width]="rating*20+\'%\'"></div>\n				</div>\n				<span margin-left no-wrap>{{ratingCount}} {{\'detail.rating\'|translate}} & {{reviewCount.length}} {{\'detail.review\'|translate}}</span>\n				<ion-icon margin-left name="ios-arrow-forward"></ion-icon>\n			</ion-row>\n		</div>\n		<!-- Attributes -->\n		<div padding margin-top light-bg *ngIf="detail.type!=\'grouped\' && detail.type!=\'external\'">\n			<!--<div *ngIf="detail.type==\'simple\'">\n				<div *ngFor="let attr of detail.attributes">\n					\n					<div *ngIf="(attr.name|uppercase)!=\'COLOR\'" [ngClass]="(attr.name|uppercase)==\'SIZE\' ? \'attribute-size\':\'attribute-default\'">\n						<div text-uppercase><b dark>{{attr.name}}</b></div>\n						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getSimpleAttributes()">\n							<ion-item float-left *ngFor="let option of attr.options" no-padding>\n								<ion-label [attr.text-center]="(attr.name|uppercase)==\'SIZE\'?true:null">{{option}}</ion-label>\n								<ion-radio [value]="(option|lowercase)" (ionSelect)="radioChecked()"></ion-radio>\n							</ion-item>\n						</ion-list>\n					</div>\n				</div>\n			</div>-->\n			<div *ngIf="detail.type==\'variable\'">\n				<div *ngFor="let attr of detail.attributes | filter:{variation:true}">\n					<!-- Color -->\n					<div *ngIf="(attr.name|uppercase)==\'COLOR\'" class="attribute-color">\n						<div text-uppercase><b dark>{{attr.name}}</b></div>\n						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getVariation()">\n							<ion-item float-left margin-right *ngFor="let option of attr.options" no-padding>\n								<ion-radio [value]="(option|lowercase)" [style.background]="option"></ion-radio>\n							</ion-item>\n						</ion-list>\n					</div>\n					<!-- Size or Orther -->\n					<div *ngIf="(attr.name|uppercase)!=\'COLOR\' && (attr.name|uppercase)!=\'SUB_CATEGORY_ID\'" [ngClass]="(attr.name|uppercase)==\'SIZE\' ? \'attribute-size\':\'attribute-default\'">\n						<div text-uppercase><b dark>{{attr.name}}</b></div>\n						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getVariation()">\n							<ion-item float-left *ngFor="let option of attr.options" no-padding>\n								<ion-label [attr.text-center]="(attr.name|uppercase)==\'SIZE\'?true:null">{{option}}</ion-label>\n								<ion-radio [value]="(option|lowercase)" (ionSelect)="radioChecked()"></ion-radio>\n							</ion-item>\n						</ion-list>\n					</div>\n				</div>\n			</div>\n			<!-- Quantum & Price-->\n			<div text-uppercase dark no-wrap class="quantity-title">\n				<b>{{\'detail.quantity\'|translate}}</b>\n				<b float-right>{{\'detail.price\'|translate}}</b>\n			</div>\n			<ion-row dark class="quantity-price" wrap>\n				<ion-col no-padding *ngIf="!detail.sold_individually">\n					<button-quantity float-left [(ngModel)]="quantity" [max]="(detail.manage_stock && !detail.backorders_allowed)?detail.stock_quantity:false"></button-quantity>\n				</ion-col>\n				<ion-col no-padding *ngIf="detail.sold_individually">\n					<h3 no-margin><b>1</b></h3>\n				</ion-col>\n				<ion-col no-padding text-right>\n					<h3 no-margin><b>{{detail.price*quantity||0|price}}</b></h3>\n				</ion-col>\n			</ion-row>\n		</div>\n		<!-- Grouped -->\n		<div padding-horizontal border-bottom light-bg *ngIf="detail.type==\'grouped\'">\n			<ion-row *ngFor="let product of groupedProduct; let i = index" class="item-product-grouped">\n				<ion-col no-padding [navPush]="DetailPage" [navParams]="{id:product.id}">\n					<div dark><b [innerHTML]="product.name"></b></div>\n					<span *ngIf="product.sale_price" font-80>\n					<span text-through>{{product.regular_price*1|price}}</span>\n					</span>\n					<b dark>{{product.price*1||0|price}}</b>\n					<ion-badge font-80 *ngIf="product.sale_price">{{(product.sale_price/product.regular_price*100)-100|number:\'1.0-0\'}}%</ion-badge>\n					<span *ngIf="!detail.in_stock" font-80>\n					{{\'detail.outStock\'|translate}}\n				</span>\n				</ion-col>\n				<ion-col *ngIf="product.type==\'variable\' || product.type==\'external\'" width-33 no-padding>\n					<button ion-button clear no-margin [navPush]="DetailPage" [navParams]="{id:product.id}" class="disable-hover">\n					<span *ngIf="product.type==\'variable\'">{{\'detail.grouped.variable\'|translate}}</span>\n					<span *ngIf="product.type==\'external\'" text-underline>{{product.button_text}}</span>\n				</button>\n				</ion-col>\n				<ion-col *ngIf="product.type==\'simple\' && detail.in_stock" width-33 no-padding>\n					<ion-item mode="md" *ngIf="product.sold_individually">\n						<ion-checkbox mode="md" [(ngModel)]="groupedProduct[i].quantity" value="1"></ion-checkbox>\n					</ion-item>\n					<button-quantity *ngIf="!product.sold_individually" float-left [(ngModel)]="groupedProduct[i].quantity" min="0" [max]="(product.manage_stock && !product.backorders_allowed)?product.stock_quantity:null"></button-quantity>\n				</ion-col>\n			</ion-row>\n		</div>\n		<!-- Item Description -->\n		<div padding-horizontal light-bg class="detail-description" *ngIf="description">\n			<div padding-top><h6 no-margin dark>{{\'detail.item_description\'|translate}}</h6></div>\n			<div *ngIf="!viewMore" [innerHtml]="description|viewmore" class="description-content"></div>\n			<div *ngIf="viewMore" [innerHtml]="description" class="description-content disable-hover"></div>\n			<button ion-button clear (click)="viewMore=!viewMore" font-80 no-padding no-margin>\n			<div *ngIf="!viewMore">{{\'detail.view_more\'|translate}}</div>\n			<div *ngIf="viewMore">{{\'detail.view_less\'|translate}}</div>\n		</button>\n		</div>\n		<!-- About This Item -->\n		\n		<!--<div padding margin-top light-bg border-bottom class="about-this-item" *ngIf="detail.type!=\'grouped\' && (detail.sku || detail.manage_stock || 0< detail.attributes.length)">\n			<div margin-bottom><h6 no-margin dark>{{\'detail.about_this_item\'|translate}}</h6></div>\n			\n			<ion-row *ngIf="detail.sku">\n				<ion-col><b>{{\'detail.sku\'|translate}}</b></ion-col>\n				<ion-col>{{detail.sku}}</ion-col>\n			</ion-row>\n			<ion-row *ngIf="detail.dimensions && detail.dimensions.height">\n				<ion-col><b>{{\'detail.height\'|translate}}</b></ion-col>\n				<ion-col>{{detail.dimensions.height}}</ion-col>\n			</ion-row>\n			<ion-row *ngIf="detail.dimensions && detail.dimensions.length">\n				<ion-col><b>{{\'detail.length\'|translate}}</b></ion-col>\n				<ion-col>{{detail.dimensions.length}}</ion-col>\n			</ion-row>\n			<ion-row *ngIf="detail.dimensions && detail.dimensions.width">\n				<ion-col><b>{{\'detail.width\'|translate}}</b></ion-col>\n				<ion-col>{{detail.dimensions.width}}</ion-col>\n			</ion-row>\n			<ion-row *ngIf="detail.manage_stock">\n				<ion-col><b>{{\'detail.quantity\'|translate}}</b></ion-col>\n				<ion-col>{{detail.stock_quantity||0}} {{\'detail.available\'|translate}}</ion-col>\n			</ion-row>\n			<ion-row *ngFor="let attribute of detail.attributes">\n				<div *ngIf="(attribute.name|uppercase)!=\'SUB_CATEGORY_ID\'"> \n				<ion-col text-capitalize><b>{{attribute.name}}</b></ion-col>\n				<ion-col>{{attribute.options|ArrayJoin}}</ion-col>\n				</div>\n			</ion-row>\n		</div>-->\n\n		<!-- Buyer Protection -->\n		<div margin-top class="buyer-protection">\n			<div class="buyer-icon">\n				<ion-icon name="icon-safe" success></ion-icon>\n			</div>\n			<div class="buyer-content" padding>\n				<div><b dark [innerHTML]="\'modern_buyer_product_title\'|static"></b></div>\n				<div [innerHTML]="\'modern_description_buyer_product\'|static"></div>\n			</div>\n		</div>\n		<!-- Buy The Look -->\n		<div margin-top light-bg *ngIf="detail.modernshop_look_images && 0<detail.modernshop_look_images.length">\n			<div padding-horizontal padding-top><h6 no-margin dark>Related Products</h6></div>\n			<ion-row padding-8 wrap>\n				<ion-col padding-8 width-50 *ngFor="let product of detail.modernshop_look_images" [navPush]="DetailPage" [navParams]="{id:product.id}">\n					<div relative overflow>\n						<img float-left *ngIf="product.images && product.images.modern_square" [src]="product.images.modern_square" />\n						<img float-left *ngIf="!product.images || !product.images.modern_square" src="assets/images/no-image.png" />\n						<div absolute bottom primary-bg product-sale *ngIf="product.sale_price">\n							<span light>{{(product.sale_price/product.regular_price*100)-100|number:\'1.0-0\'}}%</span>\n						</div>\n					</div>\n					<p float-left width-100>\n						<span *ngIf="product.type!=\'variable\' && product.type!=\'grouped\'">\n						<!-- <b dark font-120>{{product.price*1||0|price}}</b>\n						<span *ngIf="product.sale_price" margin-left text-through>{{product.regular_price*1|price}}</span> -->\n						<span dark class="simple-price" [innerHTML]="product.price_html"></span>\n						</span>\n						<span *ngIf="product.type==\'variable\' || product.type==\'grouped\'">\n						<b dark font-120 [innerHTML]="product.price_html"></b>\n					</span>\n					</p>\n					<span float-left width-100 [innerHTML]="product.name"></span>\n				</ion-col>\n			</ion-row>\n		</div>\n	</div>\n	<ion-infinite-scroll (ionInfinite)="load($event)" *ngIf="!over" threshold="1%" position="bottom">\n		<ion-infinite-scroll-content></ion-infinite-scroll-content>\n	</ion-infinite-scroll>\n</ion-content>\n<ion-footer class="detail-footer">\n	<ion-toolbar no-padding-hard>\n		<ion-row *ngIf="detail.name">\n			<ion-col border-right no-padding>\n				<button ion-button full clear color="dark" (click)="share()" class="disable-hover">\n				<ion-icon icon-big name="icon-share"></ion-icon>\n			</button>\n			</ion-col>\n			<ion-col no-padding>\n				<button ion-button full clear class="disable-hover" color="dark" [navPush]="CommentsPage" [navParams]="{id:detail.id,data:detail.wooconnector_reviews,allow:reviews_allowed}">\n				<ion-icon icon-big name="icon-chat"></ion-icon>\n				<ion-badge absolute>{{detail.rating_count}}</ion-badge>\n			</button>\n			</ion-col>\n			<ion-col width-50 primary-bg text-center no-padding>\n				<button ion-button full clear class="disable-hover" [disabled]="!(detail.price*1) && detail.price.html == \'\'" color="light" (click)="addToCart()">\n					<h5 no-margin *ngIf="detail.type!=\'external\'">{{\'detail.addToCart\'|translate}}</h5>\n					<span *ngIf="detail.type==\'external\'" no-wrap-ellipsis>\n						<ion-icon name="icon-link"></ion-icon>\n						<span>{{detail.button_text}}</span>\n					</span>\n				</button>\n			</ion-col>\n		</ion-row>\n	</ion-toolbar>\n</ion-footer>'/*ion-inline-end:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\detail\detail.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__service_core_service__["a" /* Core */], __WEBPACK_IMPORTED_MODULE_11__pipes_object_to_array__["a" /* ObjectToArray */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_photo_viewer__["a" /* PhotoViewer */]]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_core_service__["a" /* Core */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_core_service__["a" /* Core */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__["c" /* TranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__["c" /* TranslateService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_toast__["a" /* Toast */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_toast__["a" /* Toast */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__["a" /* SocialSharing */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__["a" /* SocialSharing */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_8__ionic_native_photo_viewer__["a" /* PhotoViewer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__ionic_native_photo_viewer__["a" /* PhotoViewer */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__["a" /* InAppBrowser */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__["a" /* InAppBrowser */]) === "function" && _m || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__service_core_service__["a" /* Core */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_7__module_ng2_translate__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_5__ionic_native_toast__["a" /* Toast */],
+            __WEBPACK_IMPORTED_MODULE_6__ionic_native_social_sharing__["a" /* SocialSharing */],
+            __WEBPACK_IMPORTED_MODULE_8__ionic_native_photo_viewer__["a" /* PhotoViewer */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
     ], DetailPage);
     return DetailPage;
-    var DetailPage_1, _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+    var DetailPage_1;
 }());
 
 //# sourceMappingURL=detail.js.map
@@ -5812,9 +5432,9 @@ var DetailPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterTabsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_categories_categories__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_search_search__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_categories_categories__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_search_search__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_account_account__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_about_about__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_contact_contact__ = __webpack_require__(54);
@@ -6852,13 +6472,410 @@ var CoreValidator = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailCategoryPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_core_service__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_toast__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pipes_object_to_array__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__detail_detail__ = __webpack_require__(35);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+// Custom
+
+
+
+
+//Pipes
+
+// Page
+
+var DetailCategoryPage = /** @class */ (function () {
+    function DetailCategoryPage(navParams, core, http, storage, translate, Toast) {
+        var _this = this;
+        this.navParams = navParams;
+        this.core = core;
+        this.http = http;
+        this.storage = storage;
+        this.Toast = Toast;
+        this.DetailPage = __WEBPACK_IMPORTED_MODULE_9__detail_detail__["a" /* DetailPage */];
+        this.DetailCategoryPage = DetailCategoryPage_1;
+        this.page = 1;
+        this.sort = '-date';
+        this.range = { lower: 0, upper: 0 };
+        this.data = {};
+        this.favorite = {};
+        this.products = [];
+        this.attributes = [];
+        this.filter = { grid: false, open: null, value: {}, valueCustom: {} };
+        this.categories = [];
+        this.noResuilt = false;
+        this.quantity = 1;
+        this.trans = {};
+        this.actionCart = [];
+        this.cartArray = {};
+        this.faded = false;
+        this.loaddata = false;
+        translate.get('detail').subscribe(function (trans) { return _this.trans = trans; });
+        this.id = navParams.get('id');
+        console.log("category id:");
+        console.log(this.id);
+        var params = { term_id: this.id };
+        http.get(wordpress_url + '/wp-json/wooconnector/product/getcategories', {
+            search: core.objectToURLParams(params)
+        }).subscribe(function (res) {
+            _this.data = res.json();
+            _this.getProducts().subscribe(function (products) {
+                if (products && products.length > 0) {
+                    _this.checkCart();
+                    _this.noResuilt = false;
+                    _this.page++;
+                    _this.products = products;
+                    _this.loaded = true;
+                    _this.loaddata = true;
+                    setTimeout(function () {
+                        _this.faded = true;
+                    }, 100);
+                    http.get(wordpress_url + '/wp-json/wooconnector/product/getattribute')
+                        .subscribe(function (res) {
+                        _this.attributes = res.json();
+                        _this.attributes['custom'] = new __WEBPACK_IMPORTED_MODULE_8__pipes_object_to_array__["a" /* ObjectToArray */]().transform(_this.attributes['custom']);
+                        _this.reset();
+                    });
+                }
+                else {
+                    _this.loaddata = true;
+                    _this.noResuilt = true;
+                }
+            });
+            _this.loadCategories();
+        });
+    }
+    DetailCategoryPage_1 = DetailCategoryPage;
+    DetailCategoryPage.prototype.ionViewDidEnter = function () {
+        this.checkCart();
+        this.getFavorite();
+        this.buttonCart.update();
+    };
+    DetailCategoryPage.prototype.checkCart = function () {
+        var _this = this;
+        this.storage.get('cart').then(function (val) {
+            var cartNew = Object.assign([], val);
+            _this.cartArray = {};
+            cartNew.forEach(function (productCart) {
+                _this.cartArray[productCart['id']] = productCart['id'];
+            });
+        });
+    };
+    DetailCategoryPage.prototype.loadCategories = function () {
+        var _this = this;
+        var params = { cat_num_page: 1, cat_per_page: 100, parent: this.id };
+        this.http.get(wordpress_url + '/wp-json/wooconnector/product/getcategories', {
+            search: this.core.objectToURLParams(params)
+        }).subscribe(function (res) {
+            if (res.json() && res.json().length > 0)
+                _this.categories = _this.categories.concat(res.json());
+            if (res.json() && res.json().length == 100) {
+                params.cat_num_page++;
+                _this.loadCategories();
+            }
+        });
+    };
+    ;
+    DetailCategoryPage.prototype.getFavorite = function () {
+        var _this = this;
+        this.storage.get('favorite').then(function (val) { if (val)
+            _this.favorite = val; });
+    };
+    DetailCategoryPage.prototype.getProducts = function () {
+        var _this = this;
+        return new __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"](function (observable) {
+            var tmpFilter = [];
+            for (var filter in _this.filter['value']) {
+                var attr = _this.filter['value'][filter];
+                if (Object.keys(attr).length > 0)
+                    for (var option in attr) {
+                        if (attr[option]) {
+                            var now = {};
+                            now['keyattr'] = filter;
+                            now['valattr'] = option;
+                            now['type'] = 'attributes';
+                            tmpFilter.push(now);
+                        }
+                    }
+                ;
+            }
+            for (var filter in _this.filter['valueCustom']) {
+                var attr = _this.filter['value'][filter];
+                if (attr && Object.keys(attr).length > 0)
+                    for (var option in attr) {
+                        if (attr[option]) {
+                            var now = {};
+                            now['keyattr'] = filter;
+                            now['valattr'] = option;
+                            now['type'] = 'custom';
+                            tmpFilter.push(now);
+                        }
+                    }
+                ;
+            }
+            var params = {
+                'post_category': _this.id.toString(),
+                'post_num_page': _this.page,
+                'post_per_page': wordpress_per_page,
+            };
+            var sortParams = _this.core.addSortToSearchParams(params, _this.sort);
+            if (tmpFilter.length == 0 && !_this.range['lower'] && !_this.range['upper']) {
+                _this.http.get(wordpress_url + '/wp-json/wooconnector/product/getproduct', {
+                    search: _this.core.objectToURLParams(params)
+                }).subscribe(function (products) {
+                    observable.next(products.json());
+                    observable.complete();
+                });
+            }
+            else {
+                if (tmpFilter.length > 0)
+                    params['attribute'] = JSON.stringify(tmpFilter);
+                if (_this.range['lower'] != 0)
+                    params['min_price'] = _this.range['lower'];
+                if (_this.range['upper'] != 0)
+                    params['max_price'] = _this.range['upper'];
+                _this.http.get(wordpress_url + '/wp-json/wooconnector/product/getproductbyattribute', {
+                    search: _this.core.objectToURLParams(params)
+                }).subscribe(function (products) {
+                    observable.next(products.json());
+                    observable.complete();
+                });
+            }
+        });
+    };
+    DetailCategoryPage.prototype.doRefresh = function (refresher) {
+        var _this = this;
+        this.page = 1;
+        this.faded = false;
+        this.getProducts().subscribe(function (products) {
+            if (products && products.length > 0)
+                _this.page++;
+            _this.products = [];
+            _this.products = products;
+            _this.over = false;
+            setTimeout(function () {
+                _this.faded = true;
+            }, 100);
+            refresher.complete();
+        });
+    };
+    DetailCategoryPage.prototype.load = function (infiniteScroll) {
+        var _this = this;
+        this.getProducts().subscribe(function (products) {
+            if (products && products.length > 0) {
+                _this.page++;
+                _this.products = _this.products.concat(products);
+            }
+            else
+                _this.over = true;
+            infiniteScroll.complete();
+        });
+    };
+    DetailCategoryPage.prototype.openCategory = function () {
+        if (this.filter['open'] == 'category')
+            this.filter['open'] = null;
+        else
+            this.filter['open'] = 'category';
+    };
+    DetailCategoryPage.prototype.openFilter = function () {
+        if (this.filter['open'] == 'filter')
+            this.filter['open'] = null;
+        else
+            this.filter['open'] = 'filter';
+    };
+    DetailCategoryPage.prototype.openSort = function () {
+        if (this.filter['open'] == 'sort')
+            this.filter['open'] = null;
+        else
+            this.filter['open'] = 'sort';
+    };
+    DetailCategoryPage.prototype.changeFavorite = function (product) {
+        if (this.favorite[product["id"]]) {
+            delete this.favorite[product["id"]];
+            this.storage.set('favorite', this.favorite);
+        }
+        else {
+            var data = {
+                id: product["id"],
+                name: product["name"],
+                regular_price: product["regular_price"],
+                sale_price: product["sale_price"],
+                price: product["price"],
+                on_sale: product["on_sale"],
+                price_html: product["price_html"],
+                type: product["type"]
+            };
+            if (product["modernshop_images"])
+                data['images'] = product["modernshop_images"][0].modern_square;
+            this.favorite[product["id"]] = data;
+            this.storage.set('favorite', this.favorite);
+        }
+    };
+    DetailCategoryPage.prototype.reset = function () {
+        var _this = this;
+        this.filter['value'] = {};
+        this.filter['valueCustom'] = {};
+        this.attributes['attributes'].forEach(function (attr) {
+            _this.filter['value'][attr['slug']] = {};
+        });
+        this.attributes['custom'].forEach(function (attr) {
+            _this.filter['valueCustom'][attr['slug']] = {};
+        });
+        this.range = { lower: 0, upper: 0 };
+    };
+    DetailCategoryPage.prototype.runFilter = function () {
+        var _this = this;
+        this.openFilter();
+        this.page = 1;
+        this.products = [];
+        this.faded = false;
+        this.loaded = false;
+        this.loaddata = false;
+        this.filtering = true;
+        this.getProducts().subscribe(function (products) {
+            if (products && products.length > 0) {
+                _this.page++;
+                _this.products = products;
+                _this.filtering = false;
+                _this.loaded = true;
+                _this.loaddata = true;
+                setTimeout(function () {
+                    _this.faded = true;
+                }, 100);
+            }
+            else {
+                _this.loaddata = true;
+                _this.noResuilt = true;
+            }
+        });
+    };
+    DetailCategoryPage.prototype.runSort = function () {
+        var _this = this;
+        this.filter['open'] = null;
+        this.page = 1;
+        this.products = [];
+        this.loaded = false;
+        this.faded = false;
+        this.loaddata = false;
+        this.getProducts().subscribe(function (products) {
+            if (products && products.length > 0) {
+                _this.page++;
+                _this.products = products;
+                _this.loaded = true;
+                _this.loaddata = true;
+                setTimeout(function () {
+                    _this.faded = true;
+                }, 100);
+            }
+            else {
+                _this.loaddata = true;
+                _this.noResuilt = true;
+            }
+        });
+    };
+    DetailCategoryPage.prototype.addtoCart = function (detail) {
+        var _this = this;
+        if (!detail['in_stock']) {
+            this.Toast.showShortBottom("Out of Stock").subscribe(function (toast) { }, function (error) { console.log(error); });
+            return;
+        }
+        var data = {};
+        var idCart = detail["id"];
+        data.idCart = idCart;
+        data.id = detail["id"];
+        data.name = detail["name"];
+        if (detail["wooconnector_crop_images"])
+            data.images = detail["wooconnector_crop_images"][0].wooconnector_medium;
+        data.regular_price = detail["regular_price"];
+        data.sale_price = detail["sale_price"];
+        data.price = detail["price"];
+        data.quantity = this.quantity;
+        data.sold_individually = detail['sold_individually'];
+        this.storage.get('cart').then(function (val) {
+            var individually = false;
+            if (!val)
+                val = {};
+            if (!val[idCart])
+                val[idCart] = data;
+            else {
+                if (!detail['sold_individually'])
+                    val[idCart].quantity += data.quantity;
+                else
+                    individually = true;
+            }
+            if (individually) {
+                _this.Toast.showShortBottom(_this.trans['individually']['before'] + detail['name'] + _this.trans['individually']['after']).subscribe(function (toast) { }, function (error) { console.log(error); });
+            }
+            else
+                _this.storage.set('cart', val).then(function () {
+                    _this.checkCart();
+                    _this.buttonCart.update();
+                    if (!detail['in_stock'] && detail['backorders'] == 'notify') {
+                        _this.Toast.showShortBottom(_this.trans["addOut"]).subscribe(function (toast) { }, function (error) { console.log(error); });
+                    }
+                    else {
+                        _this.Toast.showShortBottom(_this.trans["add"]).subscribe(function (toast) { }, function (error) { console.log(error); });
+                    }
+                });
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('cart'),
+        __metadata("design:type", Object)
+    ], DetailCategoryPage.prototype, "buttonCart", void 0);
+    DetailCategoryPage = DetailCategoryPage_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-detail-category',template:/*ion-inline-start:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\detail-category\detail-category.html"*/'<ion-header>\n  <ion-navbar>\n    <span [innerHTML]="data.name"></span>\n	<!--<ion-title><span no-wrap [innerHTML]="data.name"></span></ion-title>-->\n	<ion-buttons end>\n		<button-cart #cart icon="icon-bag"></button-cart>\n	</ion-buttons>\n  </ion-navbar>\n  <ion-toolbar class="header-filter">\n	<button *ngIf="categories && 0<categories.length" ion-button clear color="dark" no-margin (click)="openCategory()" class="disable-hover button-drop">\n		<span [attr.primary]="filter.open==\'category\' ? true : null">{{\'categories.category\'|translate}}</span>\n		<ion-icon name="md-arrow-dropdown"></ion-icon>\n	</button>\n	<button ion-button clear color="dark" no-margin (click)="openFilter()" class="disable-hover button-drop">\n		<span [attr.primary]="filter.open==\'filter\' ? true : null">{{\'categories.filter\'|translate}}</span>\n		<ion-icon name="md-arrow-dropdown"></ion-icon>\n	</button>\n	<button ion-button clear color="dark" no-margin (click)="openSort()" class="disable-hover button-drop">\n		<span [attr.primary]="filter.open==\'sort\' ? true : null">{{\'categories.sort\'|translate}}</span>\n		<ion-icon name="md-arrow-dropdown"></ion-icon>\n	</button>\n	<div float-right>\n		<button float-right ion-button clear color="dark" no-margin class="disable-hover"\n		[ngClass]="{\'disabled\':filter.grid}" (click)="filter.grid=false">\n			<ion-icon name="icon-order"></ion-icon>\n		</button>\n		<button float-right ion-button clear color="dark" no-margin class="disable-hover"\n		[ngClass]="{\'disabled\':!filter.grid}" (click)="filter.grid=true">\n			<ion-icon name="icon-grid-out"></ion-icon>\n		</button>\n	</div>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n<!-- Refresh -->\n<ion-refresher (ionRefresh)="doRefresh($event)">\n	<ion-refresher-content\n		[pullingIcon]="\'general.pullingIcon\'|translate"\n		[pullingText]="\'general.pullToRefresh\'|translate"\n		[refreshingSpinner]="\'general.refreshingSpinner\'|translate"\n		[refreshingText]="\'general.refreshing\'|translate">\n	</ion-refresher-content>\n</ion-refresher>\n<!-- Category -->\n<ion-scroll tappable *ngIf="filter.open==\'category\'" ion-fixed width-100 height-100 mark (click)="filter.open=null" scrollY="true" class="list-categories">\n	<button detail-none ion-item *ngFor="let category of categories" [navPush]="DetailCategoryPage" [navParams]="{id:category.id}">\n		<ion-label dark [innerHTML]="category.name"></ion-label>\n	</button>\n</ion-scroll>\n<!-- Filter -->\n<div *ngIf="filter.open==\'filter\'" ion-fixed width-100 height-100 light-bg>\n	<ion-scroll width-100 height-100 scrollY="true">\n		<ion-list>\n			\n			<hide-show color="light" *ngFor="let attr of attributes.attributes" class="filter-attribute">\n				<span this-title><b text-capitalize [innerHTML]="attr.name"></b></span>\n				<ion-list wrap this-content padding-bottom>\n					<ion-row>\n						<ion-col no-padding width-50 *ngFor="let term of attr.term">\n							<ion-item>\n								<ion-label >{{term.name}}</ion-label>\n								<ion-checkbox [(ngModel)]="filter.value[attr.slug][term.slug]"></ion-checkbox>\n							</ion-item>\n						</ion-col>\n					</ion-row>\n				</ion-list>\n			</hide-show> \n			<hide-show color="light" *ngFor="let attr of attributes.custom" class="filter-attribute">\n				<span this-title><b text-capitalize [innerHTML]="attr.name"></b></span>\n				<ion-list wrap this-content padding-bottom>\n					<ion-row>\n						<ion-col width-50 *ngFor="let term of attr.term|ObjectToArray" no-padding>\n							<ion-item>\n								<ion-label>{{term.name}}</ion-label>\n								<ion-checkbox [(ngModel)]="filter.valueCustom[attr.slug][term.slug]"></ion-checkbox>\n							</ion-item>\n						</ion-col>\n					</ion-row>\n				</ion-list>\n			</hide-show> \n			<!-- Range Price -->\n			<hide-show color="light">\n				<span this-title>\n					<b>{{\'categories.price_range\'|translate}}</b>\n					<span>{{range.lower|price}}</span><span *ngIf="0<range.upper"> - {{range.upper|price}}</span>\n				</span>\n				<ion-range mode="md" this-content dualKnobs="true" [min]="attributes.min_price" [max]="attributes.max_price" [(ngModel)]="range">\n				</ion-range>\n			</hide-show> \n		</ion-list>\n	</ion-scroll>\n</div>\n<!-- Sort -->\n<div *ngIf="filter.open==\'sort\'" ion-fixed width-100 height-100 mark tappable (click)="filter.open=null">\n	<ion-list radio-group [(ngModel)]="sort" class="list-sort" (ngModelChange)="runSort()">\n		<ion-item *ngFor="let option of \'categories.sortData\'|translate">\n			<ion-label [innerHTML]="option.text"></ion-label>\n			<ion-radio [value]="option.value"></ion-radio>\n		</ion-item>\n	</ion-list>		\n</div>\n<!-- List products -->\n<div width-100 text-center padding *ngIf="!loaddata"><ion-spinner name="ios"></ion-spinner></div>\n<ion-row padding-8 wrap *ngIf="0< products.length" class="faded-content" [ngClass]="{\'filter-list\':!filter.grid, \'faded-has-content\':faded}">\n	<ion-col padding-8 relative [attr.width-50]="filter.grid ? true : null" *ngFor="let product of products" class="product-block">\n		<div [navPush]="DetailPage" [navParams]="{id:product.id}" relative class="product-image clearfix">\n			<img float-left *ngIf="product.modernshop_images && product.modernshop_images[0].modern_square" [src]="product.modernshop_images[0].modern_square" />\n			<img float-left *ngIf="!product.modernshop_images || !product.modernshop_images[0].modern_square" src="assets/images/no-image.png" />\n			<div absolute bottom primary-bg product-sale *ngIf="product.sale_price && product.type!=\'variable\' && product.type!=\'grouped\'" class="sale">\n				<span light>{{(product.sale_price/product.regular_price*100)-100|number:\'1.0-0\'}}%</span>\n			</div>\n			<img absolute icon-sale *ngIf="(product.type==\'variable\'||product.type==\'grouped\') && product.on_sale" src="assets/images/icon-sale.png" />\n		</div>\n		<div class="product-info clearfix">\n			<div [navPush]="DetailPage" [navParams]="{id:product.id}">\n				<span class="product-title" dark  float-left width-100 [innerHTML]="product.name"></span>\n				<p [attr.no-margin]="filter.grid ? null : true" width-100>\n					<span class="product-price" *ngIf="product.type!=\'variable\' && product.type!=\'grouped\'" font-90>\n						<!-- <b dark font-120>{{product.price*1||0|price}}</b>\n						<span *ngIf="product.sale_price" margin-left text-through>{{product.regular_price*1|price}}</span> -->\n						<span class="simple-price" [innerHTML]="product.price_html"></span>\n					</span>\n					<span class="product-price" *ngIf="product.type==\'variable\' || product.type==\'grouped\'" font-90>\n						<b dark font-120 [innerHTML]="product.price_html"></b>\n					</span>\n				</p>\n				<div [hidden]="filter.grid">\n					<div class="rate">\n						<div class="rating" [style.width]="product.average_rating*20+\'%\'"></div>\n					</div>\n				</div>\n				<!-- <span class="product-title" dark [innerHTML]="product.name"></span> -->\n				\n				<div *ngIf="product.type==\'variable\' && 0< product.attributes.length" [hidden]="filter.grid">\n					<div *ngFor="let attribute of product.attributes|filter:{variation:true}">\n						<span [innerHTML]="attribute.name"></span>: \n						<span dark>{{attribute.options|ArrayJoin:\', \'}}</span>\n					</div>\n				</div>\n				<!-- <div [hidden]="filter.grid" overflow>\n					<div float-left primary no-wrap class="sale">{{\'categories.sold\'|translate}} {{product.total_sales}}</div>\n				</div> -->\n			</div>\n			<div class="button-cart-list" *ngIf="product.type!=\'variable\' && product.type!=\'grouped\' && product.type!=\'external\'">\n				<button ion-button class="button-cart" [disabled]="!product.price" (tap)="addtoCart(product)">\n					<div float-left width-100 font-weight-500>\n						<ion-icon class="icon-cart-add" name="icon-iconcartadd" primary></ion-icon>\n						<span primary class="add-to-cart">{{\'categories.addtocart\' | translate}}</span>\n					</div>\n				</button>\n				<ion-icon *ngIf="cartArray[product.id] == product.id" float-right class="icon-cart-iconcartcheck" name="icon-iconcartcheck" primary></ion-icon>\n			</div>\n			<div class="button-cart-list-option" *ngIf="product.type==\'variable\' || product.type==\'grouped\' || product.type==\'external\'" [navPush]="DetailPage" [navParams]="{id:product.id}">\n				<button ion-button class="button-cart">\n					<div float-left width-100 font-weight-500>\n						<span class="add-to-cart">{{\'categories.chooseoption\' | translate}}</span>\n					</div>\n				</button>\n			</div>\n		</div>\n		<button ion-button absolute top right clear no-margin (click)="changeFavorite(product)"\n		[color]="favorite[product.id] ? \'primary\' : \'primary\'" [hidden]="filter.grid" class="disable-hover btn-favorite">\n				<!--<ion-icon name="icon-favorite"></ion-icon>-->\n				\n				<ion-icon [name]="favorite[product.id] ? \'heart\':\'icon-favorite\'"></ion-icon>\n		</button>\n	</ion-col>\n</ion-row>\n<div padding *ngIf="products.length < 1 && noResuilt" text-center style="margin:0 auto;">{{\'general.no_data\'|translate}}</div>\n<ion-infinite-scroll (ionInfinite)="load($event)" *ngIf="!over && !filtering">\n	<ion-infinite-scroll-content></ion-infinite-scroll-content>\n</ion-infinite-scroll>\n</ion-content>\n<ion-footer>\n	<ion-toolbar>\n		<footer-tabs></footer-tabs>\n		<ion-row absolute width-100 height-100 top left light-bg [hidden]="filter.open!=\'filter\'">\n			<ion-col no-padding height-100>\n				<button ion-button full height-100 color="secondary" (click)="reset()">\n					<span>{{\'general.reset\'|translate}}</span>\n				</button>\n			</ion-col>\n			<ion-col no-padding height-100>\n				<button ion-button full height-100 (click)="runFilter()">\n					<span>{{\'categories.done\'|translate}}</span>\n				</button>\n			</ion-col>\n		</ion-row>\n		<div absolute width-100 height-100 top left mark [hidden]="filter.open!=\'sort\' && filter.open!=\'category\'" tappable (click)="filter.open=null"></div>\n	</ion-toolbar>\n</ion-footer>'/*ion-inline-end:"c:\MobileApp\modernshop\modernshopv2.0\src\pages\detail-category\detail-category.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_4__service_core_service__["a" /* Core */], __WEBPACK_IMPORTED_MODULE_8__pipes_object_to_array__["a" /* ObjectToArray */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_4__service_core_service__["a" /* Core */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */],
+            __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */],
+            __WEBPACK_IMPORTED_MODULE_6__module_ng2_translate__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_7__ionic_native_toast__["a" /* Toast */]])
+    ], DetailCategoryPage);
+    return DetailCategoryPage;
+    var DetailCategoryPage_1;
+}());
+
+//# sourceMappingURL=detail-category.js.map
+
+/***/ }),
+
+/***/ 69:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_core_service__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__detail_category_detail_category__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__search_search__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__detail_category_detail_category__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__search_search__ = __webpack_require__(70);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6942,7 +6959,7 @@ var CategoriesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 69:
+/***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6957,7 +6974,7 @@ var CategoriesPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_toast__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pipes_object_to_array__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__detail_detail__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__categories_categories__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__categories_categories__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__account_account__ = __webpack_require__(133);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7298,7 +7315,7 @@ var SearchPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 71:
+/***/ 72:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7335,7 +7352,7 @@ var TermsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 72:
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
