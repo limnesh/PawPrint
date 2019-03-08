@@ -46,7 +46,10 @@ export class DetailCategoryPage {
 		private Toast: Toast
 	) {
 		translate.get('detail').subscribe(trans => this.trans = trans);
+		
 		this.id = navParams.get('id');
+		console.log("category id:");
+		console.log(this.id);
 		let params = { term_id: this.id };
 		http.get(wordpress_url + '/wp-json/wooconnector/product/getcategories', {
 			search: core.objectToURLParams(params)

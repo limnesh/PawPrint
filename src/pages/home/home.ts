@@ -70,7 +70,7 @@ export class HomePage {
 		private screenOrientation: ScreenOrientation,
 		public modalCtrl: ModalController
 	) {
-		this.loadCategories();
+		
 		this.display = display_mode;
 		platform.ready().then(() => {
 			if (platform.is('cordova')) {
@@ -113,7 +113,8 @@ export class HomePage {
 					config.set('required_login', res.json()['required_login']);
 					this.statictext = config['text_static'];
 					this.buttonCart;
-					this.getData();
+					//this.getData();
+					//this.loadCategories();
 				}, error => {
 					showAlertfirst();
 				});
@@ -150,7 +151,7 @@ export class HomePage {
 			getstatic();
 			});
 			//this.getData(); Limnesh
-			
+			this.loadCategories();
 			
 		});
 		storage.get('require').then(val =>{

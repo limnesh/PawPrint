@@ -20,9 +20,9 @@ page-appointment {
 			&.item-radio-checked{
 				border-color:color($colors, primary, base);
 				&:after{
-					/*font-family:"vspfonts";*/
-					font-family:"latolight";
-					/*content:"\e034";*/
+					font-family:"vspfonts";
+					/*font-family:"latolight";*/
+					content:"\e034";
 					position:absolute;
 					bottom:-2px;
 					right:-2px;

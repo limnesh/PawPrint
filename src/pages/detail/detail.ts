@@ -17,7 +17,7 @@ import { ObjectToArray } from '../../pipes/object-to-array';
 
 //Page
 import { CommentsPage } from '../comments/comments';
-
+import { DetailCategoryPage } from '../detail-category/detail-category';
 declare var wordpress_url: string;
 declare var cordova: any;
 declare var display_mode: string;
@@ -30,6 +30,7 @@ declare var display_mode: string;
 export class DetailPage {
 	CommentsPage = CommentsPage;
 	DetailPage = DetailPage;
+	DetailCategoryPage = DetailCategoryPage;
 	@ViewChild('cart') buttonCart;
 	id: Number; slides: Number = 1; quantity: Number = 1; variation: Number;
 	detail: any = { wooconnector_crop_images: [] }; attributes: any = {}; rating:Number; ratingCount:Number; reviewCount:Object = [];
@@ -108,6 +109,14 @@ export class DetailPage {
 						//this.attributes[val["name"]].price = 
 						//console.log(val["price"]);
 					}
+					/*else {
+						this.attributes[val["name"]] = {};
+						this.attributes[val["name"]].id = val["id"];
+						this.attributes[val["name"]].name = val["name"];
+						this.attributes[val["name"]].option = val["options"][0].toLowerCase();
+						//this.attributes[val["name"]].price = 
+						//console.log(val["price"]);
+					}*/
 				});
 			}
 			// //default_attributes
@@ -117,6 +126,7 @@ export class DetailPage {
 				});
 			}
 			this.getVariation();
+			console.log(this.detail);
 			// this.core.hideLoading();
 			// this.http.get(wordpress_url + '/wp-json/mobiconnector/post/counter_view?post_id=' + this.id)
 			// 	.subscribe(() => { this.core.hideLoading(); });
@@ -182,14 +192,14 @@ export class DetailPage {
 	}
 	radioChecked()
 	{
-		var strName = this.detail["slug"] + '-'+this.attributes.Size.option;
+		var strName = this.detail["slug"] ;//+ '-'+this.attributes.Size.option;
 		var price = this.detail["price"];
 		var sale_price = this.detail["sale_price"];
 		var regular_price = this.detail["regular_price"];
 		var currVariation;
 		this.detail.variations.forEach(function(element) {
-			//console.log(strName);
-			//console.log(element.slug);
+			console.log(strName);
+			console.log(element.slug);
 			console.log(element.price);
 			if(strName==element.slug)
 			{
@@ -208,6 +218,30 @@ export class DetailPage {
 		//console.log(this.attributes.Size.option);
 		
 	}
+	/*getSimpleAttributes()
+	{
+		console.log(this.detail);
+		if (this.detail["type"] == "simple" && this.detail["attributes"].length > 0) {
+			let attr = new ObjectToArray().transform(this.attributes);
+			this.core.getVariation(this.detail["attributes"], attr).subscribe(
+				res => {
+					if (res) {
+						this.variation = res["id"];
+						let _res = Object.assign({}, res);
+						delete _res["id"];
+						delete _res["attributes"];
+						delete _res["type"];
+						_res['wooconnector_crop_images'] = _res['wooconnector_crop_images'].concat(this.images);
+						this.detail = Object.assign(this.detail, _res);
+					} else {
+						this.variation = 0;
+						this.noVariation();
+					}
+				}
+			);
+			this.radioChecked();
+		}
+	}*/
 	getVariation() {
 		if (this.detail["type"] == "variable" && this.detail["variations"].length > 0) {
 			let attr = new ObjectToArray().transform(this.attributes);
@@ -308,6 +342,26 @@ export class DetailPage {
 				});
 			});
 		}
+		//[navPush]="DetailCategoryPage" [navParams]="{id:category.id}"
+		
+		if(this.detail['attributes'])
+		{
+			var i=0;
+			for(i=0;i<this.detail['attributes'].length; i++)
+			{
+				if(this.detail['attributes'][i]['name'] == "SUB_CATEGORY_ID")
+				{
+					if(this.detail['attributes'][i]['options'])
+					{
+						
+						var catID = this.detail['attributes'][i]['options'][0];
+						console.log(catID);
+						this.navCtrl.push(this.DetailCategoryPage, { id: catID });
+					}
+				}
+			}
+		}
+		
 	}
 	external(link: string) {
 		// cordova["InAppBrowser"].open(link, '_system');

@@ -70,6 +70,20 @@
 		</div>
 		<!-- Attributes -->
 		<div padding margin-top light-bg *ngIf="detail.type!='grouped' && detail.type!='external'">
+			<!--<div *ngIf="detail.type=='simple'">
+				<div *ngFor="let attr of detail.attributes">
+					
+					<div *ngIf="(attr.name|uppercase)!='COLOR'" [ngClass]="(attr.name|uppercase)=='SIZE' ? 'attribute-size':'attribute-default'">
+						<div text-uppercase><b dark>{{attr.name}}</b></div>
+						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getSimpleAttributes()">
+							<ion-item float-left *ngFor="let option of attr.options" no-padding>
+								<ion-label [attr.text-center]="(attr.name|uppercase)=='SIZE'?true:null">{{option}}</ion-label>
+								<ion-radio [value]="(option|lowercase)" (ionSelect)="radioChecked()"></ion-radio>
+							</ion-item>
+						</ion-list>
+					</div>
+				</div>
+			</div>-->
 			<div *ngIf="detail.type=='variable'">
 				<div *ngFor="let attr of detail.attributes | filter:{variation:true}">
 					<!-- Color -->
@@ -82,7 +96,7 @@
 						</ion-list>
 					</div>
 					<!-- Size or Orther -->
-					<div *ngIf="(attr.name|uppercase)!='COLOR'" [ngClass]="(attr.name|uppercase)=='SIZE' ? 'attribute-size':'attribute-default'">
+					<div *ngIf="(attr.name|uppercase)!='COLOR' && (attr.name|uppercase)!='SUB_CATEGORY_ID'" [ngClass]="(attr.name|uppercase)=='SIZE' ? 'attribute-size':'attribute-default'">
 						<div text-uppercase><b dark>{{attr.name}}</b></div>
 						<ion-list mode="md" overflow radio-group [(ngModel)]="attributes[attr.name].option" (ngModelChange)="getVariation()">
 							<ion-item float-left *ngFor="let option of attr.options" no-padding>
@@ -162,8 +176,10 @@
 				<ion-col>{{detail.stock_quantity||0}} {{'detail.available'|translate}}</ion-col>
 			</ion-row>
 			<ion-row *ngFor="let attribute of detail.attributes">
+				<div *ngIf="(attribute.name|uppercase)!='SUB_CATEGORY_ID'"> 
 				<ion-col text-capitalize><b>{{attribute.name}}</b></ion-col>
 				<ion-col>{{attribute.options|ArrayJoin}}</ion-col>
+				</div>
 			</ion-row>
 		</div>
 		<!-- Item Description -->
