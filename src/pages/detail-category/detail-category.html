@@ -114,8 +114,9 @@
 		</div>
 		<div class="product-info clearfix">
 			<div [navPush]="DetailPage" [navParams]="{id:product.id}">
-				<span class="product-title" dark  float-left width-100 [innerHTML]="product.name"></span>
+				<!--<span class="product-title" dark  float-left width-100 [innerHTML]="product.name"></span>-->
 				<p [attr.no-margin]="filter.grid ? null : true" width-100>
+					<span class="product-title" dark [innerHTML]="product.name"></span>
 					<span class="product-price" *ngIf="product.type!='variable' && product.type!='grouped'" font-90>
 						<!-- <b dark font-120>{{product.price*1||0|price}}</b>
 						<span *ngIf="product.sale_price" margin-left text-through>{{product.regular_price*1|price}}</span> -->
@@ -130,7 +131,7 @@
 						<div class="rating" [style.width]="product.average_rating*20+'%'"></div>
 					</div>
 				</div>
-				<!-- <span class="product-title" dark [innerHTML]="product.name"></span> -->
+				<!--<span class="product-title" dark [innerHTML]="product.name"></span>-->
 				
 				<div *ngIf="product.type=='variable' && 0< product.attributes.length" [hidden]="filter.grid">
 					<div *ngFor="let attribute of product.attributes|filter:{variation:true}">
@@ -149,7 +150,15 @@
 						<span primary class="add-to-cart">{{'categories.addtocart' | translate}}</span>
 					</div>
 				</button>
-				<ion-icon *ngIf="cartArray[product.id] == product.id" float-right class="icon-cart-iconcartcheck" name="icon-iconcartcheck" primary></ion-icon>
+				<!--<button ion-button float-right  clear no-margin color='primary'>-->
+				<ion-icon *ngIf="cartArray[product.id] == product.id" name="icon-iconcartcheck" ></ion-icon>
+				<!--</button>-->
+				<button ion-button float-right clear no-margin (click)="changeFavorite(product)"
+					[color]="favorite[product.id] ? 'primary' : 'primary'" [hidden]="filter.grid" class="disable-hover btn-favorite">
+				<!--<ion-icon name="icon-favorite"></ion-icon>-->
+				
+					<ion-icon [name]="favorite[product.id] ? 'heart':'icon-favorite'"></ion-icon>
+				</button>
 			</div>
 			<div class="button-cart-list-option" *ngIf="product.type=='variable' || product.type=='grouped' || product.type=='external'" [navPush]="DetailPage" [navParams]="{id:product.id}">
 				<button ion-button class="button-cart">
@@ -157,14 +166,18 @@
 						<span class="add-to-cart">{{'categories.chooseoption' | translate}}</span>
 					</div>
 				</button>
-			</div>
-		</div>
-		<button ion-button absolute top right clear no-margin (click)="changeFavorite(product)"
-		[color]="favorite[product.id] ? 'primary' : 'primary'" [hidden]="filter.grid" class="disable-hover btn-favorite">
+				<button ion-button  float-right clear no-margin (click)="changeFavorite(product)"
+					[color]="favorite[product.id] ? 'primary' : 'primary'" [hidden]="filter.grid" class="disable-hover btn-favorite">
 				<!--<ion-icon name="icon-favorite"></ion-icon>-->
 				
+					<ion-icon [name]="favorite[product.id] ? 'heart':'icon-favorite'"></ion-icon>
+				</button>
+			</div>
+		</div>
+		<!--<button ion-button absolute top right clear no-margin (click)="changeFavorite(product)"
+		[color]="favorite[product.id] ? 'primary' : 'primary'" [hidden]="filter.grid" class="disable-hover btn-favorite">
 				<ion-icon [name]="favorite[product.id] ? 'heart':'icon-favorite'"></ion-icon>
-		</button>
+		</button>-->
 	</ion-col>
 </ion-row>
 <div padding *ngIf="products.length < 1 && noResuilt" text-center style="margin:0 auto;">{{'general.no_data'|translate}}</div>

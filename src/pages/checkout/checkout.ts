@@ -208,18 +208,55 @@ export class CheckoutPage {
 		});
 		alert.present();
 	}
+	PostSchedule(order_id:string)
+	{
+						let headers = new Headers();
+						headers.set('Content-Type', 'application/json; charset=UTF-8');
+						
+						const app_params = new FormData();
+						app_params["order_id"] = order_id;
+						app_params["app_date"] = this.AppointmentDate.substring(0, 10);
+						app_params["app_time"] = this.AppointmentDate.substring(11, 17);
+						app_params["mode"] = "book";
+						
+						this.core.showLoading();
+						console.log(JSON.stringify(app_params));
+						this.http.post(wordpress_url+'/postschedule.php',JSON.stringify(app_params),{
+							headers: headers,
+							withCredentials: false
+						} )
+						.subscribe(res => {
+							console.log(res);
+								this.core.hideLoading();
+								
+								/*if (result=="5468")
+								{
+									console.log("One Hi");
+								}
+								else
+								{
+									console.log("One H2222223");					
+								}*/
+							
+						}, err => {
+							this.core.hideLoading();
+							console.log(err);
+						});
+	}
 	checkout(res) {
 		console.log(res);
 		let order_id;
 		let checkoutUrl = wordpress_url + '/wooconnector-checkout/?data_key=' + res;
 		//if (this.platform.is('cordova')) {
-			//this.platform.ready().then(() => {
+		//	this.platform.ready().then(() => {
+			//this.PostSchedule('123');
 				let isCheckout: boolean = false;
 				let openCheckout = this.InAppBrowser.create(checkoutUrl, '_blank', 'location=no,closebuttoncaption=Close,hardwareback=yes,footer=yes');
-				openCheckout.on('loadstart').subscribe(res => {
-				console.log(res);			
+				//openCheckout.on('loadstart').subscribe(res => {
+				openCheckout.on('loadstop').subscribe(res => {
+					console.log(res);			
 					let url = wordpress_url;
-					if (res.url.indexOf(url) != 0) url = url.replace('http', 'https');
+					//if (res.url.indexOf(url) != 0) url = url.replace('http', 'https');
 					console.log(url);
 					if ((res.url.indexOf(url) == 0 && res.url.indexOf('order-received') != -1)){
 						order_id = (res.url.split('?')[0]).split('order-received/')[1].replace("/", "");
@@ -228,6 +265,9 @@ export class CheckoutPage {
 						if (this.login && this.login['token']) {
 							params['token'] = true;
 						} else params['token'] = false;
+						
+						this.PostSchedule(order_id);
+						
 						this.navCtrl.push(ThanksPage,{ params: params}).then(() => {
 							openCheckout.close();    
                         	this.storageMul.remove(['cart', 'coupon']);
@@ -243,8 +283,9 @@ export class CheckoutPage {
 						error => { console.log(error); }
 					);
 				});
-			//});
+		//	});
 		//}
+		
 	}
 	showTerms(){
 		 let alert = this.alertCtrl.create({

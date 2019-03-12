@@ -60,14 +60,14 @@
   "dependencies": {},
   "description": "An implementation of angular translate for Angular 2",
   "devDependencies": {
-    "@angular/common": "2.1.1",
-    "@angular/compiler": "2.1.1",
-    "@angular/compiler-cli": "2.1.1",
-    "@angular/core": "2.1.1",
-    "@angular/http": "2.1.1",
-    "@angular/platform-browser": "2.1.1",
-    "@angular/platform-browser-dynamic": "2.1.1",
-    "@angular/platform-server": "2.1.1",
+    "@angular/common": "5.0.0",
+    "@angular/compiler": "5.0.0",
+    "@angular/compiler-cli": "5.0.0",
+    "@angular/core": "5.0.0",
+    "@angular/http": "5.0.0",
+    "@angular/platform-browser": "5.0.0",
+    "@angular/platform-browser-dynamic": "5.0.0",
+    "@angular/platform-server": "5.0.0",
     "@types/hammerjs": "2.0.33",
     "@types/jasmine": "2.5.35",
     "@types/node": "6.0.45",
@@ -94,7 +94,7 @@
     "ts-helpers": "1.1.2",
     "tslint": "3.15.1",
     "tslint-loader": "2.1.5",
-    "typescript": "2.0.3",
+    "typescript": "2.4.2",
     "webpack": "2.1.0-beta.25",
     "zone.js": "0.6.26"
   },
@@ -123,8 +123,8 @@
   "name": "ng2-translate",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "^2.0.0",
-    "@angular/http": "^2.0.0"
+    "@angular/core": "^5.0.0",
+    "@angular/http": "^5.0.0"
   },
   "readme": "ERROR: No README data found!",
   "repository": {

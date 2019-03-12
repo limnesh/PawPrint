@@ -41358,6 +41358,7 @@ page-detail-order {
 }
 
 page-detail-order .order-status {
+  color: #fff;
   background: #00A3FD;
 }
 
@@ -41375,6 +41376,7 @@ page-detail-order .order-status.cancelled {
 
 page-detail-order .order-status .order-date {
   padding: 16px;
+  color: #000;
   background: #DACEDB;
   padding-left: 0px;
 }
@@ -41784,6 +41786,7 @@ page-order .item-order .order-id {
 }
 
 page-order .item-order .order-status {
+  color: #fff;
   background: #00A3FD;
   min-width: 67px;
   margin-left: 5px;

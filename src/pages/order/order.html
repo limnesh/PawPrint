@@ -30,13 +30,13 @@
 	<ion-col no-padding [navPush]="DetailOrderPage" [navParams]="{id:order.id}">
 		<div class="order-id">
 			<b dark>{{'order.id'|translate}} - #{{order.id}}</b>
-			<span class="order-status" *ngIf="order.status == 'processing'" light text-capitalize>{{'order.status.processing' |translate }}</span>
-			<span class="order-status" *ngIf="order.status == 'on-hold'" light text-capitalize>{{'order.status.on_hold' |translate }}</span>
-			<span class="order-status" *ngIf="order.status == 'cancelled'" light text-capitalize>{{'order.status.cancelled' |translate }}</span>
-			<span class="order-status" *ngIf="order.status == 'completed'" light text-capitalize>{{'order.status.completed' |translate }}</span>
-			<span class="order-status" *ngIf="order.status == 'pending'" light text-capitalize>{{'order.status.pending' |translate }}</span>
-			<span class="order-status" *ngIf="order.status == 'refunded'" light text-capitalize>{{'order.status.refunded' |translate }}</span>
-			<span class="order-status" *ngIf="order.status == 'failed'" light text-capitalize>{{'order.status.failed' |translate }}</span>
+			<span class="order-status" *ngIf="order.status == 'processing'"  text-capitalize>{{'order.status.processing' |translate }}</span>
+			<span class="order-status" *ngIf="order.status == 'on-hold'"  text-capitalize>{{'order.status.on_hold' |translate }}</span>
+			<span class="order-status" *ngIf="order.status == 'cancelled'"  text-capitalize>{{'order.status.cancelled' |translate }}</span>
+			<span class="order-status" *ngIf="order.status == 'completed'"  text-capitalize>{{'order.status.completed' |translate }}</span>
+			<span class="order-status" *ngIf="order.status == 'pending'"  text-capitalize>{{'order.status.pending' |translate }}</span>
+			<span class="order-status" *ngIf="order.status == 'refunded'"  text-capitalize>{{'order.status.refunded' |translate }}</span>
+			<span class="order-status" *ngIf="order.status == 'failed'"  text-capitalize>{{'order.status.failed' |translate }}</span>
 		</div>
 		<div>{{'order.date'|translate}} {{order.date_created|date:date_format}}</div>
 		<div>

@@ -24,7 +24,7 @@ export class DetailOrderPage {
 	date_format: string = date_format;
 	@ViewChild(Content) content: Content;
 	trans: Object;
-
+	AppointmentDate:string;
 	constructor(
 		private navCtrl: NavController,
 		navParams: NavParams,
@@ -42,6 +42,7 @@ export class DetailOrderPage {
 			if (val && val['token']) {
 				this.login = val;
 				this.getData();
+				this.GetSchedule(this.id.toString());
 			} else navCtrl.pop();
 		});
 	}
@@ -58,6 +59,40 @@ export class DetailOrderPage {
 			this.core.hideLoading();
 			this.content.resize();
 		});
+	}
+	GetSchedule(order_id:string)
+	{
+						let headers = new Headers();
+						headers.set('Content-Type', 'application/json; charset=UTF-8');
+						
+						const app_params = new FormData();
+						app_params["order_id"] = order_id;
+						app_params["mode"] = "get";
+						
+						this.core.showLoading();
+						console.log(JSON.stringify(app_params));
+						this.http.post(wordpress_url+'/postschedule.php',JSON.stringify(app_params),{
+							headers: headers,
+							withCredentials: false
+						} )
+						.subscribe(res => {
+							console.log(res);
+								this.core.hideLoading();
+								console.log(res);
+								this.AppointmentDate=res['_body'];
+								/*if (result=="5468")
+								{
+									console.log("One Hi");
+								}
+								else
+								{
+									console.log("One H2222223");					
+								}*/
+							
+						}, err => {
+							this.core.hideLoading();
+							console.log(err);
+						});
 	}
 	changeStatus() {
 		let alert = this.alertCtrl.create({

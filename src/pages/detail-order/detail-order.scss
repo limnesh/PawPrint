@@ -6,12 +6,14 @@
 }
 page-detail-order {
 	.order-status{
+		color:#fff;
 		background:#00A3FD;
 		&.pending{background:color($colors, primary);}
 		&.completed{background:color($colors, success);}
 		&.cancelled{background:#A09C96;}
 		.order-date{
 			padding:$content-padding;
+			color:#000;
 			background:color($colors, light);
 			padding-left: 0px;
 			&:before{
