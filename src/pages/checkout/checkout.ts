@@ -215,8 +215,9 @@ export class CheckoutPage {
 						
 						const app_params = new FormData();
 						app_params["order_id"] = order_id;
+						
 						app_params["app_date"] = this.AppointmentDate.substring(0, 10);
-						app_params["app_time"] = this.AppointmentDate.substring(11, 17);
+						app_params["app_time"] = this.AppointmentDate.substring(11, 25);
 						app_params["mode"] = "book";
 						
 						this.core.showLoading();
@@ -256,7 +257,7 @@ export class CheckoutPage {
 				openCheckout.on('loadstop').subscribe(res => {
 					console.log(res);			
 					let url = wordpress_url;
-					//if (res.url.indexOf(url) != 0) url = url.replace('http', 'https');
+					if (res.url.indexOf(url) != 0) url = url.replace('http', 'https');
 					console.log(url);
 					if ((res.url.indexOf(url) == 0 && res.url.indexOf('order-received') != -1)){
 						order_id = (res.url.split('?')[0]).split('order-received/')[1].replace("/", "");

@@ -54,6 +54,8 @@ export class DetailCategoryPage {
 		http.get(wordpress_url + '/wp-json/wooconnector/product/getcategories', {
 			search: core.objectToURLParams(params)
 		}).subscribe(res => {
+			
+			console.log(res);
 			this.data = res.json();
 			this.getProducts().subscribe(products => {
 				if (products && products.length > 0) {
@@ -140,22 +142,33 @@ export class DetailCategoryPage {
 				'post_category' : this.id.toString(),
 				'post_num_page' : this.page,
 				'post_per_page' : wordpress_per_page,
+				//'post_order_by' : 'name'
 			};
+			
 			let sortParams = this.core.addSortToSearchParams(params, this.sort);
+			
 			if (tmpFilter.length == 0 && !this.range['lower'] && !this.range['upper']) {
+				console.log(params);
 				this.http.get(wordpress_url + '/wp-json/wooconnector/product/getproduct', {
+					//search: this.core.objectToURLParams(params)
 					search: this.core.objectToURLParams(params)
 				}).subscribe(products => {
 					observable.next(products.json());
 					observable.complete();
+					console.log(products);
 				});
-			} else {			
+			} else {
+				
 				if (tmpFilter.length > 0) params['attribute'] = JSON.stringify(tmpFilter);
 				if (this.range['lower'] != 0) params['min_price'] = this.range['lower'];
 				if (this.range['upper'] != 0) params['max_price'] = this.range['upper'];
-				this.http.get(wordpress_url + '/wp-json/wooconnector/product/getproductbyattribute', {
+				console.log(params);
+				this.http.get(wordpress_url + '/wp-json/wooconnector/product/getproduct', {
+				//this.http.get(wordpress_url + '/wp-json/wooconnector/product/getproductbyattribute', {
+					//search: this.core.objectToURLParams(params)
 					search: this.core.objectToURLParams(params)
 				}).subscribe(products => {
+					console.log(products);
 					observable.next(products.json());
 					observable.complete();
 				});

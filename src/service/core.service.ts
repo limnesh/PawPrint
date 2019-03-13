@@ -112,10 +112,12 @@ export class Core {
             params['price_sort'] = 1;
             params['post_order_page'] = 'DESC';
         } else if (sort_type == '-name') {
-            params['name_sort'] = 1;
+            //params['name_sort'] = 1;
+			params['post_order_by'] = 'name';
             params['post_order_page'] = 'DESC';
         } else if (sort_type == 'name') {
-            params['name_sort'] = 1;
+            //params['name_sort'] = 1;
+			params['post_order_by'] = 'name';
             params['post_order_page'] = 'ASC';
         } else if (sort_type == 'popularity') {
         	params['popularity_sort'] = 1;

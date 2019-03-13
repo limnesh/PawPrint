@@ -7,6 +7,7 @@ import {DatePicker} from '@ionic-native/date-picker';
 import {Calendar} from '@ionic-native/calendar';
 //import {Platform} from 'ionic-angular';
 // Custom
+import { ObjectToArray } from '../../pipes/object-to-array';
 import { CoreValidator } from '../../validator/core';
 import { Storage } from '@ionic/storage';
 import { StorageMulti } from '../../service/storage-multi.service';
@@ -46,9 +47,11 @@ export class AppointmentPage {
   rawData: Object;
   isCache: boolean;
   states: Object = {};
+  cart: Object = {};
   trans: Object;
   display_mode: string;
   check_require_login:boolean;
+  isService:boolean;
   
   strAppointmentDate: string;
 	schSelectedTime: string;
@@ -72,7 +75,7 @@ export class AppointmentPage {
     public ngZone: NgZone,
 	private DatePicker: DatePicker
   ) {
-		
+		this.getData();
 	  	platform.ready().then(() => 
 			{
 				  let options = 
@@ -109,7 +112,7 @@ export class AppointmentPage {
 	  strAppointmentDate: ['', Validators.required]
       
     });
-    this.getData();
+    
 
   }
   ionViewDidEnter() {
@@ -129,6 +132,28 @@ export class AppointmentPage {
       }
       this.reset();
     });*/
+	console.log('Test123');
+		this.storageMul.get([ 'cart']).then(val => {
+			if (val["cart"]) {
+				this.cart = val["cart"];
+				//console.log(this.cart);
+				this.isService = false;
+				new ObjectToArray().transform(this.cart).forEach(product => {
+						if (product['variation_id']) 
+						{
+							this.isService=true;
+							console.log(this.isService);
+						}
+						else
+						{
+							console.log(this.isService);
+						}
+						
+				});
+			}
+			
+		});
+		
   }
   reset() {
     this.formAppointment.patchValue({
@@ -174,9 +199,11 @@ export class AppointmentPage {
   	getAppointTimes() {
 		
 		//this.core.showLoading();
-		if (this.platform.is('cordova'))
+		console.log('Service');
+		console.log(this.isService);
+		//if (this.platform.is('cordova'))
 		{
-		  this.http.get(wordpress_url + '/getschedules.php'+'?date='+this.strAppointmentDate)
+		  this.http.get(wordpress_url + '/getschedules.php'+'?date='+this.strAppointmentDate+'&service='+this.isService)
 							.subscribe(res => {
 				console.log(res);
 				this.core.hideLoading();
@@ -199,10 +226,10 @@ export class AppointmentPage {
 				
 			});
 	  }
-	  else
+	  /*else
 	  {
 		this.schAvailableTimes = "08:30;09:15;10:15;12:20;13:10;14:45".split(";");
-	  }
+	  }*/
 		/**/
 	}
 

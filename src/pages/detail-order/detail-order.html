@@ -74,8 +74,8 @@
 						<span primary *ngIf="item.total==0" success>{{'detailOrder.free'|translate}}</span>
 					</ion-label>
 			</ion-item>
-			<ion-item mode="md" *ngIf="AppointmentDate"> 
-				<span primary >Appointment: <span [innerHTML]="AppointmentDate"></span></span>
+			<ion-item mode="md" *ngIf="AppointmentDate" no-padding> 
+				<span primary >Time: <span [innerHTML]="AppointmentDate"></span></span>
 			</ion-item>	
 			
 		</div>
