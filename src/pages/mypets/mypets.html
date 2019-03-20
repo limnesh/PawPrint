@@ -30,7 +30,11 @@
 			<ion-img  style="width: 100%; height: 100%;"  *ngIf="!category.modernshop_images_categories || !category.modernshop_images_categories.modern_square" src="assets/images/no-image.png"></ion-img>-->
 		</ion-row>
 	</ion-item>
-	<button  ion-button block icon-right margin-top [navPush]="PetinfoPage" [disabled]="!is_loggedin" ><!--class="button-checkout"-->
+	<button *ngIf="!is_loggedin" ion-button block icon-right margin-top [navPush]="LoginPage">
+		<span text-uppercase>Login<!--{{'appointment.checkout'|translate}}--></span>
+				<ion-icon name="ios-arrow-round-forward"></ion-icon>
+	</button>
+	<button *ngIf="is_loggedin" ion-button block icon-right margin-top [navPush]="PetinfoPage" [disabled]="!is_loggedin" ><!--class="button-checkout"-->
 				<span text-uppercase>Add<!--{{'appointment.checkout'|translate}}--></span>
 				<ion-icon name="ios-arrow-round-forward"></ion-icon>
 	</button>

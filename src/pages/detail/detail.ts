@@ -146,9 +146,9 @@ export class DetailPage {
 	load(infiniteScroll) {
 		this.page++;
 		this.getProducts().subscribe(products => {
-			if (products['modernshop_look_images'].length > 0) {	
+			/*if (products['modernshop_look_images'].length > 0) {	
 				this.detail['modernshop_look_images'] = this.detail['modernshop_look_images'].concat(products['modernshop_look_images']);
-			} else this.over = true;
+			} else*/ this.over = true;
 			infiniteScroll.complete();
 		});
 	}

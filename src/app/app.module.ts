@@ -6,7 +6,7 @@ import { Pro } from '@ionic/pro';
 import { Injectable, Injector } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 Pro.init('d32002e9', {
-  appVersion: '1.2.5'
+  appVersion: '1.2.9'
 })
 
 import { HttpModule, Http } from '@angular/http';

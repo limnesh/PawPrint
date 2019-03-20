@@ -196,7 +196,7 @@
 		</div>-->
 
 		<!-- Buyer Protection -->
-		<div margin-top class="buyer-protection">
+		<!--<div margin-top class="buyer-protection">
 			<div class="buyer-icon">
 				<ion-icon name="icon-safe" success></ion-icon>
 			</div>
@@ -204,9 +204,9 @@
 				<div><b dark [innerHTML]="'modern_buyer_product_title'|static"></b></div>
 				<div [innerHTML]="'modern_description_buyer_product'|static"></div>
 			</div>
-		</div>
+		</div>-->
 		<!-- Buy The Look -->
-		<div margin-top light-bg *ngIf="detail.modernshop_look_images && 0<detail.modernshop_look_images.length">
+		<!--<div margin-top light-bg *ngIf="detail.modernshop_look_images && 0<detail.modernshop_look_images.length">
 			<div padding-horizontal padding-top><h6 no-margin dark>Related Products</h6></div>
 			<ion-row padding-8 wrap>
 				<ion-col padding-8 width-50 *ngFor="let product of detail.modernshop_look_images" [navPush]="DetailPage" [navParams]="{id:product.id}">
@@ -219,8 +219,8 @@
 					</div>
 					<p float-left width-100>
 						<span *ngIf="product.type!='variable' && product.type!='grouped'">
-						<!-- <b dark font-120>{{product.price*1||0|price}}</b>
-						<span *ngIf="product.sale_price" margin-left text-through>{{product.regular_price*1|price}}</span> -->
+						 <b dark font-120>{{product.price*1||0|price}}</b>
+						<span *ngIf="product.sale_price" margin-left text-through>{{product.regular_price*1|price}}</span>
 						<span dark class="simple-price" [innerHTML]="product.price_html"></span>
 						</span>
 						<span *ngIf="product.type=='variable' || product.type=='grouped'">
@@ -230,7 +230,7 @@
 					<span float-left width-100 [innerHTML]="product.name"></span>
 				</ion-col>
 			</ion-row>
-		</div>
+		</div>-->
 	</div>
 	<ion-infinite-scroll (ionInfinite)="load($event)" *ngIf="!over" threshold="1%" position="bottom">
 		<ion-infinite-scroll-content></ion-infinite-scroll-content>

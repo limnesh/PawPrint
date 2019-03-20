@@ -10,6 +10,7 @@ import { TranslateService } from '../../module/ng2-translate';
 import { Toast } from '@ionic-native/toast';
 import { Keyboard } from '@ionic-native/keyboard';
 import { Content } from 'ionic-angular';
+import { Events } from 'ionic-angular';
 
 //Page
 import { SignupPage } from '../signup/signup';
@@ -38,6 +39,7 @@ export class LoginPage {
 		private alertCtrl: AlertController,
 		translate: TranslateService,
 		private Toast: Toast,
+		private events: Events,
 		public keyboard: Keyboard
 	){
 		this.formLogin = formBuilder.group({
@@ -57,7 +59,10 @@ export class LoginPage {
 				this.http.post(this.wordpress_user+'/get_info', params).subscribe(user => {
 					this.core.hideLoading();
 					this.storage.set('user', user.json()).then(() => {
-						this.storage.set('login', login).then(() => this.navCtrl.pop());
+						this.storage.set('login', login).then(() => {
+							this.events.publish('RefreshPetsLoginPage');
+							this.navCtrl.pop();
+							});
 					});
 				}, err => {
 					this.core.hideLoading();

@@ -55,6 +55,9 @@ export class MypetsPage {
 		events.subscribe('RefreshPetsPage',() => {
 			this.loadPets(this.login['username']);
 		});
+		events.subscribe('RefreshPetsLoginPage',() => {
+			this.getData();
+		});
 	}
 	
 	
@@ -131,8 +134,25 @@ export class MypetsPage {
 			}
 			else
 			{
-				this.navCtrl.push(this.LoginPage);
-				
+				this.navCtrl.push(this.LoginPage);/*.then(() => {
+							if(!this.is_loggedin)
+							{
+								this.storageMul.get(['login']).then((val) => {
+									this.login = val['login'];
+									if (this.login )
+									{
+										this.is_loggedin=true;
+										this.loadPets(this.login['username']);
+									}
+									else
+									{
+										
+										this.navCtrl.pop();
+									};
+
+								});
+							};
+						});*/
 			};
 
 		});

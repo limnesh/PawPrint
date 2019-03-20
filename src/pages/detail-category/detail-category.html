@@ -11,10 +11,10 @@
 		<span [attr.primary]="filter.open=='category' ? true : null">{{'categories.category'|translate}}</span>
 		<ion-icon name="md-arrow-dropdown"></ion-icon>
 	</button>
-	<button ion-button clear color="dark" no-margin (click)="openFilter()" class="disable-hover button-drop">
+<!--	<button ion-button clear color="dark" no-margin (click)="openFilter()" class="disable-hover button-drop">
 		<span [attr.primary]="filter.open=='filter' ? true : null">{{'categories.filter'|translate}}</span>
 		<ion-icon name="md-arrow-dropdown"></ion-icon>
-	</button>
+	</button>-->
 	<button ion-button clear color="dark" no-margin (click)="openSort()" class="disable-hover button-drop">
 		<span [attr.primary]="filter.open=='sort' ? true : null">{{'categories.sort'|translate}}</span>
 		<ion-icon name="md-arrow-dropdown"></ion-icon>
@@ -53,7 +53,7 @@
 	<ion-scroll width-100 height-100 scrollY="true">
 		<ion-list>
 			
-			<hide-show color="light" *ngFor="let attr of attributes.attributes" class="filter-attribute">
+			<!--<hide-show color="light" *ngFor="let attr of attributes.attributes" class="filter-attribute">
 				<span this-title><b text-capitalize [innerHTML]="attr.name"></b></span>
 				<ion-list wrap this-content padding-bottom>
 					<ion-row>
@@ -78,7 +78,7 @@
 						</ion-col>
 					</ion-row>
 				</ion-list>
-			</hide-show> 
+			</hide-show> -->
 			<!-- Range Price -->
 			<hide-show color="light">
 				<span this-title>
@@ -122,9 +122,9 @@
 						<span *ngIf="product.sale_price" margin-left text-through>{{product.regular_price*1|price}}</span> -->
 						<span class="simple-price" [innerHTML]="product.price_html"></span>
 					</span>
-					<span class="product-price" *ngIf="product.type=='variable' || product.type=='grouped'" font-90>
+					<!--<span class="product-price" *ngIf="product.type=='variable' || product.type=='grouped'" font-90>
 						<b dark font-120 [innerHTML]="product.price_html"></b>
-					</span>
+					</span>-->
 				</p>
 				<div [hidden]="filter.grid">
 					<div class="rate">
@@ -133,12 +133,12 @@
 				</div>
 				<!--<span class="product-title" dark [innerHTML]="product.name"></span>-->
 				
-				<div *ngIf="product.type=='variable' && 0< product.attributes.length" [hidden]="filter.grid">
+				<!--<div *ngIf="product.type=='variable' && 0< product.attributes.length" [hidden]="filter.grid">
 					<div *ngFor="let attribute of product.attributes|filter:{variation:true}">
 						<span [innerHTML]="attribute.name"></span>: 
 						<span dark>{{attribute.options|ArrayJoin:', '}}</span>
 					</div>
-				</div>
+				</div>-->
 				<!-- <div [hidden]="filter.grid" overflow>
 					<div float-left primary no-wrap class="sale">{{'categories.sold'|translate}} {{product.total_sales}}</div>
 				</div> -->

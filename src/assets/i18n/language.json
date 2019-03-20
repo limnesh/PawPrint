@@ -226,20 +226,20 @@
 			"before": "You cannot add another ",
 			"after": " to your cart."
 		},
-		"add": "Add successfully",
-		"addOut": "Add successfully, can be backordered",
+		"add": "Added successfully",
+		"addOut": "Added successfully, can be backordered",
 		"outStock": "Out of stock",
 		"grouped": {
 			"variable": "Option >",
 			"button": "OK"
 		},
-		"have_not_variation": "No variation you choose",
+		"have_not_variation": "You didn't choose any variations",
 		"height": "Height",
 		"length": "Length",
 		"width": "Width"
 	},
 	"comments": {
-		"title": "All commenters",
+		"title": "All Reviews",
 		"ratings_reviews": "Ratings & Reviews",
 		"rating": "rating",
 		"button": "RATE AND WRITE A REVIEW"
